@@ -1,5 +1,26 @@
-import "@/styles/globals.css";
+import { useState, useEffect } from 'react'
+import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const saved = localStorage.getItem('ours-darkMode')
+    if (saved !== null) {
+      setDarkMode(JSON.parse(saved))
+    } else {
+      setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    localStorage.setItem('ours-darkMode', JSON.stringify(darkMode))
+  }, [darkMode])
+
+  return <Component {...pageProps} darkMode={darkMode} setDarkMode={setDarkMode} />
 }
