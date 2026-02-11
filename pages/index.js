@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useRef } from 'react'
 
-const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://sttudio.vercel.app'
+const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://malloc24.vercel.app'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -82,7 +82,7 @@ export default function Home({ darkMode, setDarkMode }) {
           </a>
           <div className="flex items-center gap-4">
             <a
-              href="#sttudio"
+              href="#malloc24"
               className="hidden sm:block text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
             >
               말록24
@@ -138,7 +138,7 @@ export default function Home({ darkMode, setDarkMode }) {
                 </svg>
               </a>
               <a
-                href="#sttudio"
+                href="#malloc24"
                 className="inline-flex items-center gap-2 px-8 py-4 text-slate-700 dark:text-slate-300 font-semibold rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200"
               >
                 자세히 보기
@@ -147,7 +147,7 @@ export default function Home({ darkMode, setDarkMode }) {
 
             {/* Scroll indicator */}
             <div className="mt-20 flex justify-center">
-              <a href="#sttudio" className="animate-bounce">
+              <a href="#malloc24" className="animate-bounce">
                 <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -157,7 +157,7 @@ export default function Home({ darkMode, setDarkMode }) {
         </section>
 
         {/* Product Section - 말록24 */}
-        <section id="sttudio" className="py-24 sm:py-32">
+        <section id="malloc24" className="py-24 sm:py-32">
           <div ref={productRef} className="max-w-5xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
               {/* Left - Info */}
