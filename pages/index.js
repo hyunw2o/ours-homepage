@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useRef } from 'react'
 
-const STTUDIO_URL = process.env.NEXT_PUBLIC_STTUDIO_URL || 'http://localhost:3000'
+const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://sttudio.vercel.app'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -67,7 +67,7 @@ export default function Home({ darkMode, setDarkMode }) {
     <>
       <Head>
         <title>OURS - AI Technology for Everyone</title>
-        <meta name="description" content="OURS builds AI tools that transform how you work. Meet STTudio, our AI-powered speech-to-text tool." />
+        <meta name="description" content="OURS builds AI tools that transform how you work. Meet 말록24, our AI-powered speech-to-text tool." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="OURS - AI Technology for Everyone" />
         <meta property="og:description" content="OURS builds AI tools that transform how you work." />
@@ -85,7 +85,7 @@ export default function Home({ darkMode, setDarkMode }) {
               href="#sttudio"
               className="hidden sm:block text-sm text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
             >
-              STTudio
+              말록24
             </a>
             <a
               href="#features"
@@ -129,10 +129,10 @@ export default function Home({ darkMode, setDarkMode }) {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={STTUDIO_URL}
+                href={MALLOC24_URL}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-2xl shadow-lg shadow-brand-600/25 hover:shadow-brand-600/40 transition-all duration-200"
               >
-                STTudio 시작하기
+                말록24 시작하기
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -156,7 +156,7 @@ export default function Home({ darkMode, setDarkMode }) {
           </div>
         </section>
 
-        {/* Product Section - STTudio */}
+        {/* Product Section - 말록24 */}
         <section id="sttudio" className="py-24 sm:py-32">
           <div ref={productRef} className="max-w-5xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -166,7 +166,7 @@ export default function Home({ darkMode, setDarkMode }) {
                   Our First Product
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                  STTudio
+                  말록24
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   AI 기반 음성 인식 도구. 음성 파일을 올리면, 정돈된 녹취록을 받아보세요.
@@ -194,10 +194,10 @@ export default function Home({ darkMode, setDarkMode }) {
                 </ul>
 
                 <a
-                  href={STTUDIO_URL}
+                  href={MALLOC24_URL}
                   className="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold hover:gap-3 transition-all"
                 >
-                  STTudio 바로가기
+                  말록24 바로가기
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -213,7 +213,7 @@ export default function Home({ darkMode, setDarkMode }) {
                       <div className="w-3 h-3 rounded-full bg-red-400" />
                       <div className="w-3 h-3 rounded-full bg-amber-400" />
                       <div className="w-3 h-3 rounded-full bg-green-400" />
-                      <span className="ml-2 text-xs text-slate-400 font-medium">STTudio</span>
+                      <span className="ml-2 text-xs text-slate-400 font-medium">말록24</span>
                     </div>
 
                     {/* Mockup upload zone */}
@@ -268,7 +268,7 @@ export default function Home({ darkMode, setDarkMode }) {
           <div ref={featuresRef} className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                Why STTudio?
+                Why 말록24?
               </h2>
               <p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
                 음성을 텍스트로 변환하는 가장 간편한 방법
@@ -321,10 +321,10 @@ export default function Home({ darkMode, setDarkMode }) {
                 음성 파일을 올리고, AI가 만드는 녹취록을 경험하세요.
               </p>
               <a
-                href={STTUDIO_URL}
+                href={MALLOC24_URL}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-brand-700 font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200"
               >
-                STTudio 시작하기
+                말록24 시작하기
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -340,8 +340,8 @@ export default function Home({ darkMode, setDarkMode }) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-6">
               <span className="text-sm font-bold text-slate-900 dark:text-white">OURS</span>
-              <a href={STTUDIO_URL} className="text-sm text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                STTudio
+              <a href={MALLOC24_URL} className="text-sm text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                말록24
               </a>
             </div>
             <p className="text-xs text-slate-400 dark:text-slate-600">
