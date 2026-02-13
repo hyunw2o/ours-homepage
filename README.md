@@ -28,6 +28,8 @@ cp .env.local.example .env.local
 
 - `NEXT_PUBLIC_MALLOC24_URL`: malloc24 service URL
 - `NEXT_PUBLIC_BUSINESS_REG_NUMBER`: business registration number shown in footer and privacy page
+- `NEXT_PUBLIC_REPRESENTATIVE_NAME`: representative name shown in footer and privacy page
+- `NEXT_PUBLIC_BUSINESS_ADDRESS`: business address shown in footer and privacy page
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 
 const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://malloc24.vercel.app'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
+const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
+const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -217,9 +219,12 @@ export default function Home({ darkMode, setDarkMode }) {
               <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Building AI Tools</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white tracking-tight mb-6">
-              OURS
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">
+              malloc24
             </h1>
+            <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] text-slate-400 dark:text-slate-500 uppercase mb-6">
+              by OURS
+            </p>
 
             <p className="text-xl sm:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-4">
               Turning AI into ours.
@@ -440,6 +445,12 @@ export default function Home({ darkMode, setDarkMode }) {
             <div className="text-center sm:text-right">
               <p className="text-xs text-slate-400 dark:text-slate-600">
                 Business Registration No.: {BUSINESS_REG_NUMBER}
+              </p>
+              <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
+                Representative: {REPRESENTATIVE_NAME}
+              </p>
+              <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
+                Business Address: {BUSINESS_ADDRESS}
               </p>
               <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
                 Copyright 2026. OURS All rights reserved.

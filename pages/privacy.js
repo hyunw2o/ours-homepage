@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
+const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
+const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -98,6 +100,8 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
           <Section title="6. 사업자 정보 및 문의">
             <p>상호: OURS</p>
             <p>사업자등록번호: {BUSINESS_REG_NUMBER}</p>
+            <p>대표자: {REPRESENTATIVE_NAME}</p>
+            <p>사업장 주소: {BUSINESS_ADDRESS}</p>
             <p className="mt-2">문의: 서비스 하단 연락 채널 또는 운영자 이메일</p>
           </Section>
 
