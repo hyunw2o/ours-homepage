@@ -2,7 +2,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
-const MALLOG24_URL = process.env.NEXT_PUBLIC_MALLOG24_URL || 'https://mallog24.vercel.app'
+const MALLOG24_URL =
+  process.env.NEXT_PUBLIC_MALLOG24_URL ||
+  process.env.NEXT_PUBLIC_MALLOC24_URL ||
+  'https://malloc24.vercel.app'
 const MALLOG24_INFO_URL = '/mallog24-en'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'

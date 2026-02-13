@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const MALLOG24_URL = process.env.NEXT_PUBLIC_MALLOG24_URL || 'https://mallog24.vercel.app'
+const MALLOG24_URL =
+  process.env.NEXT_PUBLIC_MALLOG24_URL ||
+  process.env.NEXT_PUBLIC_MALLOC24_URL ||
+  'https://malloc24.vercel.app'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 도입 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\nmallog24 도입 관련 문의드립니다.\n')}`
 

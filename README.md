@@ -27,6 +27,7 @@ cp .env.local.example .env.local
 ```
 
 - `NEXT_PUBLIC_MALLOG24_URL`: mallog24 service URL
+  - if your mallog24 domain is not ready yet, use the existing `https://malloc24.vercel.app`
 - `NEXT_PUBLIC_BUSINESS_REG_NUMBER`: business registration number shown in footer and privacy page
 - `NEXT_PUBLIC_REPRESENTATIVE_NAME`: representative name shown in footer and privacy page
 - `NEXT_PUBLIC_BUSINESS_ADDRESS`: business address shown in footer and privacy page
