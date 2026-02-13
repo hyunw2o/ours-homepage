@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
-const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://malloc24.vercel.app'
+const MALLOG24_URL = process.env.NEXT_PUBLIC_MALLOG24_URL || 'https://mallog24.vercel.app'
+const MALLOG24_INFO_URL = '/mallog24-en'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
@@ -89,7 +90,7 @@ function MockupWindow() {
         <div className="w-3 h-3 rounded-full bg-red-400" />
         <div className="w-3 h-3 rounded-full bg-amber-400" />
         <div className="w-3 h-3 rounded-full bg-green-400" />
-        <span className="ml-2 text-xs text-slate-400 font-medium">malloc24.vercel.app</span>
+        <span className="ml-2 text-xs text-slate-400 font-medium">mallog24.vercel.app</span>
       </div>
 
       <div className="p-5">
@@ -154,7 +155,7 @@ export default function Home({ darkMode, setDarkMode }) {
     <>
       <Head>
         <title>OURS - AI Technology for Everyone</title>
-        <meta name="description" content="OURS builds AI tools that transform how you work. Meet malloc24, our AI-powered speech-to-text tool." />
+        <meta name="description" content="OURS builds AI tools that transform how you work. Meet mallog24, our AI-powered speech-to-text tool." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="OURS - AI Technology for Everyone" />
         <meta property="og:description" content="OURS builds AI tools that transform how you work." />
@@ -188,15 +189,15 @@ export default function Home({ darkMode, setDarkMode }) {
             >
               Products
             </a>
-            <a
-              href={MALLOC24_URL}
+            <Link
+              href={MALLOG24_INFO_URL}
               className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
             >
-              malloc24
+              mallog24
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </a>
+            </Link>
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           </div>
         </div>
@@ -222,7 +223,7 @@ export default function Home({ darkMode, setDarkMode }) {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">
-              malloc24
+              mallog24
             </h1>
             <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] text-slate-400 dark:text-slate-500 uppercase mb-6">
               by OURS
@@ -240,19 +241,19 @@ export default function Home({ darkMode, setDarkMode }) {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
-                href={MALLOC24_URL}
+                href={MALLOG24_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-sm hover:shadow-md"
               >
-                Get started with malloc24
+                Get started with mallog24
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
               <a
-                href="#products"
+                href={MALLOG24_INFO_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-slate-600 dark:text-slate-400 font-semibold rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200"
               >
-                Learn more
+                About mallog24
               </a>
             </div>
           </div>
@@ -265,9 +266,9 @@ export default function Home({ darkMode, setDarkMode }) {
             {/* Bento Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-              {/* Card 1: malloc24 Hero Card (large) */}
+              {/* Card 1: mallog24 Hero Card (large) */}
               <BentoCard
-                href={MALLOC24_URL}
+                href={MALLOG24_INFO_URL}
                 className="p-8 lg:p-10"
                 span="md:col-span-2 lg:col-span-2 lg:row-span-2"
               >
@@ -277,7 +278,7 @@ export default function Home({ darkMode, setDarkMode }) {
                       Our First Product
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">
-                      malloc24
+                      mallog24
                     </h2>
                     <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
                       AI-powered speech recognition for cleaner transcripts from any recording.
@@ -292,7 +293,7 @@ export default function Home({ darkMode, setDarkMode }) {
                   </div>
 
                   <div className="mt-6 inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold text-sm group-hover:gap-3 transition-all">
-                    Open malloc24
+                    View mallog24 details
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -418,10 +419,10 @@ export default function Home({ darkMode, setDarkMode }) {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
-                    href={MALLOC24_URL}
+                    href={MALLOG24_URL}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
                   >
-                    Get started with malloc24
+                    Get started with mallog24
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -448,9 +449,9 @@ export default function Home({ darkMode, setDarkMode }) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6">
               <span className="text-sm font-bold text-slate-900 dark:text-white">OURS</span>
-              <a href={MALLOC24_URL} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                malloc24
-              </a>
+              <Link href={MALLOG24_INFO_URL} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                mallog24
+              </Link>
               <Link href="/privacy" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                 Privacy Policy
               </Link>
