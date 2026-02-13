@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://malloc24.vercel.app'
+const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -426,16 +427,24 @@ export default function Home({ darkMode, setDarkMode }) {
       {/* Footer */}
       <footer className="border-t border-slate-200 dark:border-slate-800 py-12">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6">
               <span className="text-sm font-bold text-slate-900 dark:text-white">OURS</span>
               <a href={MALLOC24_URL} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                 malloc24
               </a>
+              <Link href="/privacy" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                개인정보처리방침
+              </Link>
             </div>
-            <p className="text-xs text-slate-400 dark:text-slate-600">
-              Copyright 2026. OURS All rights reserved.
-            </p>
+            <div className="text-center sm:text-right">
+              <p className="text-xs text-slate-400 dark:text-slate-600">
+                사업자등록번호: {BUSINESS_REG_NUMBER}
+              </p>
+              <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
+                Copyright 2026. OURS All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </footer>

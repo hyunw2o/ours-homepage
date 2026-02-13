@@ -18,6 +18,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
+## Environment Variables
+
+Copy `.env.local.example` to `.env.local` and set values.
+
+```bash
+cp .env.local.example .env.local
+```
+
+- `NEXT_PUBLIC_MALLOC24_URL`: malloc24 service URL
+- `NEXT_PUBLIC_BUSINESS_REG_NUMBER`: business registration number shown in footer and privacy page
+
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
