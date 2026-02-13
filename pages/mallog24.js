@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Mallog24Logo from '../components/Mallog24Logo'
 
 const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
@@ -68,7 +69,9 @@ export default function Mallog24Intro({ darkMode, setDarkMode }) {
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100/70 via-transparent to-transparent dark:from-brand-900/20" />
           <div className="max-w-5xl mx-auto px-6">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-brand-600 dark:text-brand-400 mb-4">Product Detail</p>
-            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">mallog24</h1>
+            <div className="mb-4">
+              <Mallog24Logo className="w-full max-w-[420px] h-auto rounded-2xl border border-slate-200/70 shadow-sm" />
+            </div>
             <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-3xl">
               mallog24는 음성 파일을 업로드하면 정돈된 텍스트와 요약을 생성하고,
               회의 핵심 키워드, 진료 참고 기록, 설교 핵심 요약을 별도 기록본으로 저장할 수 있는 AI 음성 기록 서비스입니다.
