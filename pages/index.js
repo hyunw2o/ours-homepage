@@ -6,6 +6,8 @@ const MALLOC24_URL = process.env.NEXT_PUBLIC_MALLOC24_URL || 'https://malloc24.v
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
+const BUSINESS_EMAIL = 'ours113814@gmail.com'
+const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 비즈니스 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n문의 내용:\n')}`
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -414,15 +416,26 @@ export default function Home({ darkMode, setDarkMode }) {
                 <p className="text-lg text-slate-300 max-w-lg mx-auto mb-10">
                   음성 파일을 올리고, AI가 만드는 녹취록을 경험하세요.
                 </p>
-                <a
-                  href={MALLOC24_URL}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
-                >
-                  malloc24 시작하기
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href={MALLOC24_URL}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    malloc24 시작하기
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </a>
+                  <a
+                    href={BUSINESS_MAILTO}
+                    className="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-200"
+                  >
+                    비즈니스 문의하기
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -441,6 +454,9 @@ export default function Home({ darkMode, setDarkMode }) {
               <Link href="/privacy" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                 개인정보처리방침
               </Link>
+              <a href={BUSINESS_MAILTO} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                비즈니스 문의
+              </a>
             </div>
             <div className="text-center sm:text-right">
               <p className="text-xs text-slate-400 dark:text-slate-600">
