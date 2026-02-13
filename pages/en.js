@@ -195,9 +195,9 @@ export default function Home({ darkMode, setDarkMode }) {
             </a>
             <Link
               href={MALLOG24_INFO_URL}
-              className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 rounded-lg px-2 py-1 text-sm font-medium text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/30 hover:text-brand-700 dark:hover:text-brand-300 transition-all"
             >
-              <Mallog24Logo className="h-6 w-auto rounded-md border border-slate-200" />
+              <Mallog24Logo className="h-[22px] w-auto shrink-0" />
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -226,8 +226,8 @@ export default function Home({ darkMode, setDarkMode }) {
               <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Building AI Tools</span>
             </div>
 
-            <div className="mb-3 flex justify-center">
-              <Mallog24Logo className="w-full max-w-[560px] h-auto rounded-2xl border border-slate-200/70 shadow-sm" />
+            <div className="mb-4 flex justify-center">
+              <Mallog24Logo className="w-full max-w-[460px] h-auto" />
             </div>
             <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] text-slate-400 dark:text-slate-500 uppercase mb-6">
               by OURS
@@ -281,7 +281,7 @@ export default function Home({ darkMode, setDarkMode }) {
                     <span className="inline-block px-3 py-1 text-xs font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50 rounded-full mb-4">
                       Our First Product
                     </span>
-                    <Mallog24Logo className="w-full max-w-[260px] h-auto rounded-xl border border-slate-200/80 mb-3" />
+                    <Mallog24Logo className="w-full max-w-[220px] h-auto mb-4" />
                     <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
                       AI-powered speech recognition for cleaner transcripts from any recording.
                       Convert sermons, lectures, and meetings into accurate text in minutes.
@@ -451,8 +451,8 @@ export default function Home({ darkMode, setDarkMode }) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6">
               <span className="text-sm font-bold text-slate-900 dark:text-white">OURS</span>
-              <Link href={MALLOG24_INFO_URL} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                <Mallog24Logo className="h-5 w-auto rounded-md border border-slate-200" />
+              <Link href={MALLOG24_INFO_URL} className="inline-flex items-center transition-opacity hover:opacity-80">
+                <Mallog24Logo className="h-5 w-auto" />
               </Link>
               <Link href="/privacy" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                 Privacy Policy
