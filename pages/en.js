@@ -95,7 +95,7 @@ function MockupWindow() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
             </div>
-            <p className="text-sm text-slate-400">음성 파일 업로드</p>
+            <p className="text-sm text-slate-400">Upload audio file</p>
           </div>
         )}
 
@@ -109,7 +109,7 @@ function MockupWindow() {
                 <div className="h-1.5 bg-blue-400 rounded-full w-full animate-pulse" />
               </div>
             </div>
-            <p className="text-xs text-slate-400 text-center">AI 음성 인식 중...</p>
+            <p className="text-xs text-slate-400 text-center">AI speech recognition in progress...</p>
           </div>
         )}
 
@@ -125,7 +125,7 @@ function MockupWindow() {
                 <div className="h-1.5 bg-green-400 rounded-full w-full" />
               </div>
             </div>
-            <p className="text-xs text-slate-400 text-center">텍스트 교정 완료</p>
+            <p className="text-xs text-slate-400 text-center">Text refinement complete</p>
           </div>
         )}
 
@@ -166,13 +166,13 @@ export default function Home({ darkMode, setDarkMode }) {
             <nav className="flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 p-1">
               <Link
                 href="/"
-                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
+                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
               >
                 KR
               </Link>
               <Link
                 href="/en"
-                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
               >
                 EN
               </Link>
@@ -221,13 +221,13 @@ export default function Home({ darkMode, setDarkMode }) {
             </h1>
 
             <p className="text-xl sm:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-4">
-              우리의 기술이 되다.
+              Turning AI into ours.
             </p>
 
             <p className="text-base sm:text-lg text-slate-400 dark:text-slate-500 max-w-lg mx-auto mb-14 leading-relaxed">
-              일하는 방식을 바꾸는 AI 도구를 만듭니다.
+              We build AI tools that transform how people work.
               <br className="hidden sm:block" />
-              음성에서 시작하여, 모든 말에 닿습니다.
+              Starting with speech, reaching every word.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -235,7 +235,7 @@ export default function Home({ darkMode, setDarkMode }) {
                 href={MALLOC24_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-sm hover:shadow-md"
               >
-                malloc24 시작하기
+                Get started with malloc24
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -244,7 +244,7 @@ export default function Home({ darkMode, setDarkMode }) {
                 href="#products"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-slate-600 dark:text-slate-400 font-semibold rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200"
               >
-                더 알아보기
+                Learn more
               </a>
             </div>
           </div>
@@ -272,8 +272,8 @@ export default function Home({ darkMode, setDarkMode }) {
                       malloc24
                     </h2>
                     <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
-                      AI 기반 음성 인식 도구. 음성 파일을 올리면, 정돈된 녹취록을 받아보세요.
-                      설교, 강의, 회의 등 다양한 음성 콘텐츠를 빠르고 정확하게 텍스트로 변환합니다.
+                      AI-powered speech recognition for cleaner transcripts from any recording.
+                      Convert sermons, lectures, and meetings into accurate text in minutes.
                     </p>
                   </div>
 
@@ -284,7 +284,7 @@ export default function Home({ darkMode, setDarkMode }) {
                   </div>
 
                   <div className="mt-6 inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold text-sm group-hover:gap-3 transition-all">
-                    malloc24 바로가기
+                    Open malloc24
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -292,33 +292,33 @@ export default function Home({ darkMode, setDarkMode }) {
                 </div>
               </BentoCard>
 
-              {/* Card 2: AI 음성 인식 */}
+              {/* Card 2: AI Speech Recognition */}
               <BentoCard className="p-8">
                 <div className="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">AI 음성 인식</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">AI Speech Recognition</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Whisper + Gemini 2단계 엔진으로 높은 정확도의 음성 인식. 저음질 오디오도 문맥 기반으로 복원합니다.
+                  A two-stage Whisper + Gemini pipeline delivers high-accuracy transcription, even for low-quality audio.
                 </p>
               </BentoCard>
 
-              {/* Card 3: 스마트 교정 */}
+              {/* Card 3: Smart Text Refinement */}
               <BentoCard className="p-8">
                 <div className="w-12 h-12 rounded-2xl bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">스마트 텍스트 교정</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Smart Text Refinement</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  전문 용어 사전 + AI 교정으로 의료, 교회, 일반 용어를 정확하게 변환합니다.
+                  Domain dictionaries plus AI refinement preserve medical, church, and general terminology with precision.
                 </p>
               </BentoCard>
 
-              {/* Card 4: 다양한 녹취 유형 (wide) */}
+              {/* Card 4: Multiple Transcript Types (wide) */}
               <BentoCard className="p-8" span="md:col-span-2">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6">
                   <div className="flex-1">
@@ -327,16 +327,16 @@ export default function Home({ darkMode, setDarkMode }) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">다양한 녹취 유형 지원</h3>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Built for Multiple Transcript Types</h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                      설교, 통화, 회의 등 상황에 최적화된 프롬프트로 더 정확한 결과를 제공합니다.
+                      Optimized prompts for sermons, calls, and meetings improve accuracy by context.
                     </p>
                   </div>
                   <div className="flex gap-3 flex-wrap">
                     {[
-                      { label: '설교 녹취', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' },
-                      { label: '통화 기록', color: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' },
-                      { label: '회의 기록', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' },
+                      { label: 'Sermon Transcript', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' },
+                      { label: 'Call Record', color: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' },
+                      { label: 'Meeting Record', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' },
                     ].map((type) => (
                       <span key={type.label} className={`px-4 py-2 rounded-xl text-sm font-medium ${type.color}`}>
                         {type.label}
@@ -346,42 +346,42 @@ export default function Home({ darkMode, setDarkMode }) {
                 </div>
               </BentoCard>
 
-              {/* Card 5: 빠른 처리 */}
+              {/* Card 5: Fast Processing */}
               <BentoCard className="p-8">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">빠른 처리</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Fast Processing</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  긴 음성 파일도 몇 분 안에 처리. 자동 분할 + 병렬 처리로 빠르게 결과를 받아보세요.
+                  Long audio files are processed within minutes using auto-splitting and parallel handling.
                 </p>
               </BentoCard>
 
-              {/* Card 6: 한국어 + 영어 */}
+              {/* Card 6: Korean + English */}
               <BentoCard className="p-8">
                 <div className="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">한국어 + English</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Korean + English</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  한국어와 영어 모두 지원. 각 언어에 최적화된 용어 사전과 교정 로직을 적용합니다.
+                  Supports both Korean and English with language-optimized dictionaries and correction logic.
                 </p>
               </BentoCard>
 
-              {/* Card 7: 내보내기 */}
+              {/* Card 7: Export */}
               <BentoCard className="p-8">
                 <div className="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">다양한 내보내기</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Flexible Exports</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  TXT, Word 형식으로 내보내기. 클립보드 복사와 주보용 요약 생성도 지원합니다.
+                  Export as TXT or Word, copy to clipboard, and generate bulletin-ready summaries.
                 </p>
               </BentoCard>
 
@@ -403,16 +403,16 @@ export default function Home({ darkMode, setDarkMode }) {
 
               <div className="relative px-8 py-16 sm:px-16 sm:py-20 text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                  지금 바로 시작하세요
+                  Start now
                 </h2>
                 <p className="text-lg text-slate-300 max-w-lg mx-auto mb-10">
-                  음성 파일을 올리고, AI가 만드는 녹취록을 경험하세요.
+                  Upload your audio and experience AI-generated transcripts.
                 </p>
                 <a
                   href={MALLOC24_URL}
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
-                  malloc24 시작하기
+                  Get started with malloc24
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
