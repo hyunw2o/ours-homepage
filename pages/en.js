@@ -13,6 +13,7 @@ const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyun
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
+const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -438,6 +439,15 @@ export default function Home({ darkMode, setDarkMode }) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </a>
+                  <a
+                    href={ONE_TO_ONE_MAILTO}
+                    className="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-200"
+                  >
+                    1:1 Inquiry
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H9l-4 3V8a2 2 0 012-2z" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -459,6 +469,9 @@ export default function Home({ darkMode, setDarkMode }) {
               </Link>
               <a href={BUSINESS_MAILTO} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
                 Business Inquiry
+              </a>
+              <a href={ONE_TO_ONE_MAILTO} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                1:1 Inquiry
               </a>
             </div>
             <div className="text-center sm:text-right">
