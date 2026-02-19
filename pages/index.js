@@ -206,14 +206,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               by OURS
             </p>
 
-            <h1 className="ours-hero-title ours-gradient-text mb-5">
-              우리의 기술이 되다
+            <h1 className="ours-hero-title mb-5">
+              당신의 말이 <span className="ours-gradient-word">기록</span>이 되는 순간
             </h1>
 
             <p className="text-base sm:text-xl ours-muted max-w-2xl mx-auto mb-14 leading-relaxed">
-              일하는 방식을 바꾸는 AI 도구를 만듭니다.
+              녹음만 하세요. 정리는 AI가 합니다.
               <br className="hidden sm:block" />
-              음성에서 시작하여, 모든 말에 닿습니다.
+              가장 정확한 음성 기록 서비스, mallog24.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

@@ -206,14 +206,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               by OURS
             </p>
 
-            <h1 className="ours-hero-title ours-gradient-text mb-5">
-              Turning AI Into Ours
+            <h1 className="ours-hero-title mb-5">
+              The moment your voice becomes a <span className="ours-gradient-word">record</span>
             </h1>
 
             <p className="text-base sm:text-xl ours-muted max-w-2xl mx-auto mb-14 leading-relaxed">
-              We build AI tools that transform how people work.
+              Just hit record. AI handles the organization.
               <br className="hidden sm:block" />
-              Starting with speech, reaching every word.
+              mallog24 delivers accurate speech-to-text for real work.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
