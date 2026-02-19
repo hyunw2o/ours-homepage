@@ -453,6 +453,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 Business Address: {BUSINESS_ADDRESS}
               </p>
               <p className="text-xs ours-muted mt-1">
+                Business Inquiry Email: {BUSINESS_EMAIL}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                1:1 Inquiry Email: {BUSINESS_EMAIL}
+              </p>
+              <p className="text-xs ours-muted mt-1">
                 Copyright 2026. OURS All rights reserved.
               </p>
             </div>

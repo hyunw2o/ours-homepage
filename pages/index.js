@@ -453,6 +453,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 사업장 주소: {BUSINESS_ADDRESS}
               </p>
               <p className="text-xs ours-muted mt-1">
+                비즈니스 문의 이메일: {BUSINESS_EMAIL}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                1:1 문의 이메일: {BUSINESS_EMAIL}
+              </p>
+              <p className="text-xs ours-muted mt-1">
                 Copyright 2026. OURS All rights reserved.
               </p>
             </div>
