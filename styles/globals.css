@@ -143,10 +143,11 @@ body {
 }
 
 body {
+  font-family: 'Pretendard Variable', 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background:
-    radial-gradient(900px 460px at 10% -5%, var(--ours-glow-1), transparent 62%),
-    radial-gradient(900px 460px at 100% 0%, var(--ours-glow-2), transparent 64%),
-    var(--ours-bg);
+    radial-gradient(1100px 560px at -4% -14%, var(--ours-glow-1), transparent 64%),
+    radial-gradient(940px 520px at 104% -6%, var(--ours-glow-2), transparent 66%),
+    linear-gradient(180deg, color-mix(in oklab, var(--ours-bg) 86%, #ffffff 14%), var(--ours-bg));
   color: var(--ours-text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -154,24 +155,27 @@ body {
 .ours-header {
   backdrop-filter: blur(20px);
   background: var(--ours-surface);
-  border-bottom: 1px solid var(--ours-border);
+  border-bottom: 0;
+  box-shadow: 0 14px 30px -26px color-mix(in oklab, var(--ours-accent) 24%, transparent);
 }
 
 .ours-panel {
   background: var(--ours-surface-solid);
-  border: 1px solid var(--ours-border);
-  box-shadow: 0 20px 60px -48px rgba(16, 24, 40, 0.45);
+  border: 1px solid color-mix(in oklab, var(--ours-border) 42%, transparent);
+  box-shadow: 0 26px 48px -42px color-mix(in oklab, var(--ours-accent) 34%, transparent);
 }
 
 .ours-card {
   background: var(--ours-surface-solid);
-  border: 1px solid var(--ours-border);
-  box-shadow: 0 18px 45px -38px rgba(16, 24, 40, 0.4);
+  border: 1px solid color-mix(in oklab, var(--ours-border) 38%, transparent);
+  box-shadow:
+    0 24px 50px -42px color-mix(in oklab, var(--ours-accent) 26%, transparent),
+    0 12px 24px -22px color-mix(in oklab, var(--ours-text) 18%, transparent);
 }
 
 .ours-soft-card {
   background: var(--ours-surface-soft);
-  border: 1px solid color-mix(in oklab, var(--ours-border) 72%, transparent);
+  border: 1px solid color-mix(in oklab, var(--ours-border) 56%, transparent);
 }
 
 .ours-chip {
@@ -200,6 +204,9 @@ body {
   background: var(--ours-accent);
   color: var(--ours-accent-contrast);
   border: 1px solid color-mix(in oklab, var(--ours-accent) 75%, #000 8%);
+  box-shadow:
+    0 18px 32px -22px color-mix(in oklab, var(--ours-accent) 52%, transparent),
+    0 8px 18px -12px color-mix(in oklab, var(--ours-accent) 26%, transparent);
 }
 
 .ours-btn-primary:hover {
@@ -207,9 +214,10 @@ body {
 }
 
 .ours-btn-secondary {
-  background: transparent;
+  background: color-mix(in oklab, var(--ours-surface-soft) 66%, transparent);
   color: var(--ours-muted);
-  border: 1px solid var(--ours-border);
+  border: 1px solid color-mix(in oklab, var(--ours-border) 70%, transparent);
+  box-shadow: 0 14px 24px -20px color-mix(in oklab, var(--ours-accent) 18%, transparent);
 }
 
 .ours-btn-secondary:hover {
@@ -285,6 +293,73 @@ body {
 .ours-menu-item.active {
   color: var(--ours-accent);
   background: color-mix(in oklab, var(--ours-accent) 16%, var(--ours-surface-soft));
+}
+
+.ours-hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(56px);
+  pointer-events: none;
+}
+
+.ours-hero-orb-a {
+  width: 360px;
+  height: 360px;
+  top: -80px;
+  left: -90px;
+  background: color-mix(in oklab, var(--ours-accent) 26%, transparent);
+}
+
+.ours-hero-orb-b {
+  width: 320px;
+  height: 320px;
+  top: 30px;
+  right: -100px;
+  background: color-mix(in oklab, var(--ours-accent-soft) 22%, transparent);
+}
+
+.ours-hero-orb-c {
+  width: 280px;
+  height: 280px;
+  bottom: -120px;
+  left: 28%;
+  background: color-mix(in oklab, var(--ours-accent) 16%, var(--ours-glow-2));
+}
+
+.ours-glass-shape {
+  position: absolute;
+  inset: auto auto 24px 8%;
+  width: 240px;
+  height: 110px;
+  border-radius: 28px;
+  border: 1px solid color-mix(in oklab, var(--ours-border) 48%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--ours-surface-solid) 45%, transparent),
+    color-mix(in oklab, var(--ours-accent) 12%, transparent)
+  );
+  backdrop-filter: blur(14px);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.ours-hero-title {
+  font-size: clamp(3.75rem, 8.6vw, 5.3rem);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.ours-gradient-text {
+  background: linear-gradient(
+    118deg,
+    color-mix(in oklab, var(--ours-accent) 82%, #ffffff 18%) 0%,
+    color-mix(in oklab, var(--ours-accent-soft) 70%, #7fd3ff 30%) 48%,
+    color-mix(in oklab, var(--ours-text) 68%, #ffffff 32%) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 ::-webkit-scrollbar {

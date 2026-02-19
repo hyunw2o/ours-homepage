@@ -188,17 +188,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
       <main>
         {/* Hero Section */}
         <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
-          {/* Dot grid background */}
-          <div className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.05]"
-            style={{
-              backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
-            }}
-          />
-          {/* Gradient blob */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[800px] h-[600px] bg-brand-500/[0.08] dark:bg-brand-500/5 rounded-full blur-[120px] -z-10" />
+          <div className="ours-hero-orb ours-hero-orb-a -z-10" />
+          <div className="ours-hero-orb ours-hero-orb-b -z-10" />
+          <div className="ours-hero-orb ours-hero-orb-c -z-10" />
+          <div className="ours-glass-shape -z-10 hidden md:block" />
 
-          <div className="max-w-4xl mx-auto px-6 text-center animate-fade-in">
+          <div className="max-w-5xl mx-auto px-6 text-center animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 ours-chip">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
               <span className="text-xs font-medium ours-muted">Building AI Tools</span>
@@ -211,11 +206,11 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               by OURS
             </p>
 
-            <p className="text-xl sm:text-2xl font-medium ours-muted mb-4">
-              우리의 기술이 되다.
-            </p>
+            <h1 className="ours-hero-title ours-gradient-text mb-5">
+              우리의 기술이 되다
+            </h1>
 
-            <p className="text-base sm:text-lg ours-muted max-w-lg mx-auto mb-14 leading-relaxed">
+            <p className="text-base sm:text-xl ours-muted max-w-2xl mx-auto mb-14 leading-relaxed">
               일하는 방식을 바꾸는 AI 도구를 만듭니다.
               <br className="hidden sm:block" />
               음성에서 시작하여, 모든 말에 닿습니다.
