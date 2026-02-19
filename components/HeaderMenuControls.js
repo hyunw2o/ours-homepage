@@ -2,10 +2,9 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 const UI_THEME_OPTIONS = [
-  { key: 'auto', label: 'Auto' },
-  { key: 'aurora', label: 'Aurora' },
-  { key: 'noir', label: 'Noir' },
-  { key: 'sunset', label: 'Sunset' },
+  { key: 'auto', label: 'System' },
+  { key: 'light', label: 'Light' },
+  { key: 'dark', label: 'Dark' },
 ]
 
 export default function HeaderMenuControls({
@@ -36,16 +35,17 @@ export default function HeaderMenuControls({
   const handleThemeSelect = (themeKey) => {
     if (themeKey === 'auto') {
       setUiThemeMode('auto')
+    } else if (themeKey === 'light') {
+      setUiThemeMode('manual')
+      setUiTheme('aurora')
+      setDarkMode(false)
     } else {
       setUiThemeMode('manual')
-      setUiTheme(themeKey)
+      setUiTheme('noir')
+      setDarkMode(true)
     }
     setOpenMenu('')
   }
-
-  const darkModeLabel = locale === 'en'
-    ? (darkMode ? 'Light Mode' : 'Dark Mode')
-    : (darkMode ? '라이트 모드' : '다크 모드')
 
   return (
     <div ref={menuRef} className="relative flex items-center gap-2">
@@ -106,21 +106,13 @@ export default function HeaderMenuControls({
                 onClick={() => handleThemeSelect(theme.key)}
                 className={`ours-menu-item ${theme.key === 'auto'
                   ? uiThemeMode === 'auto' ? 'active' : ''
-                  : uiThemeMode === 'manual' && uiTheme === theme.key ? 'active' : ''}`}
+                  : theme.key === 'light'
+                    ? uiThemeMode === 'manual' && uiTheme === 'aurora' ? 'active' : ''
+                    : uiThemeMode === 'manual' && uiTheme === 'noir' ? 'active' : ''}`}
               >
                 {theme.label}
               </button>
             ))}
-            <button
-              type="button"
-              className="ours-menu-item"
-              onClick={() => {
-                setDarkMode(!darkMode)
-                setOpenMenu('')
-              }}
-            >
-              {darkModeLabel}
-            </button>
           </div>
         )}
       </div>
