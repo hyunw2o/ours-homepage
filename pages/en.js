@@ -239,6 +239,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
         {/* Bento Grid Section */}
         <section id="products" className="py-16 sm:py-24">
           <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-12">
+              <span className="ours-section-kicker">Products</span>
+              <h2 className="ours-section-title">A cleaner workspace for voice intelligence</h2>
+              <p className="ours-section-copy">
+                Instead of listing every technical detail, we tuned this section around real workflow steps
+                so users can understand value and start fast.
+              </p>
+            </div>
 
             {/* Bento Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -251,11 +259,11 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               >
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50 rounded-full mb-4">
+                    <span className="ours-section-kicker mb-4">
                       Our First Product
                     </span>
                     <Mallog24Logo className="w-full max-w-[220px] h-auto mb-4" />
-                    <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg">
+                    <p className="ours-feature-copy max-w-lg">
                       AI-powered speech recognition for cleaner transcripts from any recording.
                       Convert sermons, lectures, and meetings into accurate text in minutes.
                     </p>
@@ -267,7 +275,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     </div>
                   </div>
 
-                  <div className="mt-6 inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                  <div className="mt-6 inline-flex items-center gap-2 ours-link font-semibold text-sm group-hover:gap-3 transition-all">
                     View mallog24 details
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -278,26 +286,26 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
               {/* Card 2: AI Speech Recognition */}
               <BentoCard className="p-8">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="ours-feature-icon mb-5">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">AI Speech Recognition</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <h3 className="ours-feature-title">AI Speech Recognition</h3>
+                <p className="ours-feature-copy">
                   A two-stage Whisper + Gemini pipeline delivers high-accuracy transcription, even for low-quality audio.
                 </p>
               </BentoCard>
 
               {/* Card 3: Smart Text Refinement */}
               <BentoCard className="p-8">
-                <div className="w-12 h-12 rounded-2xl bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="ours-feature-icon mb-5">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Smart Text Refinement</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <h3 className="ours-feature-title">Smart Text Refinement</h3>
+                <p className="ours-feature-copy">
                   Domain dictionaries plus AI refinement preserve medical, church, and general terminology with precision.
                 </p>
               </BentoCard>
@@ -306,24 +314,20 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <BentoCard className="p-8" span="md:col-span-2">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6">
                   <div className="flex-1">
-                    <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-5">
-                      <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="ours-feature-icon mb-5">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Built for Multiple Transcript Types</h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    <h3 className="ours-feature-title">Built for Multiple Transcript Types</h3>
+                    <p className="ours-feature-copy">
                       Optimized prompts for sermons, calls, and meetings improve accuracy by context.
                     </p>
                   </div>
                   <div className="flex gap-3 flex-wrap">
-                    {[
-                      { label: 'Sermon Transcript', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' },
-                      { label: 'Call Record', color: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' },
-                      { label: 'Meeting Record', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' },
-                    ].map((type) => (
-                      <span key={type.label} className={`px-4 py-2 rounded-xl text-sm font-medium ${type.color}`}>
-                        {type.label}
+                    {['Sermon Transcript', 'Call Record', 'Meeting Record'].map((label) => (
+                      <span key={label} className="ours-type-chip">
+                        {label}
                       </span>
                     ))}
                   </div>
@@ -332,39 +336,39 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
               {/* Card 5: Fast Processing */}
               <BentoCard className="p-8">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="ours-feature-icon mb-5">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Fast Processing</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <h3 className="ours-feature-title">Fast Processing</h3>
+                <p className="ours-feature-copy">
                   Long audio files are processed within minutes using auto-splitting and parallel handling.
                 </p>
               </BentoCard>
 
               {/* Card 6: Korean + English */}
               <BentoCard className="p-8">
-                <div className="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="ours-feature-icon mb-5">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Korean + English</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <h3 className="ours-feature-title">Korean + English</h3>
+                <p className="ours-feature-copy">
                   Supports both Korean and English with language-optimized dictionaries and correction logic.
                 </p>
               </BentoCard>
 
               {/* Card 7: Export */}
               <BentoCard className="p-8">
-                <div className="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="ours-feature-icon mb-5">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Flexible Exports</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <h3 className="ours-feature-title">Flexible Exports</h3>
+                <p className="ours-feature-copy">
                   Export as TXT or Word, copy to clipboard, and generate bulletin-ready summaries.
                 </p>
               </BentoCard>
@@ -376,26 +380,18 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
         {/* CTA Section */}
         <section className="py-16 sm:py-24">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="relative rounded-3xl overflow-hidden">
-              {/* Background */}
-              <div className="absolute inset-0 bg-slate-900 dark:bg-slate-800" />
-              <div className="absolute inset-0 opacity-30"
-                style={{
-                  backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.4), transparent 50%), radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.3), transparent 50%)',
-                }}
-              />
-
+            <div className="ours-cta-panel">
               <div className="relative px-8 py-16 sm:px-16 sm:py-20 text-center">
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                <h2 className="ours-cta-title">
                   Start now
                 </h2>
-                <p className="text-lg text-slate-300 max-w-lg mx-auto mb-10">
+                <p className="ours-cta-copy mb-10">
                   Upload your audio and experience AI-generated transcripts.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
                     href={MALLOG24_URL}
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center gap-2 px-8 py-4 ours-btn-primary font-semibold rounded-2xl transition-all duration-200"
                   >
                     Get started with mallog24
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -404,7 +400,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   </a>
                   <a
                     href={BUSINESS_MAILTO}
-                    className="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
                   >
                     Business Inquiry
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,7 +409,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   </a>
                   <a
                     href={ONE_TO_ONE_MAILTO}
-                    className="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
                   >
                     1:1 Inquiry
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -428,35 +424,35 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 py-12">
+      <footer className="ours-footer">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6">
-              <span className="text-sm font-bold text-slate-900 dark:text-white">OURS</span>
+              <span className="text-sm font-bold ours-title">OURS</span>
               <Link href={MALLOG24_INFO_URL} className="inline-flex items-center transition-opacity hover:opacity-80">
                 <Mallog24Logo className="h-5 w-auto" />
               </Link>
-              <Link href="/privacy" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+              <Link href="/privacy" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Privacy Policy
               </Link>
-              <a href={BUSINESS_MAILTO} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+              <a href={BUSINESS_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Business Inquiry
               </a>
-              <a href={ONE_TO_ONE_MAILTO} className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+              <a href={ONE_TO_ONE_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 1:1 Inquiry
               </a>
             </div>
             <div className="text-center sm:text-right">
-              <p className="text-xs text-slate-400 dark:text-slate-600">
+              <p className="text-xs ours-muted">
                 Business Registration No.: {BUSINESS_REG_NUMBER}
               </p>
-              <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
+              <p className="text-xs ours-muted mt-1">
                 Representative: {REPRESENTATIVE_NAME}
               </p>
-              <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
+              <p className="text-xs ours-muted mt-1">
                 Business Address: {BUSINESS_ADDRESS}
               </p>
-              <p className="text-xs text-slate-400 dark:text-slate-600 mt-1">
+              <p className="text-xs ours-muted mt-1">
                 Copyright 2026. OURS All rights reserved.
               </p>
             </div>
