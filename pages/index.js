@@ -7,7 +7,7 @@ import HeaderMenuControls from '../components/HeaderMenuControls'
 const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
-  'https://malloc24.vercel.app'
+  'https://mallog24.com'
 const MALLOG24_INFO_URL = '/mallog24'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
@@ -76,7 +76,7 @@ function MockupWindow() {
         <div className="w-3 h-3 rounded-full bg-red-400" />
         <div className="w-3 h-3 rounded-full bg-amber-400" />
         <div className="w-3 h-3 rounded-full bg-green-400" />
-        <span className="ml-2 text-xs ours-muted font-medium">mallog24.vercel.app</span>
+        <span className="ml-2 text-xs ours-muted font-medium">mallog24.com</span>
       </div>
 
       <div className="p-5">
@@ -211,9 +211,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </h1>
 
             <p className="text-base sm:text-xl ours-muted max-w-2xl mx-auto mb-14 leading-relaxed">
-              녹음만 하세요. 정리는 AI가 합니다.
-              <br className="hidden sm:block" />
-              가장 정확한 음성 기록 서비스, mallog24.
+              녹음만 하세요. 정리는 AI가 합니다. 가장 정확한 음성 기록 서비스, mallog24.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

@@ -401,6 +401,8 @@ body {
   font-weight: 900;
   letter-spacing: -0.03em;
   color: var(--ours-text);
+  word-break: keep-all;
+  text-wrap: balance;
 }
 
 .ours-section-copy {
@@ -409,6 +411,9 @@ body {
   color: var(--ours-muted);
   font-size: clamp(0.98rem, 1.6vw, 1.08rem);
   line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 .ours-feature-icon {
@@ -430,6 +435,8 @@ body {
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--ours-text);
+  word-break: keep-all;
+  text-wrap: balance;
 }
 
 .ours-feature-copy {
@@ -437,6 +444,9 @@ body {
   font-size: 0.94rem;
   line-height: 1.62;
   color: var(--ours-muted);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 .ours-type-chip {
@@ -471,6 +481,8 @@ body {
   font-weight: 900;
   letter-spacing: -0.03em;
   color: var(--ours-text);
+  word-break: keep-all;
+  text-wrap: balance;
 }
 
 .ours-cta-copy {
@@ -480,6 +492,9 @@ body {
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--ours-muted);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 .ours-cta-ghost-btn {
