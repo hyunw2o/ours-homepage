@@ -2,6 +2,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Mallog24Logo from '../components/Mallog24Logo'
 
+const UI_THEME_OPTIONS = [
+  { key: 'auto', label: 'Auto' },
+  { key: 'aurora', label: 'Aurora' },
+  { key: 'noir', label: 'Noir' },
+  { key: 'sunset', label: 'Sunset' },
+]
+
 const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
@@ -13,7 +20,7 @@ function ThemeToggle({ darkMode, setDarkMode }) {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+      className="p-2 rounded-xl ours-card hover:opacity-90 transition-colors"
       aria-label="Toggle dark mode"
     >
       {darkMode ? (
@@ -29,19 +36,45 @@ function ThemeToggle({ darkMode, setDarkMode }) {
   )
 }
 
-function FeatureCard({ title, body, icon }) {
+function ThemePresetSwitch({ uiTheme, setUiTheme, uiThemeMode, setUiThemeMode, className = '' }) {
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5">
-      <div className="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-300 flex items-center justify-center mb-3">
-        {icon}
-      </div>
-      <h3 className="text-base font-bold text-slate-900 dark:text-white mb-2">{title}</h3>
-      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{body}</p>
+    <div className={`flex items-center rounded-xl p-1 ours-theme-group ${className}`}>
+      {UI_THEME_OPTIONS.map((theme) => (
+        <button
+          key={theme.key}
+          type="button"
+          onClick={() => {
+            if (theme.key === 'auto') {
+              setUiThemeMode('auto')
+            } else {
+              setUiThemeMode('manual')
+              setUiTheme(theme.key)
+            }
+          }}
+          className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg transition-all ours-theme-item ${theme.key === 'auto'
+            ? uiThemeMode === 'auto' ? 'active' : ''
+            : uiThemeMode === 'manual' && uiTheme === theme.key ? 'active' : ''}`}
+        >
+          {theme.label}
+        </button>
+      ))}
     </div>
   )
 }
 
-export default function Mallog24IntroEn({ darkMode, setDarkMode }) {
+function FeatureCard({ title, body, icon }) {
+  return (
+    <div className="rounded-2xl ours-card p-5">
+      <div className="w-10 h-10 rounded-xl ours-soft-card ours-link flex items-center justify-center mb-3">
+        {icon}
+      </div>
+      <h3 className="text-base font-bold ours-title mb-2">{title}</h3>
+      <p className="text-sm ours-muted leading-relaxed">{body}</p>
+    </div>
+  )
+}
+
+export default function Mallog24IntroEn({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThemeMode, setUiThemeMode }) {
   return (
     <>
       <Head>
@@ -50,42 +83,50 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/60 dark:border-slate-800/60">
+      <header className="sticky top-0 z-50 ours-header">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/en" className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+          <Link href="/en" className="text-xl font-bold ours-title tracking-tight">
             OURS
           </Link>
           <div className="flex items-center gap-4">
-            <Link href="/mallog24" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <Link href="/mallog24" className="text-sm ours-muted hover:opacity-80 transition-colors">
               KR
             </Link>
+            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} className="hidden md:flex" />
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           </div>
         </div>
       </header>
 
       <main>
+        <section className="pt-5 px-6">
+          <div className="max-w-5xl mx-auto rounded-xl ours-card p-3 flex items-center justify-between gap-3">
+            <p className="text-xs font-medium ours-muted">Auto: Light Aurora / Dark Noir</p>
+            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} />
+          </div>
+        </section>
+
         <section className="relative py-20 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100/70 via-transparent to-transparent dark:from-brand-900/20" />
           <div className="max-w-5xl mx-auto px-6">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-brand-600 dark:text-brand-400 mb-4">Product Detail</p>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase ours-link mb-4">Product Detail</p>
             <div className="mb-5 flex justify-center sm:justify-start">
               <Mallog24Logo className="w-full max-w-[360px] h-auto" />
             </div>
-            <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-3xl">
+            <p className="text-base sm:text-lg ours-muted leading-relaxed max-w-3xl">
               mallog24 is an AI speech transcription service that turns audio into polished text and summaries,
               then lets teams save separate structured notes for meeting keywords, clinical references, and sermon core summaries.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={MALLOG24_URL}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-primary font-semibold transition-opacity"
               >
                 Start mallog24
               </a>
               <a
                 href={BUSINESS_MAILTO}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
               >
                 Contact Sales
               </a>
@@ -117,23 +158,23 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode }) {
 
         <section className="pb-20">
           <div className="max-w-5xl mx-auto px-6">
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">How It Works</h2>
+            <div className="rounded-3xl ours-card p-6 sm:p-8">
+              <h2 className="text-2xl font-bold ours-title mb-6">How It Works</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-4">
-                  <p className="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-2">STEP 1</p>
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">Upload audio</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Upload sermon, meeting, or call audio and pick the transcript type.</p>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs font-semibold ours-link mb-2">STEP 1</p>
+                  <p className="text-sm font-semibold ours-title mb-1">Upload audio</p>
+                  <p className="text-xs ours-muted">Upload sermon, meeting, or call audio and pick the transcript type.</p>
                 </div>
-                <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-4">
-                  <p className="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-2">STEP 2</p>
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">Generate transcript</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Review transcript and summary, then export as TXT or Word when needed.</p>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs font-semibold ours-link mb-2">STEP 2</p>
+                  <p className="text-sm font-semibold ours-title mb-1">Generate transcript</p>
+                  <p className="text-xs ours-muted">Review transcript and summary, then export as TXT or Word when needed.</p>
                 </div>
-                <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-4">
-                  <p className="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-2">STEP 3</p>
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">Save structured notes</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Generate AI drafts and save edited records for future reuse and tracking.</p>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs font-semibold ours-link mb-2">STEP 3</p>
+                  <p className="text-sm font-semibold ours-title mb-1">Save structured notes</p>
+                  <p className="text-xs ours-muted">Generate AI drafts and save edited records for future reuse and tracking.</p>
                 </div>
               </div>
             </div>

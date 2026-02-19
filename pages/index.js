@@ -3,6 +3,13 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Mallog24Logo from '../components/Mallog24Logo'
 
+const UI_THEME_OPTIONS = [
+  { key: 'auto', label: 'Auto' },
+  { key: 'aurora', label: 'Aurora' },
+  { key: 'noir', label: 'Noir' },
+  { key: 'sunset', label: 'Sunset' },
+]
+
 const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
@@ -19,7 +26,7 @@ function ThemeToggle({ darkMode, setDarkMode }) {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+      className="p-2 rounded-xl ours-card hover:opacity-90 transition-colors"
       aria-label="Toggle dark mode"
     >
       {darkMode ? (
@@ -32,6 +39,32 @@ function ThemeToggle({ darkMode, setDarkMode }) {
         </svg>
       )}
     </button>
+  )
+}
+
+function ThemePresetSwitch({ uiTheme, setUiTheme, uiThemeMode, setUiThemeMode, className = '' }) {
+  return (
+    <div className={`flex items-center rounded-xl p-1 ours-theme-group ${className}`}>
+      {UI_THEME_OPTIONS.map((theme) => (
+        <button
+          key={theme.key}
+          type="button"
+          onClick={() => {
+            if (theme.key === 'auto') {
+              setUiThemeMode('auto')
+            } else {
+              setUiThemeMode('manual')
+              setUiTheme(theme.key)
+            }
+          }}
+          className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg transition-all ours-theme-item ${theme.key === 'auto'
+            ? uiThemeMode === 'auto' ? 'active' : ''
+            : uiThemeMode === 'manual' && uiTheme === theme.key ? 'active' : ''}`}
+        >
+          {theme.label}
+        </button>
+      ))}
+    </div>
   )
 }
 
@@ -63,7 +96,7 @@ function useScrollReveal() {
 
 function BentoCard({ children, className = '', href, span = '' }) {
   const ref = useScrollReveal()
-  const baseClass = `group relative rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:-translate-y-0.5 ${span}`
+  const baseClass = `group relative rounded-3xl ours-card overflow-hidden transition-all duration-300 hover:-translate-y-0.5 ${span}`
 
   if (href) {
     return (
@@ -90,23 +123,23 @@ function MockupWindow() {
   }, [])
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+    <div className="rounded-2xl ours-card overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-3 border-b" style={{ borderColor: 'var(--ours-border)' }}>
         <div className="w-3 h-3 rounded-full bg-red-400" />
         <div className="w-3 h-3 rounded-full bg-amber-400" />
         <div className="w-3 h-3 rounded-full bg-green-400" />
-        <span className="ml-2 text-xs text-slate-400 font-medium">mallog24.vercel.app</span>
+        <span className="ml-2 text-xs ours-muted font-medium">mallog24.vercel.app</span>
       </div>
 
       <div className="p-5">
         {step === 0 && (
           <div className="text-center py-6 animate-fade-in">
-            <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-              <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-10 h-10 mx-auto mb-3 rounded-full ours-soft-card flex items-center justify-center">
+              <svg className="w-5 h-5 ours-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
             </div>
-            <p className="text-sm text-slate-400">음성 파일 업로드</p>
+            <p className="text-sm ours-muted">음성 파일 업로드</p>
           </div>
         )}
 
@@ -120,7 +153,7 @@ function MockupWindow() {
                 <div className="h-1.5 bg-blue-400 rounded-full w-full animate-pulse" />
               </div>
             </div>
-            <p className="text-xs text-slate-400 text-center">AI 음성 인식 중...</p>
+            <p className="text-xs ours-muted text-center">AI 음성 인식 중...</p>
           </div>
         )}
 
@@ -136,7 +169,7 @@ function MockupWindow() {
                 <div className="h-1.5 bg-green-400 rounded-full w-full" />
               </div>
             </div>
-            <p className="text-xs text-slate-400 text-center">텍스트 교정 완료</p>
+            <p className="text-xs ours-muted text-center">텍스트 교정 완료</p>
           </div>
         )}
 
@@ -155,7 +188,7 @@ function MockupWindow() {
   )
 }
 
-export default function Home({ darkMode, setDarkMode }) {
+export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThemeMode, setUiThemeMode }) {
   return (
     <>
       <Head>
@@ -168,35 +201,36 @@ export default function Home({ darkMode, setDarkMode }) {
       </Head>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/60 dark:border-slate-800/60">
+      <header className="sticky top-0 z-50 ours-header">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#" className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+          <a href="#" className="text-xl font-bold ours-title tracking-tight">
             OURS
           </a>
           <div className="flex items-center gap-5">
-            <nav className="flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 p-1">
+            <nav className="flex items-center rounded-xl ours-theme-group p-1">
               <Link
                 href="/"
-                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
+                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg ours-theme-item active"
               >
                 KR
               </Link>
               <Link
                 href="/en"
-                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg ours-theme-item"
               >
                 EN
               </Link>
             </nav>
+            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} className="hidden lg:flex" />
             <a
               href="#products"
-              className="hidden sm:block text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="hidden sm:block text-sm ours-muted hover:opacity-80 transition-colors"
             >
               Products
             </a>
             <Link
               href={MALLOG24_INFO_URL}
-              className="hidden sm:inline-flex items-center gap-2 rounded-lg px-2 py-1 text-sm font-medium text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/30 hover:text-brand-700 dark:hover:text-brand-300 transition-all"
+              className="hidden sm:inline-flex items-center gap-2 rounded-lg px-2 py-1 text-sm font-medium ours-link transition-all"
             >
               <Mallog24Logo className="h-[22px] w-auto shrink-0" />
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,6 +243,13 @@ export default function Home({ darkMode, setDarkMode }) {
       </header>
 
       <main>
+        <section className="pt-5 px-6">
+          <div className="max-w-6xl mx-auto rounded-xl ours-card p-3 flex items-center justify-between gap-3">
+            <p className="text-xs font-medium ours-muted">Auto: 라이트 Aurora / 다크 Noir</p>
+            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} />
+          </div>
+        </section>
+
         {/* Hero Section */}
         <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
           {/* Dot grid background */}
@@ -222,23 +263,23 @@ export default function Home({ darkMode, setDarkMode }) {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[800px] h-[600px] bg-brand-500/[0.08] dark:bg-brand-500/5 rounded-full blur-[120px] -z-10" />
 
           <div className="max-w-4xl mx-auto px-6 text-center animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 ours-chip">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Building AI Tools</span>
+              <span className="text-xs font-medium ours-muted">Building AI Tools</span>
             </div>
 
             <div className="mb-4 flex justify-center">
               <Mallog24Logo className="w-full max-w-[460px] h-auto" />
             </div>
-            <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] text-slate-400 dark:text-slate-500 uppercase mb-6">
+            <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] ours-muted uppercase mb-6">
               by OURS
             </p>
 
-            <p className="text-xl sm:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-4">
+            <p className="text-xl sm:text-2xl font-medium ours-muted mb-4">
               우리의 기술이 되다.
             </p>
 
-            <p className="text-base sm:text-lg text-slate-400 dark:text-slate-500 max-w-lg mx-auto mb-14 leading-relaxed">
+            <p className="text-base sm:text-lg ours-muted max-w-lg mx-auto mb-14 leading-relaxed">
               일하는 방식을 바꾸는 AI 도구를 만듭니다.
               <br className="hidden sm:block" />
               음성에서 시작하여, 모든 말에 닿습니다.
@@ -247,7 +288,7 @@ export default function Home({ darkMode, setDarkMode }) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href={MALLOG24_URL}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-2xl transition-all duration-200 shadow-sm hover:shadow-md"
+                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-primary font-semibold rounded-2xl transition-all duration-200"
               >
                 mallog24 시작하기
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -256,7 +297,7 @@ export default function Home({ darkMode, setDarkMode }) {
               </a>
               <a
                 href={MALLOG24_INFO_URL}
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-slate-600 dark:text-slate-400 font-semibold rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
               >
                 mallog24 소개
               </a>
