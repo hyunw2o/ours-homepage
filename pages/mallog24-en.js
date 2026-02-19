@@ -1,13 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Mallog24Logo from '../components/Mallog24Logo'
-
-const UI_THEME_OPTIONS = [
-  { key: 'auto', label: 'Auto' },
-  { key: 'aurora', label: 'Aurora' },
-  { key: 'noir', label: 'Noir' },
-  { key: 'sunset', label: 'Sunset' },
-]
+import HeaderMenuControls from '../components/HeaderMenuControls'
 
 const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
@@ -15,52 +9,6 @@ const MALLOG24_URL =
   'https://malloc24.vercel.app'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 onboarding inquiry')}&body=${encodeURIComponent('Hello OURS team,\n\nI would like to learn more about mallog24.\n')}`
-
-function ThemeToggle({ darkMode, setDarkMode }) {
-  return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-xl ours-card hover:opacity-90 transition-colors"
-      aria-label="Toggle dark mode"
-    >
-      {darkMode ? (
-        <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-        </svg>
-      ) : (
-        <svg className="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-        </svg>
-      )}
-    </button>
-  )
-}
-
-function ThemePresetSwitch({ uiTheme, setUiTheme, uiThemeMode, setUiThemeMode, className = '' }) {
-  return (
-    <div className={`flex items-center rounded-xl p-1 ours-theme-group ${className}`}>
-      {UI_THEME_OPTIONS.map((theme) => (
-        <button
-          key={theme.key}
-          type="button"
-          onClick={() => {
-            if (theme.key === 'auto') {
-              setUiThemeMode('auto')
-            } else {
-              setUiThemeMode('manual')
-              setUiTheme(theme.key)
-            }
-          }}
-          className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg transition-all ours-theme-item ${theme.key === 'auto'
-            ? uiThemeMode === 'auto' ? 'active' : ''
-            : uiThemeMode === 'manual' && uiTheme === theme.key ? 'active' : ''}`}
-        >
-          {theme.label}
-        </button>
-      ))}
-    </div>
-  )
-}
 
 function FeatureCard({ title, body, icon }) {
   return (
@@ -89,23 +37,22 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode, uiTheme, setUiT
             OURS
           </Link>
           <div className="flex items-center gap-4">
-            <Link href="/mallog24" className="text-sm ours-muted hover:opacity-80 transition-colors">
-              KR
-            </Link>
-            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} className="hidden md:flex" />
-            <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+            <HeaderMenuControls
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+              uiTheme={uiTheme}
+              setUiTheme={setUiTheme}
+              uiThemeMode={uiThemeMode}
+              setUiThemeMode={setUiThemeMode}
+              locale="en"
+              krHref="/mallog24"
+              enHref="/mallog24-en"
+            />
           </div>
         </div>
       </header>
 
       <main>
-        <section className="pt-5 px-6">
-          <div className="max-w-5xl mx-auto rounded-xl ours-card p-3 flex items-center justify-between gap-3">
-            <p className="text-xs font-medium ours-muted">Auto: Light Aurora / Dark Noir</p>
-            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} />
-          </div>
-        </section>
-
         <section className="relative py-20 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100/70 via-transparent to-transparent dark:from-brand-900/20" />
           <div className="max-w-5xl mx-auto px-6">

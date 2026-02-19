@@ -232,6 +232,61 @@ body {
   box-shadow: 0 8px 24px -20px rgba(16, 24, 40, 0.55);
 }
 
+.ours-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ours-muted);
+  background: var(--ours-surface-soft);
+  border: 1px solid var(--ours-border);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.ours-icon-btn:hover {
+  color: var(--ours-text);
+  background: color-mix(in oklab, var(--ours-surface-solid) 88%, transparent);
+  border-color: color-mix(in oklab, var(--ours-border) 65%, var(--ours-accent) 35%);
+}
+
+.ours-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  z-index: 70;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--ours-border);
+  background: color-mix(in oklab, var(--ours-surface-solid) 95%, transparent);
+  box-shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.65);
+}
+
+.ours-menu-item {
+  width: 100%;
+  display: block;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ours-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 9px 10px;
+  transition: color 0.16s ease, background 0.16s ease;
+}
+
+.ours-menu-item:hover {
+  color: var(--ours-text);
+  background: color-mix(in oklab, var(--ours-surface-soft) 85%, transparent);
+}
+
+.ours-menu-item.active {
+  color: var(--ours-accent);
+  background: color-mix(in oklab, var(--ours-accent) 16%, var(--ours-surface-soft));
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

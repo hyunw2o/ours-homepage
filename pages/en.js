@@ -2,13 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Mallog24Logo from '../components/Mallog24Logo'
-
-const UI_THEME_OPTIONS = [
-  { key: 'auto', label: 'Auto' },
-  { key: 'aurora', label: 'Aurora' },
-  { key: 'noir', label: 'Noir' },
-  { key: 'sunset', label: 'Sunset' },
-]
+import HeaderMenuControls from '../components/HeaderMenuControls'
 
 const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
@@ -21,52 +15,6 @@ const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
-
-function ThemeToggle({ darkMode, setDarkMode }) {
-  return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-xl ours-card hover:opacity-90 transition-colors"
-      aria-label="Toggle dark mode"
-    >
-      {darkMode ? (
-        <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-        </svg>
-      ) : (
-        <svg className="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-        </svg>
-      )}
-    </button>
-  )
-}
-
-function ThemePresetSwitch({ uiTheme, setUiTheme, uiThemeMode, setUiThemeMode, className = '' }) {
-  return (
-    <div className={`flex items-center rounded-xl p-1 ours-theme-group ${className}`}>
-      {UI_THEME_OPTIONS.map((theme) => (
-        <button
-          key={theme.key}
-          type="button"
-          onClick={() => {
-            if (theme.key === 'auto') {
-              setUiThemeMode('auto')
-            } else {
-              setUiThemeMode('manual')
-              setUiTheme(theme.key)
-            }
-          }}
-          className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg transition-all ours-theme-item ${theme.key === 'auto'
-            ? uiThemeMode === 'auto' ? 'active' : ''
-            : uiThemeMode === 'manual' && uiTheme === theme.key ? 'active' : ''}`}
-        >
-          {theme.label}
-        </button>
-      ))}
-    </div>
-  )
-}
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -207,21 +155,6 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             OURS
           </a>
           <div className="flex items-center gap-5">
-            <nav className="flex items-center rounded-xl ours-theme-group p-1">
-              <Link
-                href="/"
-                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg ours-theme-item"
-              >
-                KR
-              </Link>
-              <Link
-                href="/en"
-                className="px-2.5 py-1 text-[11px] font-semibold rounded-lg ours-theme-item active"
-              >
-                EN
-              </Link>
-            </nav>
-            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} className="hidden lg:flex" />
             <a
               href="#products"
               className="hidden sm:block text-sm ours-muted hover:opacity-80 transition-colors"
@@ -237,19 +170,22 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </Link>
-            <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+            <HeaderMenuControls
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+              uiTheme={uiTheme}
+              setUiTheme={setUiTheme}
+              uiThemeMode={uiThemeMode}
+              setUiThemeMode={setUiThemeMode}
+              locale="en"
+              krHref="/"
+              enHref="/en"
+            />
           </div>
         </div>
       </header>
 
       <main>
-        <section className="pt-5 px-6">
-          <div className="max-w-6xl mx-auto rounded-xl ours-card p-3 flex items-center justify-between gap-3">
-            <p className="text-xs font-medium ours-muted">Auto: Light Aurora / Dark Noir</p>
-            <ThemePresetSwitch uiTheme={uiTheme} setUiTheme={setUiTheme} uiThemeMode={uiThemeMode} setUiThemeMode={setUiThemeMode} />
-          </div>
-        </section>
-
         {/* Hero Section */}
         <section className="relative py-24 sm:py-32 lg:py-40 overflow-hidden">
           {/* Dot grid background */}
