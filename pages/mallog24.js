@@ -7,6 +7,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
+const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 도입 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\nmallog24 도입 관련 문의드립니다.\n')}`
 
@@ -77,6 +78,12 @@ export default function Mallog24Intro({ darkMode, setDarkMode, uiTheme, setUiThe
               >
                 도입 문의하기
               </a>
+              <Link
+                href={MALLOG24_GUIDE_URL}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+              >
+                사용 가이드 보기
+              </Link>
             </div>
           </div>
         </section>

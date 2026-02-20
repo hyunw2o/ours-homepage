@@ -9,6 +9,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
 const MALLOG24_INFO_URL = '/mallog24-en'
+const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
@@ -162,6 +163,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               Products
             </a>
             <Link
+              href={MALLOG24_GUIDE_URL}
+              className="hidden sm:block text-sm ours-muted hover:opacity-80 transition-colors"
+            >
+              Usage Guide
+            </Link>
+            <Link
               href={MALLOG24_INFO_URL}
               className="hidden sm:inline-flex items-center gap-2 rounded-lg px-2 py-1 text-sm font-medium ours-link transition-all"
             >
@@ -230,6 +237,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               >
                 About mallog24
               </a>
+              <Link
+                href={MALLOG24_GUIDE_URL}
+                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
+              >
+                Usage Guide
+              </Link>
             </div>
           </div>
         </section>
@@ -396,6 +409,15 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
+                  <Link
+                    href={MALLOG24_GUIDE_URL}
+                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
+                  >
+                    View Usage Guide
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6m-7 4h8m-8 4h8m-8 4h5M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z" />
+                    </svg>
+                  </Link>
                   <a
                     href={BUSINESS_MAILTO}
                     className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
@@ -432,6 +454,9 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </Link>
               <Link href="/privacy-en" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Privacy Policy
+              </Link>
+              <Link href={MALLOG24_GUIDE_URL} className="text-sm ours-muted hover:opacity-85 transition-colors">
+                mallog24 Usage Guide
               </Link>
               <a href={BUSINESS_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Business Inquiry

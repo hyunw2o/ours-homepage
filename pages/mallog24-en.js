@@ -7,6 +7,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
+const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 onboarding inquiry')}&body=${encodeURIComponent('Hello OURS team,\n\nI would like to learn more about mallog24.\n')}`
 
@@ -77,6 +78,12 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode, uiTheme, setUiT
               >
                 Contact Sales
               </a>
+              <Link
+                href={MALLOG24_GUIDE_URL}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+              >
+                View Usage Guide
+              </Link>
             </div>
           </div>
         </section>
