@@ -11,10 +11,10 @@ const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('
 
 function GuideStep({ number, title, body }) {
   return (
-    <div className="rounded-2xl ours-soft-card p-4">
-      <p className="text-xs font-semibold ours-link mb-2">STEP {number}</p>
-      <p className="text-sm font-semibold ours-title mb-1">{title}</p>
-      <p className="text-xs ours-muted leading-relaxed">{body}</p>
+    <div className="rounded-2xl ours-soft-card p-5 sm:p-6">
+      <p className="text-sm font-semibold ours-link mb-2">STEP {number}</p>
+      <p className="text-xl font-bold ours-title mb-2">{title}</p>
+      <p className="text-base ours-muted leading-relaxed break-keep">{body}</p>
     </div>
   )
 }
@@ -89,10 +89,10 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
         </section>
 
         <section className="pb-14 sm:pb-20">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="rounded-3xl ours-card p-6 sm:p-8">
               <h2 className="text-2xl font-bold ours-title mb-6">Quick Start Flow</h2>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-5">
                 <GuideStep number="1" title="Sign in" body="Log in with email or social login (Google/Kakao)." />
                 <GuideStep number="2" title="Upload file" body="Upload audio using file picker or drag-and-drop." />
                 <GuideStep number="3" title="Select type" body="Pick sermon, call, or meeting mode for context tuning." />

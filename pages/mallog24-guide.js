@@ -11,10 +11,10 @@ const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('
 
 function GuideStep({ number, title, body }) {
   return (
-    <div className="rounded-2xl ours-soft-card p-4">
-      <p className="text-xs font-semibold ours-link mb-2">STEP {number}</p>
-      <p className="text-sm font-semibold ours-title mb-1">{title}</p>
-      <p className="text-xs ours-muted leading-relaxed whitespace-pre-line">{body}</p>
+    <div className="rounded-2xl ours-soft-card p-5 sm:p-6">
+      <p className="text-sm font-semibold ours-link mb-2">STEP {number}</p>
+      <p className="text-xl font-bold ours-title mb-2">{title}</p>
+      <p className="text-base ours-muted leading-relaxed whitespace-pre-line break-keep">{body}</p>
     </div>
   )
 }
@@ -89,10 +89,10 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
         </section>
 
         <section className="pb-14 sm:pb-20">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="rounded-3xl ours-card p-6 sm:p-8">
               <h2 className="text-2xl font-bold ours-title mb-6">빠른 시작 순서</h2>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-5">
                 <GuideStep number="1" title="로그인" body={"이메일 로그인 또는\n소셜 로그인(구글/카카오)으로 접속합니다."} />
                 <GuideStep number="2" title="파일 업로드" body={"녹음 파일을 업로드하거나\n드래그앤드롭으로 추가합니다."} />
                 <GuideStep number="3" title="유형 선택" body={"설교/통화/회의 중 목적에\n맞는 전사 유형을 선택합니다."} />
