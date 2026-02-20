@@ -136,9 +136,17 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
           </Section>
 
           <div className="pt-4 text-center">
-            <Link href="/" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-              홈으로 돌아가기
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link href="/terms" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                이용약관
+              </Link>
+              <Link href="/company-policy" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                회사 정책
+              </Link>
+              <Link href="/" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                홈으로 돌아가기
+              </Link>
+            </div>
           </div>
         </div>
       </main>

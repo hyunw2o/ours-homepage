@@ -146,6 +146,18 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
                 >
                   개인정보처리방침 보기
                 </Link>
+                <Link
+                  href="/terms"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
+                >
+                  이용약관 보기
+                </Link>
+                <Link
+                  href="/company-policy"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
+                >
+                  회사 정책 보기
+                </Link>
               </div>
             </div>
           </div>

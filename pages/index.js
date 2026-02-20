@@ -459,6 +459,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <Link href="/privacy" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 개인정보처리방침
               </Link>
+              <Link href="/terms" className="text-sm ours-muted hover:opacity-85 transition-colors">
+                이용약관
+              </Link>
+              <Link href="/company-policy" className="text-sm ours-muted hover:opacity-85 transition-colors">
+                회사 정책
+              </Link>
               <Link href={MALLOG24_GUIDE_URL} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 mallog24 사용 가이드
               </Link>

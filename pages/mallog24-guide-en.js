@@ -146,6 +146,18 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
                 >
                   View Privacy Policy
                 </Link>
+                <Link
+                  href="/terms-en"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
+                >
+                  View Terms
+                </Link>
+                <Link
+                  href="/company-policy-en"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
+                >
+                  View Company Policy
+                </Link>
               </div>
             </div>
           </div>

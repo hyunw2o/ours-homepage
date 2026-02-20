@@ -138,9 +138,17 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
           </Section>
 
           <div className="pt-4 text-center">
-            <Link href="/en" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-              Back to Home
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link href="/terms-en" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/company-policy-en" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                Company Policy
+              </Link>
+              <Link href="/en" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                Back to Home
+              </Link>
+            </div>
           </div>
         </div>
       </main>
