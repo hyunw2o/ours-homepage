@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import Mallog24Logo from '../components/Mallog24Logo'
 import HeaderMenuControls from '../components/HeaderMenuControls'
@@ -74,10 +75,14 @@ function MockupWindow() {
   return (
     <div className="rounded-2xl ours-card overflow-hidden">
       <div className="flex items-center gap-2 px-4 py-3 border-b" style={{ borderColor: 'var(--ours-border)' }}>
-        <div className="w-3 h-3 rounded-full bg-red-400" />
-        <div className="w-3 h-3 rounded-full bg-amber-400" />
-        <div className="w-3 h-3 rounded-full bg-green-400" />
-        <span className="ml-2 text-xs ours-muted font-medium">mallog24.com</span>
+        <Image
+          src="/mallog24-app-icon.png"
+          alt="mallog24 app icon"
+          width={20}
+          height={20}
+          className="w-5 h-5 rounded-md"
+        />
+        <span className="text-xs ours-muted font-medium">mallog24.com</span>
       </div>
 
       <div className="p-5">
