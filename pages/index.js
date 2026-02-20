@@ -254,8 +254,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <span className="ours-section-kicker">Products</span>
               <h2 className="ours-section-title">정돈된 기록 흐름을 만드는 핵심 기능</h2>
               <p className="ours-section-copy">
-                복잡한 기능 설명보다 실제 업무 흐름에 맞춘 카드 구성으로 필요한 기능을 빠르게 이해하고
-                바로 시작할 수 있도록 설계했습니다.
+                복잡한 기능 설명보다 실제 업무 흐름에 맞춘 카드 구성으로 필요한 기능을<br />빠르게 이해하고 바로 시작할 수 있도록 설계했습니다.
               </p>
             </div>
 
@@ -275,7 +274,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     </span>
                     <Mallog24Logo className="w-full max-w-[220px] h-auto mb-4" />
                     <p className="ours-feature-copy max-w-lg">
-                      AI 기반 음성 인식 도구. 음성 파일을 올리면, 정돈된 녹취록을 받아보세요.
+                      AI 기반 음성 인식 도구. 음성 파일을 올리면, 정돈된 녹취록을 받아보세요.<br />
                       설교, 강의, 회의 등 다양한 음성 콘텐츠를 빠르고 정확하게 텍스트로 변환합니다.
                     </p>
                   </div>
@@ -304,7 +303,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </div>
                 <h3 className="ours-feature-title">AI 음성 인식</h3>
                 <p className="ours-feature-copy">
-                  Whisper + Gemini 2단계 엔진으로 높은 정확도의 음성 인식. 저음질 오디오도 문맥 기반으로 복원합니다.
+                  Whisper + Gemini 2단계 엔진으로 높은 정확도의 음성 인식.<br />저음질 오디오도 문맥 기반으로 복원합니다.
                 </p>
               </BentoCard>
 
@@ -317,7 +316,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </div>
                 <h3 className="ours-feature-title">스마트 텍스트 교정</h3>
                 <p className="ours-feature-copy">
-                  전문 용어 사전 + AI 교정으로 의료, 교회, 일반 용어를 정확하게 변환합니다.
+                  전문 용어 사전 + AI 교정으로<br />의료, 교회, 일반 용어를 정확하게 변환합니다.
                 </p>
               </BentoCard>
 
@@ -332,7 +331,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     </div>
                     <h3 className="ours-feature-title">다양한 녹취 유형 지원</h3>
                     <p className="ours-feature-copy">
-                      설교, 통화, 회의 등 상황에 최적화된 프롬프트로 더 정확한 결과를 제공합니다.
+                      설교, 통화, 회의 등 상황에 최적화된 프롬프트로<br />더 정확한 결과를 제공합니다.
                     </p>
                   </div>
                   <div className="flex gap-3 flex-wrap">
@@ -354,7 +353,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </div>
                 <h3 className="ours-feature-title">빠른 처리</h3>
                 <p className="ours-feature-copy">
-                  긴 음성 파일도 몇 분 안에 처리. 자동 분할 + 병렬 처리로 빠르게 결과를 받아보세요.
+                  긴 음성 파일도 몇 분 안에 처리.<br />자동 분할 + 병렬 처리로 빠르게 결과를 받아보세요.
                 </p>
               </BentoCard>
 
@@ -367,7 +366,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </div>
                 <h3 className="ours-feature-title">한국어 + English</h3>
                 <p className="ours-feature-copy">
-                  한국어와 영어 모두 지원. 각 언어에 최적화된 용어 사전과 교정 로직을 적용합니다.
+                  한국어와 영어 모두 지원.<br />각 언어에 최적화된 용어 사전과 교정 로직을 적용합니다.
                 </p>
               </BentoCard>
 
@@ -380,7 +379,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </div>
                 <h3 className="ours-feature-title">다양한 내보내기</h3>
                 <p className="ours-feature-copy">
-                  TXT, Word 형식으로 내보내기. 클립보드 복사와 주보용 요약 생성도 지원합니다.
+                  TXT, Word 형식으로 내보내기.<br />클립보드 복사와 주보용 요약 생성도 지원합니다.
                 </p>
               </BentoCard>
 
