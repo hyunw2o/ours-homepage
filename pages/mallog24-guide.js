@@ -93,7 +93,7 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
             <div className="rounded-3xl ours-card p-6 sm:p-8">
               <h2 className="text-2xl font-bold ours-title mb-6">빠른 시작 순서</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-5">
-                <GuideStep number="1" title="로그인" body={"이메일 로그인 또는\n소셜 로그인(구글/카카오)으로 접속합니다."} />
+                <GuideStep number="1" title="로그인" body={"이메일 로그인 또는\n소셜\u00A0로그인(구글/카카오)으로 접속합니다."} />
                 <GuideStep number="2" title="파일 업로드" body={"녹음 파일을 업로드하거나\n드래그앤드롭으로 추가합니다."} />
                 <GuideStep number="3" title="유형 선택" body={"설교/통화/회의 중 목적에\n맞는 전사 유형을 선택합니다."} />
                 <GuideStep number="4" title="변환 실행" body={"AI 전사와 교정 완료 후\n텍스트/요약 결과를 확인합니다."} />
