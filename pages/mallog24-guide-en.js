@@ -21,9 +21,9 @@ function GuideStep({ number, title, body }) {
 
 function InfoCard({ title, children }) {
   return (
-    <div className="rounded-2xl ours-card p-5">
-      <h3 className="text-base font-bold ours-title mb-3">{title}</h3>
-      <div className="text-sm ours-muted leading-relaxed">{children}</div>
+    <div className="rounded-2xl ours-card p-6 sm:p-7">
+      <h3 className="text-2xl font-bold ours-title mb-4">{title}</h3>
+      <div className="text-lg ours-muted leading-relaxed">{children}</div>
     </div>
   )
 }
@@ -67,20 +67,20 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
           <div className="max-w-5xl mx-auto px-6">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase ours-link mb-4">Usage Guide</p>
             <h1 className="ours-section-title mb-4">mallog24 Usage Guide</h1>
-            <p className="text-base sm:text-lg ours-muted leading-relaxed max-w-3xl">
+            <p className="text-lg sm:text-xl ours-muted leading-relaxed max-w-3xl">
               This page covers a practical flow from sign-in and upload to transcript review and structured record saving,
               so teams can adopt mallog24 without setup friction.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={MALLOG24_URL}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-primary font-semibold transition-opacity"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-primary font-semibold transition-opacity"
               >
                 Open mallog24
               </a>
               <a
                 href={BUSINESS_MAILTO}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
               >
                 Ask About This Guide
               </a>
@@ -104,9 +104,9 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
         </section>
 
         <section className="pb-14 sm:pb-20">
-          <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-5">
             <InfoCard title="Recommended Upload Conditions">
-              <ul className="list-disc pl-5 space-y-1.5">
+              <ul className="list-disc pl-6 space-y-2">
                 <li>Formats: mp3, wav, m4a, mp4, webm</li>
                 <li>Max file size: 100MB</li>
                 <li>Recommended sampling: 16kHz+ and minimal background noise</li>
@@ -114,7 +114,7 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
               </ul>
             </InfoCard>
             <InfoCard title="How to Improve Accuracy">
-              <ul className="list-disc pl-5 space-y-1.5">
+              <ul className="list-disc pl-6 space-y-2">
                 <li>Speak key proper nouns early in the recording if possible.</li>
                 <li>In meetings, avoid heavy overlap when multiple speakers respond at once.</li>
                 <li>Use structured draft generation to isolate action items and key terms.</li>
@@ -125,10 +125,10 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
         </section>
 
         <section className="pb-20">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="rounded-3xl ours-card p-6 sm:p-8">
-              <h2 className="text-2xl font-bold ours-title mb-4">Common Situations</h2>
-              <div className="space-y-3 text-sm ours-muted leading-relaxed">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-8 sm:p-10">
+              <h2 className="text-4xl font-bold ours-title mb-6">Common Situations</h2>
+              <div className="space-y-4 text-lg ours-muted leading-relaxed">
                 <p><span className="font-semibold ours-title">Slow login:</span> Check network conditions and browser cache, then retry sign-in.</p>
                 <p><span className="font-semibold ours-title">Transcription stalled:</span> Recheck file size, format, and upload completion.</p>
                 <p><span className="font-semibold ours-title">Awkward term recognition:</span> Use structured record draft generation to normalize key terms quickly.</p>
@@ -136,13 +136,13 @@ export default function Mallog24GuideEn({ darkMode, setDarkMode, uiTheme, setUiT
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/mallog24-en"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
                 >
                   Back to Product Page
                 </Link>
                 <Link
                   href="/privacy-en"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
                 >
                   View Privacy Policy
                 </Link>

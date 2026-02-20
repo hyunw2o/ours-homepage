@@ -21,9 +21,9 @@ function GuideStep({ number, title, body }) {
 
 function InfoCard({ title, children }) {
   return (
-    <div className="rounded-2xl ours-card p-5">
-      <h3 className="text-base font-bold ours-title mb-3">{title}</h3>
-      <div className="text-sm ours-muted leading-relaxed">{children}</div>
+    <div className="rounded-2xl ours-card p-6 sm:p-7">
+      <h3 className="text-2xl font-bold ours-title mb-4">{title}</h3>
+      <div className="text-lg ours-muted leading-relaxed">{children}</div>
     </div>
   )
 }
@@ -67,20 +67,20 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
           <div className="max-w-5xl mx-auto px-6">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase ours-link mb-4">Usage Guide</p>
             <h1 className="ours-section-title mb-4">mallog24 사용 가이드</h1>
-            <p className="text-base sm:text-lg ours-muted leading-relaxed max-w-3xl">
+            <p className="text-lg sm:text-xl ours-muted leading-relaxed max-w-3xl">
               첫 사용자도 바로 적용할 수 있도록 로그인부터 업로드, 결과 검토, 기록본 저장까지<br />
               실제 사용 흐름 기준으로 정리했습니다.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={MALLOG24_URL}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-primary font-semibold transition-opacity"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-primary font-semibold transition-opacity"
               >
                 mallog24 열기
               </a>
               <a
                 href={BUSINESS_MAILTO}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
               >
                 가이드 문의하기
               </a>
@@ -104,9 +104,9 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
         </section>
 
         <section className="pb-14 sm:pb-20">
-          <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-5">
             <InfoCard title="권장 업로드 조건">
-              <ul className="list-disc pl-5 space-y-1.5">
+              <ul className="list-disc pl-6 space-y-2">
                 <li>파일 형식: mp3, wav, m4a, mp4, webm</li>
                 <li>파일 크기: 최대 100MB</li>
                 <li>권장 샘플링: 16kHz 이상, 너무 큰 배경 소음은 사전 제거</li>
@@ -114,7 +114,7 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
               </ul>
             </InfoCard>
             <InfoCard title="정확도 높이는 방법">
-              <ul className="list-disc pl-5 space-y-1.5">
+              <ul className="list-disc pl-6 space-y-2">
                 <li>녹음 시작 전에 주제와 주요 고유명사를 짧게 발화해 주세요.</li>
                 <li>회의에서는 발언자가 교차 발화할 때 발언 순서를 정리해 주세요.</li>
                 <li>결과 확인 후 기록본 초안 기능으로 핵심만 분리 저장하면 재활용이 쉽습니다.</li>
@@ -125,10 +125,10 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
         </section>
 
         <section className="pb-20">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="rounded-3xl ours-card p-6 sm:p-8">
-              <h2 className="text-2xl font-bold ours-title mb-4">자주 발생하는 상황</h2>
-              <div className="space-y-3 text-sm ours-muted leading-relaxed">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-8 sm:p-10">
+              <h2 className="text-4xl font-bold ours-title mb-6">자주 발생하는 상황</h2>
+              <div className="space-y-4 text-lg ours-muted leading-relaxed">
                 <p><span className="font-semibold ours-title">로그인이 느린 경우:</span> 네트워크 상태와 브라우저 캐시를 먼저 확인하고, 재로그인 후 다시 시도하세요.</p>
                 <p><span className="font-semibold ours-title">전사가 멈춘 경우:</span> 파일 크기, 포맷, 업로드 상태를 확인한 뒤 다시 업로드하세요.</p>
                 <p><span className="font-semibold ours-title">용어 인식이 어색한 경우:</span> 원문 텍스트를 기준으로 기록본 초안을 생성해 핵심 용어를 우선 정리해 주세요.</p>
@@ -136,13 +136,13 @@ export default function Mallog24Guide({ darkMode, setDarkMode, uiTheme, setUiThe
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/mallog24"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
                 >
                   소개 페이지로 돌아가기
                 </Link>
                 <Link
                   href="/privacy"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-xl ours-btn-secondary font-semibold transition-colors"
                 >
                   개인정보처리방침 보기
                 </Link>
