@@ -56,52 +56,57 @@ export default function CompanyPolicyEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 20, 2026</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 21, 2026</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Company Policy</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              OURS follows these operating principles to provide a reliable AI speech documentation service.
+              OURS operates mallog24 under clear standards for reliability, security, and responsible AI use.
             </p>
           </div>
 
-          <Section title="1. Service Principles">
+          <Section title="1. Product Operating Principles">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Keep workflows simple so users can move from recording to reusable notes quickly.</li>
-              <li>Prioritize security, stability, and transcript quality in product decisions.</li>
+              <li>Keep workflows simple so users can quickly turn audio into reusable records.</li>
+              <li>Prioritize transcript quality, security, and stability in roadmap decisions.</li>
             </ul>
           </Section>
 
-          <Section title="2. Data Minimization">
+          <Section title="2. Data Governance">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Process only the minimum data required to provide core features.</li>
-              <li>Original audio files are handled in temporary storage and removed promptly after processing by policy.</li>
+              <li>Process only the minimum data required to deliver core functionality.</li>
+              <li>Source audio is handled in temporary storage and removed after processing by default policy.</li>
+              <li>Role-based access control and audit logging are maintained for operational accountability.</li>
             </ul>
           </Section>
 
-          <Section title="3. Quality and Accuracy">
+          <Section title="3. Security Operations">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Outputs are machine-generated and should be reviewed before final business use.</li>
-              <li>Domain-specific prompting and terminology dictionaries are continuously refined.</li>
+              <li>Baseline controls include HTTPS, token verification, role separation, and request throttling.</li>
+              <li>We monitor abuse patterns and security events with defined response procedures.</li>
+              <li>During incidents, containment, analysis, and recovery steps are executed through internal playbooks.</li>
             </ul>
           </Section>
 
-          <Section title="4. Security and Access Control">
+          <Section title="4. Quality and Accuracy Policy">
             <ul className="list-disc pl-5 space-y-1">
-              <li>HTTPS transport, token verification, and least-privilege access are baseline controls.</li>
-              <li>Abuse signals are monitored; suspicious usage may be rate-limited or blocked.</li>
+              <li>Outputs are machine-generated; user review is recommended before final business use.</li>
+              <li>Domain-specific prompts and terminology dictionaries are continuously refined.</li>
+              <li>Quality issues are prioritized using reproducible logs and impact-based triage.</li>
             </ul>
           </Section>
 
-          <Section title="5. AI Ethics and Responsible Use">
+          <Section title="5. Responsible AI Use">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Uploaded data is not used outside service-delivery purposes.</li>
-              <li>Reported illegal or rights-infringing use is reviewed and handled under internal policy.</li>
+              <li>Uploaded data is processed only for requested product functionality.</li>
+              <li>Reported illegal or rights-infringing use may result in review and account/content restrictions.</li>
+              <li>We do not expand sensitive-data usage beyond disclosed service scope without explicit notice.</li>
             </ul>
           </Section>
 
           <Section title="6. Support and Policy Communication">
             <ul className="list-disc pl-5 space-y-1">
               <li>Support contact: ours113814@gmail.com</li>
-              <li>Material policy updates are announced on web pages or in-app notices.</li>
+              <li>Major policy, feature, or incident notices are provided on web pages or in-app alerts.</li>
+              <li>Security-related inquiries are handled with priority.</li>
             </ul>
           </Section>
 

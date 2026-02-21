@@ -56,74 +56,84 @@ export default function Terms({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">시행일: 2026년 2월 20일</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">시행일: 2026년 2월 21일</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">이용약관</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              본 약관은 OURS가 제공하는 mallog24 서비스의 이용조건과 운영기준을 정합니다.
+              본 약관은 OURS가 제공하는 mallog24 서비스의 이용 조건, 권리, 책임을 규정합니다.
             </p>
           </div>
 
           <Section title="1. 목적 및 적용 범위">
-            <p>본 약관은 OURS(이하 “회사”)가 제공하는 mallog24 웹/앱 서비스 이용에 적용됩니다.</p>
+            <p>본 약관은 웹/앱 mallog24 서비스와 관련된 모든 기능, 고객지원, 부가 안내에 적용됩니다.</p>
           </Section>
 
-          <Section title="2. 계정 및 회원관리">
+          <Section title="2. 계정 및 인증">
             <ul className="list-disc pl-5 space-y-1">
-              <li>이용자는 정확한 정보를 기반으로 회원가입 또는 소셜로그인을 진행해야 합니다.</li>
-              <li>계정, 비밀번호, 로그인 세션 관리 책임은 이용자에게 있습니다.</li>
-              <li>부정 사용이 의심되는 경우 회사는 인증 강화, 이용 제한 조치를 취할 수 있습니다.</li>
+              <li>이용자는 정확한 정보로 가입·로그인해야 하며, 타인 계정을 무단 사용해서는 안 됩니다.</li>
+              <li>계정·비밀번호·세션 관리 책임은 이용자에게 있습니다.</li>
+              <li>보안 위험이 확인되면 회사는 추가 인증 또는 접근 제한 조치를 할 수 있습니다.</li>
             </ul>
           </Section>
 
-          <Section title="3. 서비스 제공 내용">
+          <Section title="3. 서비스 내용 및 특성">
             <ul className="list-disc pl-5 space-y-1">
               <li>음성 파일 업로드, 전사(STT), 교정, 요약, 기록본 저장 기능을 제공합니다.</li>
-              <li>서비스 품질 향상을 위해 기능, UI, 처리 흐름은 사전 고지 후 변경될 수 있습니다.</li>
+              <li>서비스는 외부 API 연동을 포함할 수 있으며, 이에 따라 처리 시간과 결과 품질이 달라질 수 있습니다.</li>
+              <li>회사는 품질·보안·안정성 개선을 위해 기능 및 UI를 변경할 수 있습니다.</li>
             </ul>
           </Section>
 
-          <Section title="4. 요금제 및 사용량 정책">
+          <Section title="4. 요금제, 사용량, 결제">
             <ul className="list-disc pl-5 space-y-1">
               <li>무료 플랜은 공지된 월간 한도 내에서 제공됩니다.</li>
-              <li>유료 플랜/결제 기능이 도입되는 경우 별도 가격 페이지와 결제 약관이 함께 고지됩니다.</li>
-              <li>결제, 환불, 해지 조건은 관련 법령 및 결제사 정책을 따릅니다.</li>
+              <li>유료 결제 기능 도입 시 가격, 과금 주기, 해지/환불 기준을 별도 고지합니다.</li>
+              <li>결제 및 환불은 관련 법령과 결제사 정책을 따릅니다.</li>
             </ul>
           </Section>
 
-          <Section title="5. 이용자 의무">
+          <Section title="5. 이용자 업로드 자료에 대한 책임">
             <ul className="list-disc pl-5 space-y-1">
-              <li>타인의 권리를 침해하거나 법령에 위반되는 자료를 업로드해서는 안 됩니다.</li>
-              <li>서비스 보안을 해치는 자동화 공격, 우회, 비정상 트래픽을 금지합니다.</li>
-              <li>무단 배포, 역설계, 상업적 재판매 등 약관 위반 행위를 금지합니다.</li>
+              <li>이용자는 업로드 자료에 대해 적법한 권리를 보유하거나 사용 허가를 받아야 합니다.</li>
+              <li>타인의 저작권, 초상권, 개인정보 등 권리를 침해하는 자료 업로드를 금지합니다.</li>
+              <li>회사는 법령 위반 또는 권리침해 신고가 접수된 자료에 대해 접근 제한 또는 삭제할 수 있습니다.</li>
             </ul>
           </Section>
 
-          <Section title="6. 지식재산권">
+          <Section title="6. 금지 행위">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>불법·유해 콘텐츠 업로드, 악성코드 유포, 서비스 공격/우회, 비정상 자동화 트래픽</li>
+              <li>서비스 역설계, 무단 재판매, 운영 정책 우회</li>
+              <li>회사 또는 제3자의 권리를 침해하거나 서비스 신뢰를 저해하는 행위</li>
+            </ul>
+          </Section>
+
+          <Section title="7. 이용 제한 및 이의 절차">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>약관 위반 또는 보안 위협이 확인되면 사전 통지 후 이용을 제한할 수 있습니다.</li>
+              <li>긴급 보안 이슈의 경우 사후 통지 방식으로 즉시 제한할 수 있습니다.</li>
+              <li>이용자는 제한 조치에 대해 문의 메일을 통해 소명할 수 있습니다.</li>
+            </ul>
+          </Section>
+
+          <Section title="8. 지식재산권">
             <p>
-              서비스 소프트웨어, 디자인, 상표, 문서에 대한 권리는 회사에 있습니다. 이용자가 업로드한 원본 콘텐츠의 권리는 해당 이용자 또는 권리자에게 있습니다.
+              서비스 소프트웨어, 디자인, 상표, 문서에 관한 권리는 회사에 있습니다. 이용자가 업로드한 원본 콘텐츠의 권리는 이용자 또는 원권리자에게 있습니다.
             </p>
           </Section>
 
-          <Section title="7. 면책 및 책임 제한">
+          <Section title="9. 면책 및 책임 제한">
             <ul className="list-disc pl-5 space-y-1">
-              <li>회사는 천재지변, 통신장애, 외부 API 장애 등 불가항력으로 인한 손해에 대해 책임을 제한할 수 있습니다.</li>
-              <li>전사 결과는 보조 도구이며, 최종 검토 및 활용 책임은 이용자에게 있습니다.</li>
+              <li>천재지변, 통신장애, 외부 API 장애 등 회사가 통제할 수 없는 사유에 대해 책임이 제한될 수 있습니다.</li>
+              <li>전사·요약 결과는 보조 도구이며, 최종 확인과 활용 책임은 이용자에게 있습니다.</li>
             </ul>
           </Section>
 
-          <Section title="8. 이용 제한 및 계약 해지">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>약관 위반, 서비스 악용, 보안 위협이 확인되면 사전 통지 후 이용을 제한할 수 있습니다.</li>
-              <li>이용자는 언제든지 탈퇴를 요청할 수 있으며, 관련 데이터는 정책에 따라 처리됩니다.</li>
-            </ul>
+          <Section title="10. 약관 변경 및 고지">
+            <p>약관 변경 시 적용일자, 변경 사유, 주요 변경사항을 서비스 화면 또는 웹페이지로 안내합니다.</p>
           </Section>
 
-          <Section title="9. 약관 변경">
-            <p>약관 변경 시 적용일자, 변경 사유, 주요 변경사항을 서비스 화면 또는 웹페이지에 공지합니다.</p>
-          </Section>
-
-          <Section title="10. 준거법 및 문의">
-            <p>본 약관은 대한민국 법령을 준거법으로 합니다.</p>
+          <Section title="11. 준거법 및 문의">
+            <p>본 약관은 대한민국 법령을 준거법으로 하며, 문의는 아래 이메일로 접수합니다.</p>
             <p className="mt-2">문의: ours113814@gmail.com</p>
           </Section>
 

@@ -56,73 +56,83 @@ export default function TermsEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 20, 2026</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 21, 2026</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Terms of Service</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              These Terms govern your use of mallog24 web and mobile services provided by OURS.
+              These Terms define rights and responsibilities for using mallog24 web and mobile services operated by OURS.
             </p>
           </div>
 
           <Section title="1. Scope">
-            <p>These Terms apply to all users of mallog24 and related support channels provided by OURS.</p>
+            <p>These Terms apply to all users of mallog24 features, support channels, and related notices.</p>
           </Section>
 
-          <Section title="2. Accounts and Access">
+          <Section title="2. Accounts and Authentication">
             <ul className="list-disc pl-5 space-y-1">
-              <li>You must provide accurate information for sign-up and social login.</li>
-              <li>You are responsible for account credentials and session security.</li>
-              <li>We may apply additional verification or restrictions for suspicious activity.</li>
+              <li>Users must provide accurate information and must not use another person&apos;s account without authorization.</li>
+              <li>Users are responsible for account credentials, session security, and sign-in devices.</li>
+              <li>We may request additional verification or apply restrictions when suspicious activity is detected.</li>
             </ul>
           </Section>
 
-          <Section title="3. Service Features">
+          <Section title="3. Service Features and Characteristics">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Audio upload, transcription, correction, summarization, and structured note storage.</li>
-              <li>Features and UX may change to improve quality and security.</li>
+              <li>The service includes audio upload, transcription, correction, summarization, and structured note storage.</li>
+              <li>External APIs may be used, and response time or output quality may vary accordingly.</li>
+              <li>Features and UX may change to improve quality, reliability, and security.</li>
             </ul>
           </Section>
 
-          <Section title="4. Plans, Quotas, and Billing">
+          <Section title="4. Plans, Usage Limits, and Billing">
             <ul className="list-disc pl-5 space-y-1">
               <li>Free plans are subject to announced monthly usage limits.</li>
-              <li>Paid plans, checkout, and billing terms are provided separately when enabled.</li>
-              <li>Refund and cancellation follow applicable law and payment provider policies.</li>
+              <li>When paid plans are enabled, pricing, billing cycles, cancellation, and refund terms are disclosed separately.</li>
+              <li>Payments and refunds follow applicable law and payment provider rules.</li>
             </ul>
           </Section>
 
-          <Section title="5. User Obligations">
+          <Section title="5. Responsibility for Uploaded Content">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Do not upload unlawful content or material that infringes third-party rights.</li>
-              <li>Do not attempt abuse, bypass, scraping, reverse engineering, or service disruption.</li>
-              <li>Do not resell or redistribute the service without prior authorization.</li>
+              <li>You must have lawful rights or permission to upload and process source audio/content.</li>
+              <li>You must not upload content that infringes privacy, copyright, portrait rights, or other third-party rights.</li>
+              <li>We may block or remove content when required by law or verified rights-infringement reports.</li>
             </ul>
           </Section>
 
-          <Section title="6. Intellectual Property">
+          <Section title="6. Prohibited Conduct">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Unlawful content, malware distribution, abuse/attacks, bypass attempts, and abnormal automated traffic</li>
+              <li>Reverse engineering, unauthorized resale, and policy circumvention</li>
+              <li>Any conduct that harms service trust, operations, or third-party rights</li>
+            </ul>
+          </Section>
+
+          <Section title="7. Suspension and Appeal Process">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Accounts may be restricted for policy violations or security threats, generally with prior notice.</li>
+              <li>For urgent security incidents, immediate restriction may be applied with post-notification.</li>
+              <li>Users may submit appeals through support email for review.</li>
+            </ul>
+          </Section>
+
+          <Section title="8. Intellectual Property">
             <p>
-              The service software, brand, and documentation belong to OURS. User ownership of uploaded source content remains with the user or lawful rights holder.
+              Service software, brand assets, and documentation belong to OURS. Ownership of uploaded source content remains with the user or lawful rights holder.
             </p>
           </Section>
 
-          <Section title="7. Disclaimer and Limitation of Liability">
+          <Section title="9. Disclaimer and Limitation of Liability">
             <ul className="list-disc pl-5 space-y-1">
-              <li>We are not liable for delays/failures caused by force majeure, external API outages, or telecom failures.</li>
-              <li>Transcription output is an assistive tool; final review and use are your responsibility.</li>
+              <li>We are not liable for force majeure, telecom failures, or third-party API outages beyond our control.</li>
+              <li>Generated outputs are assistive; users are responsible for final review and business/legal use.</li>
             </ul>
           </Section>
 
-          <Section title="8. Suspension and Termination">
-            <ul className="list-disc pl-5 space-y-1">
-              <li>We may suspend or terminate accounts for serious policy violations or security risks.</li>
-              <li>You may request account deletion at any time.</li>
-            </ul>
+          <Section title="10. Changes to Terms">
+            <p>We may update these Terms and will announce effective dates and key changes on the website or in-app notice.</p>
           </Section>
 
-          <Section title="9. Changes to Terms">
-            <p>We may update these Terms and provide notice of effective date and key changes on our website or in-app notice.</p>
-          </Section>
-
-          <Section title="10. Governing Law and Contact">
+          <Section title="11. Governing Law and Contact">
             <p>These Terms are governed by the laws of the Republic of Korea.</p>
             <p className="mt-2">Contact: ours113814@gmail.com</p>
           </Section>

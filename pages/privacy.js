@@ -61,78 +61,95 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 19, 2026</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">개인정보처리방침</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              OURS(mallog24)는 이용자의 개인정보를 소중히 다루며, 관련 법령을 준수합니다.
+              OURS(mallog24)는 이용자의 개인정보를 최소 범위로 처리하며, 관련 법령과 보안 원칙을 준수합니다.
             </p>
           </div>
 
           <Section title="1. 처리하는 개인정보 항목">
-            <p>서비스 제공을 위해 아래 정보를 처리할 수 있습니다.</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>회원가입/로그인: 이메일, 비밀번호(이메일 로그인 시), 사용자 식별자(UID)</li>
-              <li>소셜 로그인(Google, Kakao): 이메일, 닉네임(또는 이름), 프로필 이미지, 공급자 식별자</li>
-              <li>서비스 이용 시: 업로드한 음성 파일, 변환 결과 텍스트, 저장한 기록본</li>
-              <li>자동 수집: 접속 로그, IP, 기기/브라우저 정보, 쿠키, 오류 로그</li>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>회원 인증: 이메일, 비밀번호(이메일 로그인 시), 사용자 식별자(UID)</li>
+              <li>소셜 로그인(Google, Kakao): 이메일, 이름/닉네임, 프로필 이미지, 공급자 식별자</li>
+              <li>서비스 데이터: 업로드 음성 파일, 변환/교정/요약 텍스트, 저장 기록본</li>
+              <li>자동 수집 정보: 접속 IP, 기기/브라우저 정보, 쿠키, 접속/오류 로그</li>
             </ul>
           </Section>
 
           <Section title="2. 개인정보 이용 목적">
             <ul className="list-disc pl-5 space-y-1">
-              <li>로그인/회원 관리 및 사용자 식별</li>
-              <li>음성 인식, 텍스트 변환, 요약, 기록본 저장 등 서비스 제공</li>
-              <li>장애 대응, 보안 모니터링, 고객 문의 대응</li>
+              <li>로그인/회원 관리, 본인 식별, 계정 보호</li>
+              <li>음성 인식, 텍스트 변환, 요약, 기록본 저장 및 조회</li>
+              <li>서비스 안정화, 악성 트래픽 탐지, 장애 대응, 고객 문의 처리</li>
             </ul>
           </Section>
 
-          <Section title="3. 보유 기간 및 파기">
+          <Section title="3. 수집 방법">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>회원가입/로그인 및 서비스 이용 과정에서 이용자가 직접 입력·업로드한 정보</li>
+              <li>앱/웹 사용 중 자동 생성되는 로그 및 기기 정보</li>
+              <li>고객지원 문의 접수 시 제공된 정보</li>
+            </ul>
+          </Section>
+
+          <Section title="4. 보유 기간 및 파기">
             <ul className="list-disc pl-5 space-y-1">
               <li>회원 정보: 회원 탈퇴 시까지(단, 법령상 보존 의무가 있는 경우 해당 기간 보관)</li>
-              <li>원본 음성 파일: 변환 처리 목적의 임시 저장소에서 처리 완료 후 지체 없이 삭제(영구 보관하지 않음)</li>
-              <li>변환 결과 텍스트/기록본: 서비스 기능 제공을 위해 보관되며, 이용자 삭제 요청 또는 계정 정리 시 파기</li>
+              <li>원본 음성 파일: 처리 목적의 임시 저장 후 변환 완료 시 지체 없이 삭제</li>
+              <li>변환 결과/기록본: 이용자 기능 제공 범위 내 보관, 삭제 요청 또는 계정 종료 시 파기</li>
+              <li>법령상 보존 대상 정보는 관련 법령이 정한 기간 동안 별도 보관 후 파기</li>
             </ul>
           </Section>
 
-          <Section title="4. 개인정보 처리 위탁 및 국외 이전">
-            <p>원활한 서비스 제공을 위해 아래 수탁사에 필요한 범위의 처리를 위탁할 수 있습니다.</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Supabase Inc.: 인증(Auth), 데이터베이스 저장/조회</li>
-              <li>OpenAI, LLC: 음성 인식(Whisper API) 처리</li>
-              <li>Google LLC: 텍스트 교정/요약(Gemini API) 처리</li>
-            </ul>
-            <p className="mt-2">
-              위 서비스 연동 과정에서 데이터가 국외 서버로 전송·처리될 수 있으며, 당사는 최소 범위의 데이터만 전송합니다.
-            </p>
-          </Section>
-
-          <Section title="5. AI 학습 데이터 활용 여부">
+          <Section title="5. 제3자 제공, 처리 위탁 및 국외 이전">
             <ul className="list-disc pl-5 space-y-1">
-              <li>당사는 이용자가 업로드한 음성/텍스트를 자체 AI 모델 학습 목적으로 사용하지 않습니다.</li>
-              <li>데이터는 변환·교정·요약 기능 제공을 위해서만 API로 처리됩니다.</li>
-              <li>외부 API 사업자의 상세 데이터 처리정책은 각 제공사의 정책을 따릅니다.</li>
+              <li>회사는 원칙적으로 이용자 동의 없이 개인정보를 제3자에게 판매/제공하지 않습니다.</li>
+              <li>단, 법령상 의무 이행 또는 이용자 요청 이행에 필요한 경우 예외가 발생할 수 있습니다.</li>
+              <li>처리 위탁: Supabase(인증/DB), OpenAI(Whisper STT), Google(Gemini 교정/요약)</li>
+              <li>API 처리 과정에서 데이터가 국외 서버로 전송·처리될 수 있으며, 최소 범위 데이터만 전송합니다.</li>
             </ul>
           </Section>
 
-          <Section title="6. 이용자 권리">
-            <p>이용자는 본인 개인정보의 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다.</p>
-          </Section>
-
-          <Section title="7. 안전성 확보조치">
+          <Section title="6. 민감정보·아동정보 처리 원칙">
             <ul className="list-disc pl-5 space-y-1">
-              <li>전송 구간 암호화(HTTPS), 접근 권한 최소화, 인증 토큰 기반 접근 제어</li>
-              <li>요청량 제한, 보안 헤더 적용 등 서비스 보안 강화 조치</li>
-              <li>로그 기반 이상 징후 모니터링 및 장애 대응 체계 운영</li>
+              <li>서비스 이용 시 주민등록번호, 계좌 비밀번호, 생체정보 등 불필요한 민감정보 업로드를 금지합니다.</li>
+              <li>14세 미만 아동의 개인정보는 법정대리인 동의 없이 수집하지 않는 것을 원칙으로 합니다.</li>
             </ul>
           </Section>
 
-          <Section title="8. 사업자/개인정보 보호책임자 및 문의">
-            <p>상호: OURS</p>
+          <Section title="7. 이용자 권리 및 행사 방법">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>이용자는 본인 개인정보 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다.</li>
+              <li>요청은 문의 이메일({CONTACT_EMAIL})로 접수할 수 있으며, 합리적 기간 내 처리 결과를 안내합니다.</li>
+            </ul>
+          </Section>
+
+          <Section title="8. 쿠키 및 로그 정책">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>로그인 유지, 보안, 서비스 품질 개선을 위해 쿠키와 로그를 사용할 수 있습니다.</li>
+              <li>이용자는 브라우저/기기 설정에서 쿠키 저장을 제한할 수 있습니다.</li>
+            </ul>
+          </Section>
+
+          <Section title="9. 안전성 확보조치">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>HTTPS 전송 암호화, 인증 토큰 검증, 권한 최소화, 접근 통제</li>
+              <li>요청량 제한, 보안 헤더 적용, 로그 모니터링 기반 이상 징후 탐지</li>
+              <li>운영 계정 접근 통제 및 정기 점검</li>
+            </ul>
+          </Section>
+
+          <Section title="10. 침해사고 대응 및 문의">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>보안 사고 발생 시 사실 확인 후 법령에 따른 통지·조치를 진행합니다.</li>
+              <li>문의 및 권리행사 창구: {CONTACT_EMAIL}</li>
+            </ul>
+            <p className="mt-2">상호: OURS</p>
             <p>사업자등록번호: {BUSINESS_REG_NUMBER}</p>
             <p>대표자: {REPRESENTATIVE_NAME}</p>
             <p>사업장 주소: {BUSINESS_ADDRESS}</p>
             <p className="mt-2">개인정보 보호책임자: {REPRESENTATIVE_NAME} (대표)</p>
-            <p>문의 이메일: {CONTACT_EMAIL}</p>
           </Section>
 
           <div className="pt-4 text-center">

@@ -56,52 +56,57 @@ export default function CompanyPolicy({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 20일</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">회사 정책</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              OURS는 신뢰 가능한 AI 음성 기록 서비스를 위해 아래 운영 원칙을 준수합니다.
+              OURS는 mallog24 서비스를 신뢰성, 보안성, 책임성 기준으로 운영합니다.
             </p>
           </div>
 
-          <Section title="1. 서비스 운영 원칙">
+          <Section title="1. 제품 운영 원칙">
             <ul className="list-disc pl-5 space-y-1">
-              <li>사용자가 빠르게 기록을 생성하고 재활용할 수 있도록 기능을 단순하고 명확하게 설계합니다.</li>
-              <li>보안, 안정성, 정확도 개선을 지속적으로 우선순위에 둡니다.</li>
+              <li>사용자가 빠르게 기록을 생성·재사용할 수 있도록 명확한 UX를 유지합니다.</li>
+              <li>정확도, 보안, 안정성을 제품 로드맵의 우선순위로 둡니다.</li>
             </ul>
           </Section>
 
-          <Section title="2. 데이터 최소 처리">
+          <Section title="2. 데이터 거버넌스">
             <ul className="list-disc pl-5 space-y-1">
-              <li>서비스 제공에 필요한 최소 범위의 데이터만 처리합니다.</li>
-              <li>원본 음성 파일은 처리 완료 후 임시 저장소에서 지체 없이 삭제하는 정책을 기본으로 운영합니다.</li>
+              <li>서비스 제공에 필요한 최소 데이터만 처리합니다.</li>
+              <li>원본 음성은 임시 처리 후 삭제를 기본 정책으로 운영합니다.</li>
+              <li>권한별 접근 통제와 로그 기반 추적 체계를 유지합니다.</li>
             </ul>
           </Section>
 
-          <Section title="3. 품질 및 정확도 정책">
+          <Section title="3. 보안 운영">
             <ul className="list-disc pl-5 space-y-1">
-              <li>전사 결과는 자동 생성되며, 최종 문서화 전 사용자 검토를 권장합니다.</li>
-              <li>도메인(설교/회의/통화/의료 등)별 인식 품질 향상을 위해 프롬프트 및 용어 사전을 지속 개선합니다.</li>
+              <li>HTTPS, 인증 토큰 검증, 권한 분리, 요청 제한을 기본 통제로 적용합니다.</li>
+              <li>비정상 트래픽·침해 시도 탐지를 위한 모니터링과 대응 절차를 운영합니다.</li>
+              <li>보안 이벤트 발생 시 내부 대응 프로세스에 따라 격리, 분석, 복구를 진행합니다.</li>
             </ul>
           </Section>
 
-          <Section title="4. 보안 및 접근 통제">
+          <Section title="4. 품질 및 정확도 정책">
             <ul className="list-disc pl-5 space-y-1">
-              <li>HTTPS 통신, 인증 토큰 검증, 권한 분리를 기본 보안 기준으로 적용합니다.</li>
-              <li>비정상 트래픽과 공격 징후를 모니터링하고, 필요 시 접근 제한 조치를 시행합니다.</li>
+              <li>전사 결과는 자동 생성되므로 최종 문서화 전 사용자 검토를 권장합니다.</li>
+              <li>설교/회의/통화/의료 등 도메인별 용어 사전과 프롬프트를 지속 개선합니다.</li>
+              <li>장애·품질 이슈는 재현 가능 로그를 기준으로 우선순위 대응합니다.</li>
             </ul>
           </Section>
 
-          <Section title="5. AI 윤리 및 책임">
+          <Section title="5. 책임 있는 AI 사용">
             <ul className="list-disc pl-5 space-y-1">
-              <li>사용자 업로드 데이터는 서비스 처리 목적 외 용도로 사용하지 않습니다.</li>
-              <li>불법/유해/권리침해 콘텐츠에 대한 신고 접수 시 내부 기준에 따라 검토 및 제한 조치를 진행합니다.</li>
+              <li>업로드 데이터는 서비스 제공 목적 범위에서만 처리합니다.</li>
+              <li>불법·권리침해·오용 신고가 접수되면 내부 기준으로 검토 후 제한 조치할 수 있습니다.</li>
+              <li>사용자의 명시적 요청 없이 민감정보 활용 범위를 확장하지 않습니다.</li>
             </ul>
           </Section>
 
-          <Section title="6. 고객지원 및 커뮤니케이션">
+          <Section title="6. 고객지원 및 정책 고지">
             <ul className="list-disc pl-5 space-y-1">
               <li>문의 채널: ours113814@gmail.com</li>
-              <li>주요 정책 변경은 웹페이지 공지 또는 서비스 화면 안내로 고지합니다.</li>
+              <li>정책 변경, 기능 변경, 장애 공지는 웹페이지 또는 앱 공지로 안내합니다.</li>
+              <li>고객 문의는 확인 후 순차 처리하며, 보안 관련 문의는 우선 처리합니다.</li>
             </ul>
           </Section>
 

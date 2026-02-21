@@ -61,80 +61,94 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 19, 2026</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 21, 2026</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Privacy Policy</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              OURS (mallog24) handles personal data responsibly and in compliance with applicable privacy laws.
+              OURS (mallog24) processes personal data in a minimal and secure manner for service delivery.
             </p>
           </div>
 
           <Section title="1. Personal Data We Process">
-            <p>We may process the following data to provide the service:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Sign-up/Login: email, password (email login), user identifier (UID)</li>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Account data: email, password (email login), user identifier (UID)</li>
               <li>Social login (Google, Kakao): email, name/nickname, profile image, provider identifier</li>
-              <li>Service usage: uploaded audio files, transcribed/corrected text, saved records</li>
-              <li>Automatically collected: access logs, IP, device/browser info, cookies, error logs</li>
+              <li>Service data: uploaded audio, transcript/corrected/summarized text, saved records</li>
+              <li>Automatically collected data: IP, device/browser details, cookies, access/error logs</li>
             </ul>
           </Section>
 
           <Section title="2. Purpose of Processing">
             <ul className="list-disc pl-5 space-y-1">
-              <li>User authentication and account management</li>
-              <li>Core features: transcription, correction, summarization, and record storage</li>
-              <li>Security monitoring, incident handling, and customer support</li>
+              <li>Authentication, account security, and user support</li>
+              <li>Core functionality: transcription, correction, summarization, record storage and retrieval</li>
+              <li>Service reliability, abuse detection, incident response, and customer communication</li>
             </ul>
           </Section>
 
-          <Section title="3. Retention and Deletion">
+          <Section title="3. Collection Methods">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Account data: retained until account deletion (unless legal retention is required)</li>
-              <li>Original audio files: temporarily stored for processing and deleted without delay after processing; not retained as permanent source files</li>
-              <li>Transcribed text and saved records: retained for service functionality, and deleted upon user request or account closure</li>
+              <li>Information provided directly during sign-up/login and file upload</li>
+              <li>Technical data generated automatically during app/web usage</li>
+              <li>Data submitted through support and inquiry channels</li>
             </ul>
           </Section>
 
-          <Section title="4. Processors and Overseas Processing">
-            <p>To operate the service, we use trusted processors for limited, necessary tasks:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Supabase Inc.: authentication and database operations</li>
-              <li>OpenAI, LLC: speech-to-text processing (Whisper API)</li>
-              <li>Google LLC: correction/summarization processing (Gemini API)</li>
-            </ul>
-            <p className="mt-2">
-              Data may be transferred and processed on overseas infrastructure during API-based processing.
-            </p>
-          </Section>
-
-          <Section title="5. Use of Data for AI Training">
+          <Section title="4. Retention and Deletion">
             <ul className="list-disc pl-5 space-y-1">
-              <li>OURS does not use uploaded user audio/text to train our own AI models.</li>
-              <li>Data is processed only for requested service functions.</li>
-              <li>External API providers process data under their own published policies.</li>
+              <li>Account data: retained until account deletion, unless legal retention is required</li>
+              <li>Original audio files: stored temporarily and deleted promptly after processing</li>
+              <li>Transcripts and saved records: retained for product features, deleted on request/account closure</li>
+              <li>Legally required records are retained only for statutory periods and then deleted</li>
             </ul>
           </Section>
 
-          <Section title="6. User Rights">
-            <p>
-              You may request access, correction, deletion, and restriction of processing of your personal data.
-            </p>
-          </Section>
-
-          <Section title="7. Security Measures">
+          <Section title="5. Third-Party Sharing, Processors, and Overseas Processing">
             <ul className="list-disc pl-5 space-y-1">
-              <li>HTTPS in transit, token-based access control, and least-privilege policies</li>
-              <li>Rate limiting and security headers to reduce abuse and attack surface</li>
-              <li>Operational monitoring and incident response procedures</li>
+              <li>We do not sell or provide personal data to third parties without user consent, except when legally required.</li>
+              <li>Processors: Supabase (auth/database), OpenAI (Whisper STT), Google (Gemini correction/summarization)</li>
+              <li>Data may be transferred and processed on overseas infrastructure during API-based processing.</li>
             </ul>
           </Section>
 
-          <Section title="8. Business Information and Contact">
-            <p>Business Name: OURS</p>
+          <Section title="6. Sensitive Data and Child Data Policy">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Please do not upload unnecessary sensitive data (e.g., national ID numbers, financial passwords, biometrics).</li>
+              <li>As a general policy, we do not intentionally collect data from children under age 14 without guardian consent.</li>
+            </ul>
+          </Section>
+
+          <Section title="7. User Rights and How to Exercise">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>You may request access, correction, deletion, or restriction of your personal data.</li>
+              <li>Requests can be made via {CONTACT_EMAIL}, and we respond within a reasonable period.</li>
+            </ul>
+          </Section>
+
+          <Section title="8. Cookies and Logs">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Cookies and logs may be used for session management, security, and product quality improvements.</li>
+              <li>You can restrict cookie storage from browser/device settings.</li>
+            </ul>
+          </Section>
+
+          <Section title="9. Security Measures">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>HTTPS encryption, token validation, least-privilege access control, and role separation</li>
+              <li>Rate limiting, security headers, and log monitoring for anomaly detection</li>
+              <li>Controlled access to operational accounts and periodic security checks</li>
+            </ul>
+          </Section>
+
+          <Section title="10. Incident Response and Contact">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>When a material security/privacy incident occurs, we investigate and notify users as required by law.</li>
+              <li>Privacy contact and rights requests: {CONTACT_EMAIL}</li>
+            </ul>
+            <p className="mt-2">Business Name: OURS</p>
             <p>Business Registration No.: {BUSINESS_REG_NUMBER}</p>
             <p>Representative: {REPRESENTATIVE_NAME}</p>
             <p>Business Address: {BUSINESS_ADDRESS}</p>
             <p className="mt-2">Privacy Officer: {REPRESENTATIVE_NAME}</p>
-            <p>Contact Email: {CONTACT_EMAIL}</p>
           </Section>
 
           <div className="pt-4 text-center">
