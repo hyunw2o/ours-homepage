@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const LEGAL_DOC_VERSION = 'v2026.02.21'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.21'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (

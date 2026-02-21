@@ -31,6 +31,7 @@ cp .env.local.example .env.local
 - `NEXT_PUBLIC_BUSINESS_REG_NUMBER`: business registration number shown in footer and privacy page
 - `NEXT_PUBLIC_REPRESENTATIVE_NAME`: representative name shown in footer and privacy page
 - `NEXT_PUBLIC_BUSINESS_ADDRESS`: business address shown in footer and privacy page
+- `NEXT_PUBLIC_LEGAL_DOC_VERSION`: legal document version string shown in privacy/terms/policy pages
 
 ## Key Pages
 
