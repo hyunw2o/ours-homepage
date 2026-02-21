@@ -5,6 +5,7 @@ const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'ours113814@gmail.com'
+const LEGAL_DOC_VERSION = 'v2026.02.21'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -61,7 +62,7 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 21, 2026</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 21, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Privacy Policy</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS (mallog24) processes personal data in a minimal and secure manner for service delivery.

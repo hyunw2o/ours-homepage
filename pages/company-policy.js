@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+const LEGAL_DOC_VERSION = 'v2026.02.21'
+
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
     <button
@@ -56,7 +58,7 @@ export default function CompanyPolicy({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">회사 정책</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS는 mallog24 서비스를 신뢰성, 보안성, 책임성 기준으로 운영합니다.

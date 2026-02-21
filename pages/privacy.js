@@ -5,6 +5,7 @@ const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'ours113814@gmail.com'
+const LEGAL_DOC_VERSION = 'v2026.02.21'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -61,7 +62,7 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">개인정보처리방침</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS(mallog24)는 이용자의 개인정보를 최소 범위로 처리하며, 관련 법령과 보안 원칙을 준수합니다.

@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+const LEGAL_DOC_VERSION = 'v2026.02.21'
+
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
     <button
@@ -56,7 +58,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 21, 2026</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 21, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Terms of Service</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               These Terms define rights and responsibilities for using mallog24 web and mobile services operated by OURS.
