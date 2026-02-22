@@ -221,7 +221,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
             <h1 className="ours-hero-title mb-5">
               녹음만 올리세요.<br className="hidden sm:block" />
-              바로 쓸 수 있는 <span className="ours-gradient-word">구조화 문서</span>가 나옵니다.
+              바로 쓸 수 있는 <span className="ours-gradient-word">구조화 문서가</span><br />나옵니다.
             </h1>
 
             <p className="text-base sm:text-xl ours-muted max-w-2xl mx-auto mb-14 leading-relaxed">
