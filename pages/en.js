@@ -11,6 +11,7 @@ const MALLOG24_URL =
   'https://mallog24.com'
 const MALLOG24_INFO_URL = '/mallog24-en'
 const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
+const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing-en`
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
@@ -219,12 +220,20 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </p>
 
             <h1 className="ours-hero-title mb-5">
-              The moment your voice becomes a <span className="ours-gradient-word">record</span>
+              Upload audio once.<br className="hidden sm:block" />
+              Get a <span className="ours-gradient-word">structured document</span> you can use right away.
             </h1>
 
             <p className="text-base sm:text-xl ours-muted max-w-2xl mx-auto mb-14 leading-relaxed">
-              Just hit record. AI handles the organization. mallog24 delivers accurate speech-to-text for real work.
+              Built for sermons, meetings, and phone calls with a two-stage engine (Whisper + Gemini),
+              from transcription to correction, summary, and record storage.
             </p>
+
+            <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Free 10h/month</span>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro KRW 8,000/month (Unlimited)</span>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Open Beta</span>
+            </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
@@ -248,6 +257,80 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               >
                 Usage Guide
               </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-6 sm:pb-12">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="lg:col-span-2 rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">Result Demo</span>
+              <h2 className="ours-section-title mt-2">Before voice sentence → After structured output</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs font-semibold ours-muted mb-2">Before</p>
+                  <p className="text-sm ours-muted leading-relaxed">
+                    &ldquo;Ad budget was 15% over this week, please share the revised plan by next week.&rdquo;
+                  </p>
+                  <p className="text-xs ours-muted mt-3">
+                    &ldquo;After consultation, medication guidance should be twice daily and shared with guardian.&rdquo;
+                  </p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs font-semibold ours-muted mb-2">After</p>
+                  <p className="text-sm font-semibold ours-title mb-2">Meeting Summary</p>
+                  <ul className="text-xs ours-muted space-y-1 leading-relaxed">
+                    <li>- Agenda: Ad budget overrun (+15%)</li>
+                    <li>- Decision: Revised plan by next week</li>
+                    <li>- Action: Reassign follow-up owner/timeline</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">Pricing</span>
+              <h3 className="text-xl font-bold ours-title mt-2">Plan overview before signup</h3>
+              <div className="rounded-2xl ours-soft-card p-4 mt-4">
+                <p className="text-xs ours-muted">Free</p>
+                <p className="text-lg font-bold ours-title mt-1">10 hours / month</p>
+                <p className="text-xs ours-muted mt-2">Transcription + correction + saved records included</p>
+              </div>
+              <div className="rounded-2xl ours-soft-card p-4 mt-3">
+                <p className="text-xs ours-muted">Pro</p>
+                <p className="text-lg font-bold ours-title mt-1">KRW 8,000 / month, Unlimited</p>
+                <p className="text-xs ours-muted mt-2">Priority processing for frequent use</p>
+              </div>
+              <a
+                href={MALLOG24_PRICING_URL}
+                className="inline-flex items-center gap-2 mt-4 text-sm font-semibold ours-link"
+              >
+                View pricing details
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto px-6 mt-4">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">Beta Feedback</span>
+              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">What early users say</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">&ldquo;Meeting recap time dropped significantly.&rdquo;</p>
+                  <p className="text-xs ours-muted mt-2">Operations Team</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">&ldquo;Sermon note saving is the most practical part.&rdquo;</p>
+                  <p className="text-xs ours-muted mt-2">Field Ministry User</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">&ldquo;Domain terms break less than before.&rdquo;</p>
+                  <p className="text-xs ours-muted mt-2">Clinical Consultation Desk</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
