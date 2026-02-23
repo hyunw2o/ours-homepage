@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.21'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -58,7 +58,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 21, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 23, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Terms of Service</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               These Terms define rights and responsibilities for using mallog24 web and mobile services operated by OURS.
@@ -85,15 +85,44 @@ export default function TermsEn({ darkMode, setDarkMode }) {
             </ul>
           </Section>
 
-          <Section title="4. Plans, Usage Limits, and Billing">
+          <Section title="4. Plans, Product Information, and Billing">
             <ul className="list-disc pl-5 space-y-1">
               <li>Free plans are subject to announced monthly usage limits.</li>
-              <li>When paid plans are enabled, pricing, billing cycles, cancellation, and refund terms are disclosed separately.</li>
+              <li>Paid product details are disclosed in the service UI (e.g., product name, monthly fee, service period, included features).</li>
+              <li>Current paid plan baseline: <strong>mallog24 Pro Monthly Subscription (KRW 8,000/month)</strong>, auto-renewed every month from payment approval time.</li>
               <li>Payments and refunds follow applicable law and payment provider rules.</li>
             </ul>
           </Section>
 
-          <Section title="5. Responsibility for Uploaded Content">
+          <Section title="5. Checkout and Subscription Registration Flow">
+            <ol className="list-decimal pl-5 space-y-1">
+              <li>The user logs in and selects a plan from the pricing page.</li>
+              <li>The payment provider checkout displays product name, amount, billing cycle, payment method, and terms.</li>
+              <li>Once payment is approved, subscription is activated immediately and billing period starts.</li>
+              <li>To stop renewal, the user must cancel from subscription management before the next billing date.</li>
+            </ol>
+          </Section>
+
+          <Section title="6. Refund Policy">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Full refund may be requested within 7 days after payment if no usage has occurred.</li>
+              <li>If usage exists, partial refunds for the current cycle may be limited; cancellation takes effect from the next cycle.</li>
+              <li>Duplicate charges or verified billing errors are fully refunded after verification.</li>
+              <li>Refund settlement timing depends on payment provider/card issuer policies.</li>
+              <li>Mandatory consumer protection laws prevail over this policy where applicable.</li>
+            </ul>
+          </Section>
+
+          <Section title="7. Product Registration and Change Procedure">
+            <ol className="list-decimal pl-5 space-y-1">
+              <li>Before launch, we internally review paid-product name, price, billing cycle, refund rules, and support contact.</li>
+              <li>The same values are registered in the payment provider dashboard and cross-checked against checkout and legal pages.</li>
+              <li>After registration, we run test transactions (success/cancel/failure/refund) before enabling live billing.</li>
+              <li>When product data changes, reason, effective date, and document version are announced in advance when material.</li>
+            </ol>
+          </Section>
+
+          <Section title="8. Responsibility for Uploaded Content">
             <ul className="list-disc pl-5 space-y-1">
               <li>You must have lawful rights or permission to upload and process source audio/content.</li>
               <li>You must not upload content that infringes privacy, copyright, portrait rights, or other third-party rights.</li>
@@ -101,7 +130,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
             </ul>
           </Section>
 
-          <Section title="6. Prohibited Conduct">
+          <Section title="9. Prohibited Conduct">
             <ul className="list-disc pl-5 space-y-1">
               <li>Unlawful content, malware distribution, abuse/attacks, bypass attempts, and abnormal automated traffic</li>
               <li>Reverse engineering, unauthorized resale, and policy circumvention</li>
@@ -109,7 +138,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
             </ul>
           </Section>
 
-          <Section title="7. Suspension and Appeal Process">
+          <Section title="10. Suspension and Appeal Process">
             <ul className="list-disc pl-5 space-y-1">
               <li>Accounts may be restricted for policy violations or security threats, generally with prior notice.</li>
               <li>For urgent security incidents, immediate restriction may be applied with post-notification.</li>
@@ -117,24 +146,24 @@ export default function TermsEn({ darkMode, setDarkMode }) {
             </ul>
           </Section>
 
-          <Section title="8. Intellectual Property">
+          <Section title="11. Intellectual Property">
             <p>
               Service software, brand assets, and documentation belong to OURS. Ownership of uploaded source content remains with the user or lawful rights holder.
             </p>
           </Section>
 
-          <Section title="9. Disclaimer and Limitation of Liability">
+          <Section title="12. Disclaimer and Limitation of Liability">
             <ul className="list-disc pl-5 space-y-1">
               <li>We are not liable for force majeure, telecom failures, or third-party API outages beyond our control.</li>
               <li>Generated outputs are assistive; users are responsible for final review and business/legal use.</li>
             </ul>
           </Section>
 
-          <Section title="10. Changes to Terms">
+          <Section title="13. Changes to Terms">
             <p>We may update these Terms and will announce effective dates and key changes on the website or in-app notice.</p>
           </Section>
 
-          <Section title="11. Governing Law and Contact">
+          <Section title="14. Governing Law and Contact">
             <p>These Terms are governed by the laws of the Republic of Korea.</p>
             <p className="mt-2">Contact: ours113814@gmail.com</p>
           </Section>

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.21'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -58,7 +58,7 @@ export default function CompanyPolicy({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 23일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">회사 정책</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS는 mallog24 서비스를 신뢰성, 보안성, 책임성 기준으로 운영합니다.
@@ -104,7 +104,16 @@ export default function CompanyPolicy({ darkMode, setDarkMode }) {
             </ul>
           </Section>
 
-          <Section title="6. 고객지원 및 정책 고지">
+          <Section title="6. 유료상품 등록 및 변경 거버넌스">
+            <ol className="list-decimal pl-5 space-y-1">
+              <li>유료상품 신설/변경 시 상품명, 가격, 결제주기, 환불기준, 문의처를 표준 항목으로 확정합니다.</li>
+              <li>결제대행사 관리자 콘솔과 서비스 화면(요금제/약관)에 동일 항목이 반영됐는지 교차 검증합니다.</li>
+              <li>실결제 오픈 전 테스트 결제(승인/취소/실패/환불)와 로그 검증을 완료해야 합니다.</li>
+              <li>변경 사항은 문서 버전과 시행일을 포함해 공지하며, 주요 변경은 사전 고지합니다.</li>
+            </ol>
+          </Section>
+
+          <Section title="7. 고객지원 및 정책 고지">
             <ul className="list-disc pl-5 space-y-1">
               <li>문의 채널: ours113814@gmail.com</li>
               <li>정책 변경, 기능 변경, 장애 공지는 웹페이지 또는 앱 공지로 안내합니다.</li>
