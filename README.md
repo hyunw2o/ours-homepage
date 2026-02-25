@@ -29,8 +29,11 @@ cp .env.local.example .env.local
 - `NEXT_PUBLIC_MALLOG24_URL`: mallog24 service URL
   - if your mallog24 domain is not ready yet, temporarily use `https://mallog24.com`
 - `NEXT_PUBLIC_BUSINESS_REG_NUMBER`: business registration number shown in footer and privacy page
+- `NEXT_PUBLIC_BUSINESS_NAME`: company name shown in footer
+- `NEXT_PUBLIC_LANDLINE_PHONE`: landline phone number shown in footer
 - `NEXT_PUBLIC_REPRESENTATIVE_NAME`: representative name shown in footer and privacy page
 - `NEXT_PUBLIC_BUSINESS_ADDRESS`: business address shown in footer and privacy page
+- `NEXT_PUBLIC_ECOMMERCE_REG_NUMBER`: e-commerce registration number shown in footer (`통신판매업 신고 면제 대상` if exempt)
 - `NEXT_PUBLIC_LEGAL_DOC_VERSION`: legal document version string shown in privacy/terms/policy pages
 
 ## Key Pages

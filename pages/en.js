@@ -12,9 +12,12 @@ const MALLOG24_URL =
 const MALLOG24_INFO_URL = '/mallog24-en'
 const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing-en`
+const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || 'TBD'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
+const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'Exempt from e-commerce registration'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
@@ -561,13 +564,22 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </div>
             <div className="text-center sm:text-right">
               <p className="text-xs ours-muted">
+                Company Name: {BUSINESS_NAME}
+              </p>
+              <p className="text-xs ours-muted mt-1">
                 Business Registration No.: {BUSINESS_REG_NUMBER}
               </p>
               <p className="text-xs ours-muted mt-1">
-                Representative: {REPRESENTATIVE_NAME}
+                Landline: {LANDLINE_PHONE}
               </p>
               <p className="text-xs ours-muted mt-1">
                 Business Address: {BUSINESS_ADDRESS}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                Representative (CEO): {REPRESENTATIVE_NAME}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                E-commerce Registration No.: {ECOMMERCE_REG_NUMBER}
               </p>
               <p className="text-xs ours-muted mt-1">
                 Business Inquiry Email: {BUSINESS_EMAIL}

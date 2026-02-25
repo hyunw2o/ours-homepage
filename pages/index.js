@@ -12,9 +12,12 @@ const MALLOG24_URL =
 const MALLOG24_INFO_URL = '/mallog24'
 const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing`
+const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || '준비중'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
+const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || '통신판매업 신고 면제 대상'
 const BUSINESS_EMAIL = 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 비즈니스 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n문의 내용:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 1:1 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n1:1 문의 내용:\n')}`
@@ -560,13 +563,22 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </div>
             <div className="text-center sm:text-right">
               <p className="text-xs ours-muted">
+                상호: {BUSINESS_NAME}
+              </p>
+              <p className="text-xs ours-muted mt-1">
                 사업자등록번호: {BUSINESS_REG_NUMBER}
               </p>
               <p className="text-xs ours-muted mt-1">
-                대표자: {REPRESENTATIVE_NAME}
+                유선전화번호: {LANDLINE_PHONE}
               </p>
               <p className="text-xs ours-muted mt-1">
                 사업장 주소: {BUSINESS_ADDRESS}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                대표: {REPRESENTATIVE_NAME}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                통신판매신고번호: {ECOMMERCE_REG_NUMBER}
               </p>
               <p className="text-xs ours-muted mt-1">
                 비즈니스 문의 이메일: {BUSINESS_EMAIL}
