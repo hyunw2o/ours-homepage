@@ -14,10 +14,10 @@ const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing-en`
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
-const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || 'TBD'
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
-const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'Exempt from e-commerce registration'
+const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'No. 2026-Gyeonggi Gwangju-0442'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
