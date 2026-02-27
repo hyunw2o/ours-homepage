@@ -6,7 +6,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOG24_URL ||
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
-const BUSINESS_EMAIL = 'ours113814@gmail.com'
+const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 usage guide inquiry')}&body=${encodeURIComponent('Hello OURS team,\n\nI have a question about the usage guide.\n')}`
 
 function GuideStep({ number, title, body }) {

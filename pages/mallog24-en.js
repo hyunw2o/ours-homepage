@@ -8,7 +8,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
 const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
-const BUSINESS_EMAIL = 'ours113814@gmail.com'
+const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 onboarding inquiry')}&body=${encodeURIComponent('Hello OURS team,\n\nI would like to learn more about mallog24.\n')}`
 
 function FeatureCard({ title, body, icon }) {
