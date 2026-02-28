@@ -234,7 +234,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">무료 월 10시간</span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro 월 8,000원 무제한</span>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro 월 8,800원(VAT 포함) 무제한</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">오픈 베타 운영 중</span>
             </div>
 
@@ -301,7 +301,8 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </div>
               <div className="rounded-2xl ours-soft-card p-4 mt-3">
                 <p className="text-xs ours-muted">Pro</p>
-                <p className="text-lg font-bold ours-title mt-1">월 8,000원 / 무제한</p>
+                <p className="text-lg font-bold ours-title mt-1">월 8,800원(VAT 포함) / 무제한</p>
+                <p className="text-[11px] ours-muted mt-1">공급가 8,000원 + 부가세 10%(800원)</p>
                 <p className="text-xs ours-muted mt-2">우선 처리 + 고빈도 사용 팀 권장</p>
               </div>
               <a

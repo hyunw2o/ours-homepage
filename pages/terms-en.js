@@ -89,7 +89,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
             <ul className="list-disc pl-5 space-y-1">
               <li>Free plans are subject to announced monthly usage limits.</li>
               <li>Paid product details are disclosed in the service UI (e.g., product name, monthly fee, service period, included features).</li>
-              <li>Current paid plan baseline: <strong>mallog24 Pro Monthly Subscription (KRW 8,000/month)</strong>, auto-renewed every month from payment approval time.</li>
+              <li>Current paid plan baseline: <strong>mallog24 Pro Monthly Subscription (KRW 8,800/month, VAT included)</strong>, auto-renewed every month from payment approval time.</li>
               <li>Payments and refunds follow applicable law and payment provider rules.</li>
             </ul>
           </Section>

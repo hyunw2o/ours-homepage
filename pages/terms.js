@@ -89,7 +89,7 @@ export default function Terms({ darkMode, setDarkMode }) {
             <ul className="list-disc pl-5 space-y-1">
               <li>무료 플랜은 공지된 월간 한도 내에서 제공됩니다.</li>
               <li>유료 상품 기본 정보는 서비스 화면에 명시합니다. (예: 상품명, 월 이용요금, 이용기간, 제공기능)</li>
-              <li>현재 기준 유료 상품은 <strong>mallog24 Pro 월간 구독(월 8,000원)</strong>이며, 결제 승인 시점부터 1개월 단위로 자동 갱신됩니다.</li>
+              <li>현재 기준 유료 상품은 <strong>mallog24 Pro 월간 구독(월 8,800원, VAT 포함)</strong>이며, 결제 승인 시점부터 1개월 단위로 자동 갱신됩니다.</li>
               <li>결제 및 환불은 관련 법령과 결제사 정책을 따릅니다.</li>
             </ul>
           </Section>

@@ -234,7 +234,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Free 10h/month</span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro KRW 8,000/month (Unlimited)</span>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro KRW 8,800/month (VAT included, Unlimited)</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Open Beta</span>
             </div>
 
@@ -301,7 +301,8 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </div>
               <div className="rounded-2xl ours-soft-card p-4 mt-3">
                 <p className="text-xs ours-muted">Pro</p>
-                <p className="text-lg font-bold ours-title mt-1">KRW 8,000 / month, Unlimited</p>
+                <p className="text-lg font-bold ours-title mt-1">KRW 8,800 / month (VAT included), Unlimited</p>
+                <p className="text-[11px] ours-muted mt-1">Base KRW 8,000 + VAT 10% (KRW 800)</p>
                 <p className="text-xs ours-muted mt-2">Priority processing for frequent use</p>
               </div>
               <a
