@@ -14,11 +14,15 @@ const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing`
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
-const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || ''
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || '제 2026-경기광주-0442 호'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
+const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || '집계 준비 중'
+const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || '확장 중'
+const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_KO || '60분 음성 기준 평균 3~5분'
+const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_KO || '수기 정리 대비 약 80% 시간 절감'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 비즈니스 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n문의 내용:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 1:1 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n1:1 문의 내용:\n')}`
 
@@ -249,10 +253,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </svg>
               </a>
               <a
-                href={MALLOG24_INFO_URL}
+                href={MALLOG24_PRICING_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
               >
-                mallog24 소개
+                요금제 보기
               </a>
               <Link
                 href={MALLOG24_GUIDE_URL}
@@ -260,6 +264,31 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               >
                 사용 가이드
               </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-6 sm:pb-12">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">How it works</span>
+              <h2 className="ours-section-title mt-2">몰입 없이도 이해되는 3단계 흐름</h2>
+              <p className="ours-section-copy">
+                mallog24는 업로드부터 결과 문서 저장까지 한 흐름으로 설계되어 있습니다.
+                첫 방문자도 어떤 결과를 받는지 바로 이해할 수 있어야 합니다.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+                {[
+                  ['1. 파일 업로드', '브라우저에서 먼저 음성 길이를 확인하고, 무료 한도 초과 여부를 즉시 안내합니다.'],
+                  ['2. AI 전사 + 교정', 'Whisper와 Gemini가 화자, 문맥, 전문 용어를 함께 반영해 텍스트를 정리합니다.'],
+                  ['3. 구조화 문서 저장', 'TXT, DOCX, 기록본 저장까지 같은 화면에서 이어집니다.'],
+                ].map(([title, body]) => (
+                  <div key={title} className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm font-semibold ours-title">{title}</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">{body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -319,20 +348,38 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
           <div className="max-w-6xl mx-auto px-6 mt-4">
             <div className="rounded-3xl ours-card p-6 sm:p-7">
-              <span className="ours-section-kicker">Beta Feedback</span>
-              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">초기 사용자 피드백</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <span className="ours-section-kicker">Operational facts</span>
+              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">가입 전에 확인할 수 있는 운영 기준</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
                 <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">&ldquo;회의록 정리 시간이 확 줄었습니다.&rdquo;</p>
-                  <p className="text-xs ours-muted mt-2">스타트업 운영팀</p>
+                  <p className="text-xs ours-muted">누적 처리 시간</p>
+                  <p className="text-base ours-title font-semibold mt-2">{HOURS_PROCESSED}</p>
                 </div>
                 <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">&ldquo;설교 후 기록본 저장이 가장 편했습니다.&rdquo;</p>
-                  <p className="text-xs ours-muted mt-2">현장 사역자</p>
+                  <p className="text-xs ours-muted">베타 사용자</p>
+                  <p className="text-base ours-title font-semibold mt-2">{BETA_USERS}</p>
                 </div>
                 <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">&ldquo;전문 용어가 기존 대비 덜 깨집니다.&rdquo;</p>
-                  <p className="text-xs ours-muted mt-2">의료 상담 담당자</p>
+                  <p className="text-xs ours-muted">평균 처리 속도</p>
+                  <p className="text-base ours-title font-semibold mt-2">{AVG_TURNAROUND}</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs ours-muted">시간 절감 효과</p>
+                  <p className="text-base ours-title font-semibold mt-2">{TIME_SAVING}</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">원본 음성은 임시 처리 후 삭제</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">
+                    업로드된 원본 음성 파일은 변환 목적의 임시 저장 후 지체 없이 삭제하는 정책으로 운영합니다.
+                  </p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">무료 검증 후 유료 전환</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">
+                    월 10시간까지는 결제 없이 테스트할 수 있고, 반복 실무에 맞는 경우에만 Pro로 전환하면 됩니다.
+                  </p>
                 </div>
               </div>
             </div>
@@ -532,6 +579,28 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </div>
           </div>
         </section>
+
+        <section className="pb-16 sm:pb-24">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">FAQ</span>
+              <h2 className="ours-section-title mt-2">도입 전에 자주 묻는 질문</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+                {[
+                  ['음성 파일은 얼마나 보관되나요?', '원본 음성은 변환 목적의 임시 처리 후 삭제하고, 결과 텍스트와 기록본만 계정 기능 범위 안에서 관리합니다.'],
+                  ['영어 음성도 지원하나요?', '한국어와 영어를 지원하며, 업로드 전에 언어를 직접 선택할 수 있습니다.'],
+                  ['여러 화자 구분이 가능한가요?', '회의/통화 유형에서는 화자 구분 형식을 우선 적용합니다. 발화가 겹치지 않을수록 품질이 더 좋아집니다.'],
+                  ['결제 전에 무료 검증이 가능한가요?', '가능합니다. 무료 플랜으로 월 10시간까지 실제 업로드와 구조화 결과를 확인한 뒤 Pro로 전환할 수 있습니다.'],
+                ].map(([title, body]) => (
+                  <div key={title} className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm ours-title font-semibold">{title}</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
@@ -569,9 +638,11 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <p className="text-xs ours-muted mt-1">
                 사업자등록번호: {BUSINESS_REG_NUMBER}
               </p>
-              <p className="text-xs ours-muted mt-1">
-                유선전화번호: {LANDLINE_PHONE}
-              </p>
+              {LANDLINE_PHONE ? (
+                <p className="text-xs ours-muted mt-1">
+                  유선전화번호: {LANDLINE_PHONE}
+                </p>
+              ) : null}
               <p className="text-xs ours-muted mt-1">
                 사업장 주소: {BUSINESS_ADDRESS}
               </p>

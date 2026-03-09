@@ -14,11 +14,15 @@ const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing-en`
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
-const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || ''
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'No. 2026-Gyeonggi Gwangju-0442'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
+const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || 'Data preparing'
+const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || 'Growing'
+const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_EN || 'Average 3-5 min for 60-minute audio'
+const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_EN || 'About 80% less time than manual cleanup'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
 
@@ -249,10 +253,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 </svg>
               </a>
               <a
-                href={MALLOG24_INFO_URL}
+                href={MALLOG24_PRICING_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
               >
-                About mallog24
+                View pricing
               </a>
               <Link
                 href={MALLOG24_GUIDE_URL}
@@ -260,6 +264,31 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               >
                 Usage Guide
               </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-6 sm:pb-12">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">How it works</span>
+              <h2 className="ours-section-title mt-2">A workflow users can understand in three steps</h2>
+              <p className="ours-section-copy">
+                mallog24 is designed so visitors understand the flow from upload to final structured document
+                before they ever log in.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+                {[
+                  ['1. Upload audio', 'The browser checks duration first and warns when the free quota would be exceeded.'],
+                  ['2. AI transcription + correction', 'Whisper and Gemini refine speakers, context, and domain terms together.'],
+                  ['3. Structured document ready', 'TXT, DOCX, and saved records continue in one operational flow.'],
+                ].map(([title, body]) => (
+                  <div key={title} className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm font-semibold ours-title">{title}</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">{body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -319,20 +348,38 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
 
           <div className="max-w-6xl mx-auto px-6 mt-4">
             <div className="rounded-3xl ours-card p-6 sm:p-7">
-              <span className="ours-section-kicker">Beta Feedback</span>
-              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">What early users say</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <span className="ours-section-kicker">Operational facts</span>
+              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">What visitors can verify before signup</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
                 <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">&ldquo;Meeting recap time dropped significantly.&rdquo;</p>
-                  <p className="text-xs ours-muted mt-2">Operations Team</p>
+                  <p className="text-xs ours-muted">Processed audio</p>
+                  <p className="text-base ours-title font-semibold mt-2">{HOURS_PROCESSED}</p>
                 </div>
                 <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">&ldquo;Sermon note saving is the most practical part.&rdquo;</p>
-                  <p className="text-xs ours-muted mt-2">Field Ministry User</p>
+                  <p className="text-xs ours-muted">Beta users</p>
+                  <p className="text-base ours-title font-semibold mt-2">{BETA_USERS}</p>
                 </div>
                 <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">&ldquo;Domain terms break less than before.&rdquo;</p>
-                  <p className="text-xs ours-muted mt-2">Clinical Consultation Desk</p>
+                  <p className="text-xs ours-muted">Average turnaround</p>
+                  <p className="text-base ours-title font-semibold mt-2">{AVG_TURNAROUND}</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-xs ours-muted">Time saved</p>
+                  <p className="text-base ours-title font-semibold mt-2">{TIME_SAVING}</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">Temporary raw-audio handling</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">
+                    Uploaded raw audio is handled only for transcription and removed afterward according to the service policy.
+                  </p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm ours-title font-semibold">Validate free, upgrade when needed</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">
+                    Users can test real uploads under the 10-hour free plan first, then move to Pro only when the workflow proves valuable.
+                  </p>
                 </div>
               </div>
             </div>
@@ -533,6 +580,28 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </div>
           </div>
         </section>
+
+        <section className="pb-16 sm:pb-24">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">FAQ</span>
+              <h2 className="ours-section-title mt-2">Questions people ask before adopting mallog24</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+                {[
+                  ['How long are audio files stored?', 'Raw audio is handled temporarily for transcription and removed after processing. Structured results remain within the account feature scope.'],
+                  ['Does it support English?', 'Yes. Korean and English are both supported, and users can choose the language before upload.'],
+                  ['Can it separate multiple speakers?', 'Meeting and call modes prioritize speaker-aware formatting. Clear audio with less overlap improves quality.'],
+                  ['Can users validate before paying?', 'Yes. The free plan includes up to 10 hours per month so teams can test the workflow before upgrading.'],
+                ].map(([title, body]) => (
+                  <div key={title} className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm ours-title font-semibold">{title}</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
@@ -570,9 +639,11 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <p className="text-xs ours-muted mt-1">
                 Business Registration No.: {BUSINESS_REG_NUMBER}
               </p>
-              <p className="text-xs ours-muted mt-1">
-                Landline: {LANDLINE_PHONE}
-              </p>
+              {LANDLINE_PHONE ? (
+                <p className="text-xs ours-muted mt-1">
+                  Landline: {LANDLINE_PHONE}
+                </p>
+              ) : null}
               <p className="text-xs ours-muted mt-1">
                 Business Address: {BUSINESS_ADDRESS}
               </p>
