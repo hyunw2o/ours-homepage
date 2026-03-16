@@ -14,7 +14,7 @@ const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing-en`
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
-const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || ''
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'No. 2026-Gyeonggi Gwangju-0442'
@@ -639,11 +639,9 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <p className="text-xs ours-muted mt-1">
                 Business Registration No.: {BUSINESS_REG_NUMBER}
               </p>
-              {LANDLINE_PHONE ? (
-                <p className="text-xs ours-muted mt-1">
-                  Landline: {LANDLINE_PHONE}
-                </p>
-              ) : null}
+              <p className="text-xs ours-muted mt-1">
+                Representative Phone: {LANDLINE_PHONE}
+              </p>
               <p className="text-xs ours-muted mt-1">
                 Business Address: {BUSINESS_ADDRESS}
               </p>

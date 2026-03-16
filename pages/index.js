@@ -14,7 +14,7 @@ const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing`
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
-const LANDLINE_PHONE = process.env.NEXT_PUBLIC_LANDLINE_PHONE || ''
+const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || '제 2026-경기광주-0442 호'
@@ -638,11 +638,9 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <p className="text-xs ours-muted mt-1">
                 사업자등록번호: {BUSINESS_REG_NUMBER}
               </p>
-              {LANDLINE_PHONE ? (
-                <p className="text-xs ours-muted mt-1">
-                  유선전화번호: {LANDLINE_PHONE}
-                </p>
-              ) : null}
+              <p className="text-xs ours-muted mt-1">
+                대표자 전화번호: {LANDLINE_PHONE}
+              </p>
               <p className="text-xs ours-muted mt-1">
                 사업장 주소: {BUSINESS_ADDRESS}
               </p>
