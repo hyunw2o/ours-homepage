@@ -12,6 +12,7 @@ const MALLOG24_URL =
 const MALLOG24_INFO_URL = '/mallog24-en'
 const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing-en`
+const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.mallog24.app&pcampaignid=web_share'
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
@@ -192,6 +193,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </Link>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden sm:block text-sm ours-muted hover:opacity-80 transition-colors"
+            >
+              Download App
+            </a>
             <HeaderMenuControls
               darkMode={darkMode}
               setDarkMode={setDarkMode}
@@ -266,6 +275,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               >
                 Usage Guide
               </Link>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
+              >
+                Download App
+              </a>
             </div>
           </div>
         </section>
@@ -566,6 +583,17 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     Business Inquiry
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </a>
+                  <a
+                    href={PLAY_STORE_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
+                  >
+                    Download App
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
                   <a

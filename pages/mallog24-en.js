@@ -8,6 +8,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
 const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
+const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.mallog24.app&pcampaignid=web_share'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 onboarding inquiry')}&body=${encodeURIComponent('Hello OURS team,\n\nI would like to learn more about mallog24.\n')}`
 const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
@@ -93,6 +94,14 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode, uiTheme, setUiT
               >
                 View Usage Guide
               </Link>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+              >
+                Download App
+              </a>
             </div>
           </div>
         </section>

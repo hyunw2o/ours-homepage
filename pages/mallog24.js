@@ -8,6 +8,7 @@ const MALLOG24_URL =
   process.env.NEXT_PUBLIC_MALLOC24_URL ||
   'https://mallog24.com'
 const MALLOG24_GUIDE_URL = '/mallog24-guide'
+const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.mallog24.app&pcampaignid=web_share'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 도입 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\nmallog24 도입 관련 문의드립니다.\n')}`
 const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
@@ -93,6 +94,14 @@ export default function Mallog24Intro({ darkMode, setDarkMode, uiTheme, setUiThe
               >
                 사용 가이드 보기
               </Link>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl ours-btn-secondary font-semibold transition-colors"
+              >
+                앱 다운로드
+              </a>
             </div>
           </div>
         </section>
