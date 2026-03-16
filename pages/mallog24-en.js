@@ -10,6 +10,8 @@ const MALLOG24_URL =
 const MALLOG24_GUIDE_URL = '/mallog24-guide-en'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 onboarding inquiry')}&body=${encodeURIComponent('Hello OURS team,\n\nI would like to learn more about mallog24.\n')}`
+const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
+const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || 'C-2026-013549'
 
 function FeatureCard({ title, body, icon }) {
   return (
@@ -65,6 +67,13 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode, uiTheme, setUiT
               mallog24 is an AI speech transcription service that turns audio into polished text and summaries,
               then lets teams save separate structured notes for meeting keywords, clinical references, and sermon core summaries.
             </p>
+            <p className="mt-4 text-sm sm:text-base ours-muted leading-relaxed max-w-3xl">
+              The name mallog24 combines mal, meaning spoken words, and log, meaning recorded history, to express a service that keeps spoken content recorded around the clock.
+            </p>
+            <div className="mt-5 inline-flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-3 text-sm text-slate-600 shadow-sm backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-slate-300">
+              <p>Trademark Application No.: {TRADEMARK_APPLICATION_NO}</p>
+              <p>Copyright Registration No.: {COPYRIGHT_REGISTRATION_NO}</p>
+            </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={MALLOG24_URL}

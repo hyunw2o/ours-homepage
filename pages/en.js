@@ -18,6 +18,8 @@ const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.e
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'No. 2026-Gyeonggi Gwangju-0442'
+const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
+const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || 'C-2026-013549'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || 'Data preparing'
 const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || 'Growing'
@@ -650,6 +652,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </p>
               <p className="text-xs ours-muted mt-1">
                 E-commerce Registration No.: {ECOMMERCE_REG_NUMBER}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                Trademark Application No.: {TRADEMARK_APPLICATION_NO}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                Copyright Registration No.: {COPYRIGHT_REGISTRATION_NO}
               </p>
               <p className="text-xs ours-muted mt-1">
                 Business Inquiry Email: {BUSINESS_EMAIL}

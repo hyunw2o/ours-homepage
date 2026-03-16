@@ -18,6 +18,8 @@ const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.e
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || '제 2026-경기광주-0442 호'
+const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
+const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || '제 C-2026-013549 호'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || '집계 준비 중'
 const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || '확장 중'
@@ -649,6 +651,12 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </p>
               <p className="text-xs ours-muted mt-1">
                 통신판매신고번호: {ECOMMERCE_REG_NUMBER}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                상표 출원번호: {TRADEMARK_APPLICATION_NO}
+              </p>
+              <p className="text-xs ours-muted mt-1">
+                저작권 등록번호: {COPYRIGHT_REGISTRATION_NO}
               </p>
               <p className="text-xs ours-muted mt-1">
                 비즈니스 문의 이메일: {BUSINESS_EMAIL}

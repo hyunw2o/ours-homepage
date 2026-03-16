@@ -10,6 +10,8 @@ const MALLOG24_URL =
 const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 도입 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\nmallog24 도입 관련 문의드립니다.\n')}`
+const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
+const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || '제 C-2026-013549 호'
 
 function FeatureCard({ title, body, icon }) {
   return (
@@ -65,6 +67,13 @@ export default function Mallog24Intro({ darkMode, setDarkMode, uiTheme, setUiThe
               mallog24는 음성 파일을 업로드하면 정돈된 텍스트와 요약을 생성하고,
               회의 핵심 키워드, 진료 참고 기록, 설교 핵심 요약을 별도 기록본으로 저장할 수 있는 AI 음성 기록 서비스입니다.
             </p>
+            <p className="mt-4 text-sm sm:text-base ours-muted leading-relaxed max-w-3xl">
+              mallog24는 24시간 말이 기록으로 이어진다는 뜻에서 말(mal)과 기록(log)을 결합해 만든 이름입니다.
+            </p>
+            <div className="mt-5 inline-flex flex-col gap-2 rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-3 text-sm text-slate-600 shadow-sm backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-slate-300">
+              <p>상표 출원번호: {TRADEMARK_APPLICATION_NO}</p>
+              <p>저작권 등록번호: {COPYRIGHT_REGISTRATION_NO}</p>
+            </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={MALLOG24_URL}
