@@ -27,8 +27,7 @@ const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || ''
 const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_EN || ''
 const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_EN || ''
 const HAS_OPERATIONAL_STATS = Boolean(HOURS_PROCESSED || BETA_USERS || AVG_TURNAROUND || TIME_SAVING)
-const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
-const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
+const CONTACT_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry type (general/business):\nInquiry details:\n')}`
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -595,15 +594,6 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     </svg>
                   </Link>
                   <a
-                    href={BUSINESS_MAILTO}
-                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
-                  >
-                    Business Inquiry
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </a>
-                  <a
                     href={PLAY_STORE_URL}
                     target="_blank"
                     rel="noreferrer"
@@ -615,10 +605,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     </svg>
                   </a>
                   <a
-                    href={ONE_TO_ONE_MAILTO}
+                    href={CONTACT_MAILTO}
                     className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
                   >
-                    1:1 Inquiry
+                    Contact Us
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H9l-4 3V8a2 2 0 012-2z" />
                     </svg>
@@ -673,11 +663,8 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <Link href={MALLOG24_GUIDE_URL} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 mallog24 Usage Guide
               </Link>
-              <a href={BUSINESS_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
-                Business Inquiry
-              </a>
-              <a href={ONE_TO_ONE_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
-                1:1 Inquiry
+              <a href={CONTACT_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
+                Contact Us
               </a>
             </div>
             <div className="text-center sm:text-right">
@@ -706,10 +693,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 Copyright Registration No.: {COPYRIGHT_REGISTRATION_NO}
               </p>
               <p className="text-xs ours-muted mt-1">
-                Business Inquiry Email: {BUSINESS_EMAIL}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                1:1 Inquiry Email: {BUSINESS_EMAIL}
+                Contact Email: {BUSINESS_EMAIL}
               </p>
               <p className="text-xs ours-muted mt-1">
                 Copyright 2026. OURS All rights reserved.
