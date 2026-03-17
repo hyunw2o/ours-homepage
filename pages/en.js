@@ -22,10 +22,11 @@ const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'No
 const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
 const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || 'C-2026-013549'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
-const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || 'Data preparing'
-const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || 'Growing'
-const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_EN || 'Average 3-5 min for 60-minute audio'
-const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_EN || 'About 80% less time than manual cleanup'
+const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || ''
+const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || ''
+const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_EN || ''
+const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_EN || ''
+const HAS_OPERATIONAL_STATS = Boolean(HOURS_PROCESSED || BETA_USERS || AVG_TURNAROUND || TIME_SAVING)
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Business Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry details:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('1:1 Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\n1:1 inquiry details:\n')}`
 
@@ -227,14 +228,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
           <div className="max-w-5xl mx-auto px-6 text-center animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 ours-chip">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-              <span className="text-xs font-medium ours-muted">Building AI Tools</span>
+              <span className="text-xs font-medium ours-muted">Flagship product</span>
             </div>
 
             <div className="mb-4 flex justify-center">
               <Mallog24Logo className="w-full max-w-[460px] h-auto" />
             </div>
             <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] ours-muted uppercase mb-6">
-              by OURS
+              AI speech-to-text service by OURS
             </p>
 
             <h1 className="ours-hero-title mb-5">
@@ -250,10 +251,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Free 10h/month</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro KRW 8,800/month (VAT included, Unlimited)</span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Open Beta</span>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Open beta: Free plan available</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex flex-col items-center justify-center gap-3">
               <a
                 href={MALLOG24_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-primary font-semibold rounded-2xl transition-all duration-200"
@@ -263,26 +264,41 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
-              <a
-                href={MALLOG24_PRICING_URL}
-                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
-              >
-                View pricing
-              </a>
-              <Link
-                href={MALLOG24_GUIDE_URL}
-                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
-              >
-                Usage Guide
-              </Link>
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
-              >
-                Download App
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-semibold">
+                <a href={MALLOG24_PRICING_URL} className="ours-link transition-colors">View pricing</a>
+                <Link href={MALLOG24_GUIDE_URL} className="ours-link transition-colors">Usage Guide</Link>
+                <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" className="ours-link transition-colors">Download App</a>
+              </div>
+            </div>
+            <p className="mt-3 text-xs ours-muted">
+              During open beta, visitors can validate the workflow with the free 10-hour monthly plan and only upgrade to Pro if the workflow proves useful.
+            </p>
+          </div>
+        </section>
+
+        <section className="pb-6 sm:pb-12">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">About OURS</span>
+              <h2 className="ours-section-title mt-2">OURS builds products that turn spoken work into reusable records</h2>
+              <p className="ours-section-copy">
+                OURS is focused on workflows where transcription alone is not enough. We connect transcription, correction,
+                summarization, and record saving so teams can move from spoken content to practical documents without extra cleanup.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm font-semibold ours-title">Problem</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">Meetings, sermons, and calls often stay trapped in raw notes instead of reusable documentation.</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm font-semibold ours-title">Product direction</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">mallog24 connects transcription, correction, summary, and saved records in one operational flow.</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm font-semibold ours-title">Operating principle</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">We only publish verifiable information and expand visible claims after they are measured in production.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -365,44 +381,46 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </div>
           </div>
 
-          <div className="max-w-6xl mx-auto px-6 mt-4">
-            <div className="rounded-3xl ours-card p-6 sm:p-7">
-              <span className="ours-section-kicker">Operational facts</span>
-              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">What visitors can verify before signup</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">Processed audio</p>
-                  <p className="text-base ours-title font-semibold mt-2">{HOURS_PROCESSED}</p>
+          {HAS_OPERATIONAL_STATS ? (
+            <div className="max-w-6xl mx-auto px-6 mt-4">
+              <div className="rounded-3xl ours-card p-6 sm:p-7">
+                <span className="ours-section-kicker">Operational facts</span>
+                <h3 className="text-2xl font-bold ours-title mt-2 mb-4">What visitors can verify before signup</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">Processed audio</p>
+                    <p className="text-base ours-title font-semibold mt-2">{HOURS_PROCESSED}</p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">Beta users</p>
+                    <p className="text-base ours-title font-semibold mt-2">{BETA_USERS}</p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">Average turnaround</p>
+                    <p className="text-base ours-title font-semibold mt-2">{AVG_TURNAROUND}</p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">Time saved</p>
+                    <p className="text-base ours-title font-semibold mt-2">{TIME_SAVING}</p>
+                  </div>
                 </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">Beta users</p>
-                  <p className="text-base ours-title font-semibold mt-2">{BETA_USERS}</p>
-                </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">Average turnaround</p>
-                  <p className="text-base ours-title font-semibold mt-2">{AVG_TURNAROUND}</p>
-                </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">Time saved</p>
-                  <p className="text-base ours-title font-semibold mt-2">{TIME_SAVING}</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">Temporary raw-audio handling</p>
-                  <p className="text-xs ours-muted mt-2 leading-relaxed">
-                    Uploaded raw audio is handled only for transcription and removed afterward according to the service policy.
-                  </p>
-                </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">Validate free, upgrade when needed</p>
-                  <p className="text-xs ours-muted mt-2 leading-relaxed">
-                    Users can test real uploads under the 10-hour free plan first, then move to Pro only when the workflow proves valuable.
-                  </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm ours-title font-semibold">Temporary raw-audio handling</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">
+                      Uploaded raw audio is handled only for transcription and removed afterward according to the service policy.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm ours-title font-semibold">Validate free, upgrade when needed</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">
+                      Users can test real uploads under the 10-hour free plan first, then move to Pro only when the workflow proves valuable.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : null}
         </section>
 
         {/* Bento Grid Section */}

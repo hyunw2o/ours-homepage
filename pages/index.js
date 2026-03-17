@@ -22,10 +22,11 @@ const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || '�
 const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
 const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || '제 C-2026-013549 호'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
-const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || '집계 준비 중'
-const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || '확장 중'
-const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_KO || '60분 음성 기준 평균 3~5분'
-const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_KO || '수기 정리 대비 약 80% 시간 절감'
+const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || ''
+const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || ''
+const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_KO || ''
+const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_KO || ''
+const HAS_OPERATIONAL_STATS = Boolean(HOURS_PROCESSED || BETA_USERS || AVG_TURNAROUND || TIME_SAVING)
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 비즈니스 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n문의 내용:\n')}`
 const ONE_TO_ONE_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 1:1 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n1:1 문의 내용:\n')}`
 
@@ -227,14 +228,14 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
           <div className="max-w-5xl mx-auto px-6 text-center animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 ours-chip">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-              <span className="text-xs font-medium ours-muted">Building AI Tools</span>
+              <span className="text-xs font-medium ours-muted">대표 제품 소개</span>
             </div>
 
             <div className="mb-4 flex justify-center">
               <Mallog24Logo className="w-full max-w-[460px] h-auto" />
             </div>
             <p className="text-xs sm:text-sm font-semibold tracking-[0.18em] ours-muted uppercase mb-6">
-              by OURS
+              OURS의 AI 음성 기록 서비스
             </p>
 
             <h1 className="ours-hero-title mb-5">
@@ -250,10 +251,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">무료 월 10시간</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro 월 8,800원(VAT 포함) 무제한</span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">오픈 베타 운영 중</span>
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">오픈 베타: 무료 플랜 제공 중</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex flex-col items-center justify-center gap-3">
               <a
                 href={MALLOG24_URL}
                 className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-primary font-semibold rounded-2xl transition-all duration-200"
@@ -263,26 +264,41 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
-              <a
-                href={MALLOG24_PRICING_URL}
-                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
-              >
-                요금제 보기
-              </a>
-              <Link
-                href={MALLOG24_GUIDE_URL}
-                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
-              >
-                사용 가이드
-              </Link>
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 ours-btn-secondary font-semibold rounded-2xl transition-all duration-200"
-              >
-                앱 다운로드
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-semibold">
+                <a href={MALLOG24_PRICING_URL} className="ours-link transition-colors">요금제 보기</a>
+                <Link href={MALLOG24_GUIDE_URL} className="ours-link transition-colors">사용 가이드</Link>
+                <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" className="ours-link transition-colors">앱 다운로드</a>
+              </div>
+            </div>
+            <p className="mt-3 text-xs ours-muted">
+              오픈 베타 기간에는 무료 플랜 월 10시간으로 기능을 검증할 수 있고, 필요할 때만 Pro로 전환하면 됩니다.
+            </p>
+          </div>
+        </section>
+
+        <section className="pb-6 sm:pb-12">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="rounded-3xl ours-card p-6 sm:p-7">
+              <span className="ours-section-kicker">About OURS</span>
+              <h2 className="ours-section-title mt-2">OURS는 기록이 실제 업무 흐름으로 이어지게 만드는 팀입니다</h2>
+              <p className="ours-section-copy">
+                OURS는 음성을 단순히 텍스트로 바꾸는 데서 멈추지 않고, 바로 저장하고 재사용할 수 있는 문서 흐름까지 설계합니다.
+                mallog24는 그 방향을 가장 먼저 제품화한 AI 음성 기록 서비스입니다.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm font-semibold ours-title">문제 정의</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">회의록, 설교 정리, 통화 메모가 수기로 흩어지는 문제를 구조화된 결과물로 줄입니다.</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm font-semibold ours-title">제품 방향</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">전사, 교정, 요약, 기록본 저장을 한 화면에서 이어지게 만들어 실제 사용 흐름을 단축합니다.</p>
+                </div>
+                <div className="rounded-2xl ours-soft-card p-4">
+                  <p className="text-sm font-semibold ours-title">운영 원칙</p>
+                  <p className="text-xs ours-muted mt-2 leading-relaxed">실측 가능한 정보만 공개하고, 확인 가능한 범위부터 기능과 정책을 단계적으로 확장합니다.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -365,44 +381,46 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </div>
           </div>
 
-          <div className="max-w-6xl mx-auto px-6 mt-4">
-            <div className="rounded-3xl ours-card p-6 sm:p-7">
-              <span className="ours-section-kicker">Operational facts</span>
-              <h3 className="text-2xl font-bold ours-title mt-2 mb-4">가입 전에 확인할 수 있는 운영 기준</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">누적 처리 시간</p>
-                  <p className="text-base ours-title font-semibold mt-2">{HOURS_PROCESSED}</p>
+          {HAS_OPERATIONAL_STATS ? (
+            <div className="max-w-6xl mx-auto px-6 mt-4">
+              <div className="rounded-3xl ours-card p-6 sm:p-7">
+                <span className="ours-section-kicker">Operational facts</span>
+                <h3 className="text-2xl font-bold ours-title mt-2 mb-4">가입 전에 확인할 수 있는 운영 기준</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">누적 처리 시간</p>
+                    <p className="text-base ours-title font-semibold mt-2">{HOURS_PROCESSED}</p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">베타 사용자</p>
+                    <p className="text-base ours-title font-semibold mt-2">{BETA_USERS}</p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">평균 처리 속도</p>
+                    <p className="text-base ours-title font-semibold mt-2">{AVG_TURNAROUND}</p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-xs ours-muted">시간 절감 효과</p>
+                    <p className="text-base ours-title font-semibold mt-2">{TIME_SAVING}</p>
+                  </div>
                 </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">베타 사용자</p>
-                  <p className="text-base ours-title font-semibold mt-2">{BETA_USERS}</p>
-                </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">평균 처리 속도</p>
-                  <p className="text-base ours-title font-semibold mt-2">{AVG_TURNAROUND}</p>
-                </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-xs ours-muted">시간 절감 효과</p>
-                  <p className="text-base ours-title font-semibold mt-2">{TIME_SAVING}</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">원본 음성은 임시 처리 후 삭제</p>
-                  <p className="text-xs ours-muted mt-2 leading-relaxed">
-                    업로드된 원본 음성 파일은 변환 목적의 임시 저장 후 지체 없이 삭제하는 정책으로 운영합니다.
-                  </p>
-                </div>
-                <div className="rounded-2xl ours-soft-card p-4">
-                  <p className="text-sm ours-title font-semibold">무료 검증 후 유료 전환</p>
-                  <p className="text-xs ours-muted mt-2 leading-relaxed">
-                    월 10시간까지는 결제 없이 테스트할 수 있고, 반복 실무에 맞는 경우에만 Pro로 전환하면 됩니다.
-                  </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm ours-title font-semibold">원본 음성은 임시 처리 후 삭제</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">
+                      업로드된 원본 음성 파일은 변환 목적의 임시 저장 후 지체 없이 삭제하는 정책으로 운영합니다.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl ours-soft-card p-4">
+                    <p className="text-sm ours-title font-semibold">무료 검증 후 유료 전환</p>
+                    <p className="text-xs ours-muted mt-2 leading-relaxed">
+                      월 10시간까지는 결제 없이 테스트할 수 있고, 반복 실무에 맞는 경우에만 Pro로 전환하면 됩니다.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : null}
         </section>
 
         {/* Bento Grid Section */}
