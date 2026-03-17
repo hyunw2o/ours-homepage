@@ -26,7 +26,11 @@ const BUSINESS_ADDRESS =
   '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const ECOMMERCE_REG_NUMBER = process.env.NEXT_PUBLIC_ECOMMERCE_REG_NUMBER || 'No. 2026-Gyeonggi Gwangju-0442'
 const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'
-const COPYRIGHT_REGISTRATION_NO = process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO || 'C-2026-013549'
+const rawCopyrightRegistrationNo =
+  process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO_EN ||
+  process.env.NEXT_PUBLIC_COPYRIGHT_REGISTRATION_NO ||
+  'C-2026-013549'
+const COPYRIGHT_REGISTRATION_NO = rawCopyrightRegistrationNo.replace(/^제\s*/u, '').replace(/\s*호$/u, '')
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const HOURS_PROCESSED = process.env.NEXT_PUBLIC_LANDING_STATS_HOURS_PROCESSED || ''
 const BETA_USERS = process.env.NEXT_PUBLIC_LANDING_STATS_BETA_USERS || ''
