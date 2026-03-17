@@ -574,10 +574,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 <p className="ours-cta-copy mb-10">
                   음성 파일을 올리고, AI가 만드는 녹취록을 경험하세요.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div className="mx-auto flex max-w-5xl flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <a
                     href={MALLOG24_URL}
-                    className="inline-flex items-center gap-2 px-8 py-4 ours-btn-primary font-semibold rounded-2xl transition-all duration-200"
+                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-btn-primary transition-all duration-200 sm:w-auto"
                   >
                     mallog24 시작하기
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -586,7 +586,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   </a>
                   <Link
                     href={MALLOG24_GUIDE_URL}
-                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
+                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
                   >
                     사용 가이드 보기
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -595,7 +595,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   </Link>
                   <a
                     href={BUSINESS_MAILTO}
-                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
+                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
                   >
                     비즈니스 문의하기
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -606,7 +606,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     href={PLAY_STORE_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
+                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
                   >
                     앱 다운로드
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -615,7 +615,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   </a>
                   <a
                     href={ONE_TO_ONE_MAILTO}
-                    className="inline-flex items-center gap-2 px-8 py-4 ours-cta-ghost-btn font-semibold rounded-2xl transition-all duration-200"
+                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
                   >
                     1:1 문의하기
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
