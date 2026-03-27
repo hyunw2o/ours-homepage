@@ -28,6 +28,12 @@ const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_KO |
 const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_KO || ''
 const HAS_OPERATIONAL_STATS = Boolean(HOURS_PROCESSED || BETA_USERS || AVG_TURNAROUND || TIME_SAVING)
 const CONTACT_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('OURS 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\n문의 유형(일반/비즈니스):\n문의 내용:\n')}`
+const NAV_ITEMS = [
+  { href: '#products', label: 'Products' },
+  { href: MALLOG24_GUIDE_URL, label: '사용 가이드' },
+  { href: MALLOG24_INFO_URL, label: 'mallog24 소개' },
+  { href: PLAY_STORE_URL, label: '앱 다운로드', external: true },
+]
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -211,6 +217,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               locale="kr"
               krHref="/"
               enHref="/en"
+              navItems={NAV_ITEMS}
             />
           </div>
         </div>

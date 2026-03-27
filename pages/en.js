@@ -38,6 +38,12 @@ const AVG_TURNAROUND = process.env.NEXT_PUBLIC_LANDING_STATS_AVG_TURNAROUND_EN |
 const TIME_SAVING = process.env.NEXT_PUBLIC_LANDING_STATS_TIME_SAVING_EN || ''
 const HAS_OPERATIONAL_STATS = Boolean(HOURS_PROCESSED || BETA_USERS || AVG_TURNAROUND || TIME_SAVING)
 const CONTACT_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('Inquiry to OURS')}&body=${encodeURIComponent('Hello OURS team,\n\nInquiry type (general/business):\nInquiry details:\n')}`
+const NAV_ITEMS = [
+  { href: '#products', label: 'Products' },
+  { href: MALLOG24_GUIDE_URL, label: 'Usage Guide' },
+  { href: MALLOG24_INFO_URL, label: 'mallog24 Details' },
+  { href: PLAY_STORE_URL, label: 'Download App', external: true },
+]
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -221,6 +227,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               locale="en"
               krHref="/"
               enHref="/en"
+              navItems={NAV_ITEMS}
             />
           </div>
         </div>
