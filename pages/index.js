@@ -13,6 +13,7 @@ const MALLOG24_INFO_URL = '/mallog24'
 const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing`
 const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.mallog24.app&pcampaignid=web_share'
+const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || ''
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
@@ -32,7 +33,8 @@ const NAV_ITEMS = [
   { href: '#products', label: 'Products' },
   { href: MALLOG24_GUIDE_URL, label: '사용 가이드' },
   { href: MALLOG24_INFO_URL, label: 'mallog24 소개' },
-  { href: PLAY_STORE_URL, label: '앱 다운로드', external: true },
+  { href: PLAY_STORE_URL, label: 'Android 다운로드', external: true },
+  { href: APP_STORE_URL || '#app-download', label: APP_STORE_URL ? 'iOS 다운로드' : 'iOS 심사 중', external: Boolean(APP_STORE_URL) },
 ]
 
 function useScrollReveal() {
@@ -244,7 +246,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-semibold">
                 <a href={MALLOG24_PRICING_URL} className="ours-link transition-colors">요금제 보기</a>
                 <Link href={MALLOG24_GUIDE_URL} className="ours-link transition-colors">사용 가이드</Link>
-                <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" className="ours-link transition-colors">앱 다운로드</a>
+                <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" className="ours-link transition-colors">Android 다운로드</a>
+                <a href={APP_STORE_URL || '#app-download'} target={APP_STORE_URL ? '_blank' : undefined} rel={APP_STORE_URL ? 'noreferrer' : undefined} className="ours-link transition-colors">
+                  {APP_STORE_URL ? 'iOS 다운로드' : 'iOS 심사 중'}
+                </a>
               </div>
             </div>
             <p className="mt-3 text-xs ours-muted">
@@ -551,7 +556,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 <p className="ours-cta-copy mb-10">
                   음성 파일을 올리고, AI가 만드는 녹취록을 경험하세요.
                 </p>
-                <div className="mx-auto flex max-w-5xl flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <div id="app-download" className="mx-auto flex max-w-5xl flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <a
                     href={MALLOG24_URL}
                     className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-btn-primary transition-all duration-200 sm:w-auto"
@@ -576,11 +581,32 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     rel="noreferrer"
                     className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
                   >
-                    앱 다운로드
+                    Android 다운로드
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
+                  {APP_STORE_URL ? (
+                    <a
+                      href={APP_STORE_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
+                    >
+                      iOS 다운로드
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span
+                      className="inline-flex w-full shrink-0 items-center justify-center rounded-2xl border border-dashed px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-muted sm:w-auto"
+                      style={{ borderColor: 'var(--ours-border)' }}
+                      aria-disabled="true"
+                    >
+                      iOS 심사 진행 중
+                    </span>
+                  )}
                   <a
                     href={CONTACT_MAILTO}
                     className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
