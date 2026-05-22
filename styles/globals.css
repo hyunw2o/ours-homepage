@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVF.woff') format('woff');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMonoVF.woff') format('woff');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -144,10 +160,7 @@ body {
 
 body {
   font-family: 'Pretendard Variable', 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:
-    radial-gradient(1100px 560px at -4% -14%, var(--ours-glow-1), transparent 64%),
-    radial-gradient(940px 520px at 104% -6%, var(--ours-glow-2), transparent 66%),
-    linear-gradient(180deg, color-mix(in oklab, var(--ours-bg) 86%, #ffffff 14%), var(--ours-bg));
+  background: var(--ours-bg);
   color: var(--ours-text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -337,11 +350,7 @@ body {
   height: 110px;
   border-radius: 28px;
   border: 1px solid color-mix(in oklab, var(--ours-border) 48%, transparent);
-  background: linear-gradient(
-    135deg,
-    color-mix(in oklab, var(--ours-surface-solid) 45%, transparent),
-    color-mix(in oklab, var(--ours-accent) 12%, transparent)
-  );
+  background: color-mix(in oklab, var(--ours-surface-solid) 72%, transparent);
   backdrop-filter: blur(14px);
   transform: rotate(-12deg);
   pointer-events: none;
@@ -355,28 +364,9 @@ body {
   letter-spacing: -0.04em;
 }
 
-.ours-gradient-text {
-  background: linear-gradient(
-    118deg,
-    color-mix(in oklab, var(--ours-accent) 82%, #ffffff 18%) 0%,
-    color-mix(in oklab, var(--ours-accent-soft) 70%, #7fd3ff 30%) 48%,
-    color-mix(in oklab, var(--ours-text) 68%, #ffffff 32%) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+.ours-gradient-text,
 .ours-gradient-word {
-  background: linear-gradient(
-    96deg,
-    #3b82f6 0%,
-    #5b6ff7 48%,
-    #8b5cf6 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--ours-accent);
 }
 
 .ours-section-kicker {
@@ -466,10 +456,7 @@ body {
   overflow: hidden;
   border-radius: 28px;
   border: 1px solid color-mix(in oklab, var(--ours-border) 42%, transparent);
-  background:
-    radial-gradient(420px 230px at 16% 24%, color-mix(in oklab, var(--ours-accent) 34%, transparent), transparent 68%),
-    radial-gradient(380px 220px at 82% 72%, color-mix(in oklab, var(--ours-accent-soft) 30%, transparent), transparent 70%),
-    color-mix(in oklab, var(--ours-surface-solid) 86%, var(--ours-bg) 14%);
+  background: color-mix(in oklab, var(--ours-surface-solid) 86%, var(--ours-bg) 14%);
   box-shadow:
     0 30px 62px -44px color-mix(in oklab, var(--ours-accent) 42%, transparent),
     0 18px 30px -28px color-mix(in oklab, var(--ours-text) 26%, transparent);
@@ -527,4 +514,195 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: color-mix(in oklab, var(--ours-muted) 68%, transparent);
+}
+
+/* ========== Precision SaaS Refresh ========== */
+:root,
+html[data-ui-theme='aurora'],
+html[data-ui-theme='noir'],
+html[data-ui-theme='sunset'] {
+  --mallog24-logo-text: #1A1916;
+  --ours-bg: #F9F8F6;
+  --ours-glow-1: transparent;
+  --ours-glow-2: transparent;
+  --ours-surface: rgba(249, 248, 246, 0.9);
+  --ours-surface-solid: #FFFFFF;
+  --ours-surface-soft: #F4F3EF;
+  --ours-border: rgba(26, 25, 22, 0.1);
+  --ours-text: #1A1916;
+  --ours-muted: #6B6860;
+  --ours-accent: #2D5BE3;
+  --ours-accent-soft: #1A3FA0;
+  --ours-accent-contrast: #FFFFFF;
+}
+
+html.dark,
+html.dark[data-ui-theme='aurora'],
+html.dark[data-ui-theme='noir'],
+html.dark[data-ui-theme='sunset'] {
+  --mallog24-logo-text: #F0EDE8;
+  --ours-bg: #111110;
+  --ours-surface: rgba(17, 17, 16, 0.9);
+  --ours-surface-solid: #1A1916;
+  --ours-surface-soft: #222120;
+  --ours-border: rgba(255, 255, 255, 0.1);
+  --ours-text: #F0EDE8;
+  --ours-muted: #B7B2A8;
+  --ours-accent: #5B82F0;
+  --ours-accent-soft: #93AFFA;
+  --ours-accent-contrast: #111110;
+}
+
+body {
+  font-family: 'Geist', 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--ours-bg);
+  color: var(--ours-text);
+}
+
+.ours-header {
+  border-bottom: 0.5px solid var(--ours-border);
+  background: var(--ours-surface);
+  box-shadow: none;
+}
+
+.ours-card,
+.ours-panel,
+.ours-soft-card {
+  border: 0.5px solid var(--ours-border);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.ours-chip,
+.ours-section-kicker,
+.ours-type-chip,
+.ours-feature-icon,
+.ours-btn-primary,
+.ours-btn-secondary,
+.ours-cta-ghost-btn,
+.ours-icon-btn,
+.ours-menu,
+.ours-theme-group,
+.ours-theme-item.active {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.ours-btn-primary {
+  background: var(--ours-text);
+  border: 0;
+  color: var(--ours-surface-solid);
+}
+
+.ours-btn-primary:hover {
+  background: color-mix(in oklab, var(--ours-text) 88%, var(--ours-accent) 12%);
+  box-shadow: none;
+}
+
+html.dark .ours-btn-primary {
+  background: var(--ours-text);
+  color: var(--ours-bg);
+}
+
+.ours-hero-orb,
+.ours-glass-shape {
+  display: none;
+}
+
+.bg-gradient-to-b {
+  background-image: none !important;
+}
+
+.ours-hero-title {
+  font-family: 'Geist', 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 4.5rem;
+  line-height: 1.05;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.ours-gradient-text,
+.ours-gradient-word {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+  color: var(--ours-accent);
+}
+
+.ours-section-title {
+  font-size: 2.25rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.ours-section-copy {
+  font-size: 1.02rem;
+}
+
+.ours-feature-title,
+.ours-cta-title,
+.ours-title {
+  letter-spacing: 0;
+}
+
+.ours-cta-panel {
+  border-radius: 8px;
+  border: 0;
+  background: #111110;
+  box-shadow: none;
+}
+
+.ours-cta-title {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-weight: 650;
+}
+
+.ours-cta-copy {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 1.02rem;
+}
+
+.ours-cta-ghost-btn {
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+}
+
+.ours-cta-ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ours-cta-panel .ours-btn-primary {
+  background: #FFFFFF;
+  color: #111110;
+}
+
+.ours-cta-panel .ours-btn-primary:hover {
+  background: #F0EDE8;
+}
+
+.ours-cta-panel .ours-muted {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 768px) {
+  .ours-hero-title {
+    font-size: 3.1rem;
+  }
+
+  .ours-section-title {
+    font-size: 1.9rem;
+  }
+
+  .ours-cta-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ours-hero-title {
+    font-size: 2.45rem;
+  }
 }

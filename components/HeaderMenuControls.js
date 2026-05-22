@@ -166,20 +166,20 @@ export default function HeaderMenuControls({
             aria-label={labels.close}
             onClick={() => setMobileOpen(false)}
           />
-          <div className="absolute inset-x-4 top-20 rounded-2xl border border-[var(--ours-border)] bg-[var(--ours-surface-solid)] p-4 shadow-[0_20px_60px_rgba(15,23,42,0.16)]">
+          <div className="absolute inset-x-4 top-20 rounded-lg border-[0.5px] border-[var(--ours-border)] bg-[var(--ours-surface-solid)] p-4">
             <div className="space-y-2">
               {navItems.map((item) => (
                 <NavItem
                   key={`${item.label}-${item.href}-mobile`}
                   item={item}
                   onClick={() => setMobileOpen(false)}
-                  className="flex min-h-[48px] items-center rounded-xl px-4 text-sm font-semibold text-[var(--ours-text)] transition hover:bg-[var(--ours-surface-soft)]"
+                  className="flex min-h-[48px] items-center rounded-lg px-4 text-sm font-semibold text-[var(--ours-text)] transition hover:bg-[var(--ours-surface-soft)]"
                 />
               ))}
               <Link
                 href={languageHref}
                 onClick={() => setMobileOpen(false)}
-                className="flex min-h-[48px] items-center rounded-xl px-4 text-sm font-semibold text-[var(--ours-text)] transition hover:bg-[var(--ours-surface-soft)] whitespace-nowrap"
+                className="flex min-h-[48px] items-center rounded-lg px-4 text-sm font-semibold text-[var(--ours-text)] transition hover:bg-[var(--ours-surface-soft)] whitespace-nowrap"
               >
                 {labels.switchLanguage}
               </Link>
