@@ -46,6 +46,26 @@ const NAV_ITEMS = [
   { href: PLAY_STORE_URL, label: 'Android Download', external: true },
   { href: APP_STORE_URL || '#app-download', label: APP_STORE_URL ? 'iOS Download' : 'iOS Review', external: Boolean(APP_STORE_URL) },
 ]
+const FOOTER_BUSINESS_ROWS = [
+  [`Company Name: ${BUSINESS_NAME}`, `Representative: ${REPRESENTATIVE_NAME}`, `Business Registration No.: ${BUSINESS_REG_NUMBER}`, `E-commerce Registration No.: ${ECOMMERCE_REG_NUMBER}`],
+  [`Business Address: ${BUSINESS_ADDRESS}`, `Representative Phone: ${LANDLINE_PHONE}`, `Contact Email: ${BUSINESS_EMAIL}`],
+  [`Trademark Application No.: ${TRADEMARK_APPLICATION_NO}`, `Copyright Registration No.: ${COPYRIGHT_REGISTRATION_NO}`],
+]
+
+function FooterInlineRow({ items, className = '' }) {
+  const visibleItems = items.filter(Boolean)
+
+  return (
+    <p className={`flex flex-wrap items-center justify-center sm:justify-end gap-x-2 gap-y-1 ${className}`}>
+      {visibleItems.map((item, index) => (
+        <span key={`${item}-${index}`} className="inline-flex items-center gap-x-2">
+          {index > 0 ? <span className="opacity-45">|</span> : null}
+          <span>{item}</span>
+        </span>
+      ))}
+    </p>
+  )
+}
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -660,55 +680,37 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
       <footer className="ours-footer">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-2">
               <span className="text-sm font-bold ours-title">OURS</span>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href={MALLOG24_INFO_URL} className="inline-flex items-center transition-opacity hover:opacity-80">
                 <Mallog24Logo className="h-5 w-auto" />
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href="/privacy-en" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Privacy Policy
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href="/terms-en" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Terms of Service
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href="/company-policy-en" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Company Policy
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href={MALLOG24_GUIDE_URL} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 mallog24 Usage Guide
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <a href={CONTACT_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 Contact Us
               </a>
             </div>
-            <div className="text-center sm:text-right">
-              <p className="text-xs ours-muted">
-                Company Name: {BUSINESS_NAME}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Business Registration No.: {BUSINESS_REG_NUMBER}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Representative Phone: {LANDLINE_PHONE}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Business Address: {BUSINESS_ADDRESS}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Representative (CEO): {REPRESENTATIVE_NAME}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                E-commerce Registration No.: {ECOMMERCE_REG_NUMBER}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Trademark Application No.: {TRADEMARK_APPLICATION_NO}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Copyright Registration No.: {COPYRIGHT_REGISTRATION_NO}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                Contact Email: {BUSINESS_EMAIL}
-              </p>
+            <div className="text-xs ours-muted text-center sm:text-right leading-relaxed max-w-3xl">
+              {FOOTER_BUSINESS_ROWS.map((row, index) => (
+                <FooterInlineRow key={`footer-business-${index}`} items={row} className={index > 0 ? 'mt-1' : ''} />
+              ))}
               <p className="text-xs ours-muted mt-1">
                 Copyright 2026. OURS All rights reserved.
               </p>

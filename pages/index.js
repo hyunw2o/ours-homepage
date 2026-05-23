@@ -36,6 +36,26 @@ const NAV_ITEMS = [
   { href: PLAY_STORE_URL, label: 'Android 다운로드', external: true },
   { href: APP_STORE_URL || '#app-download', label: APP_STORE_URL ? 'iOS 다운로드' : 'iOS 심사 중', external: Boolean(APP_STORE_URL) },
 ]
+const FOOTER_BUSINESS_ROWS = [
+  [`상호: ${BUSINESS_NAME}`, `대표: ${REPRESENTATIVE_NAME}`, `사업자등록번호: ${BUSINESS_REG_NUMBER}`, `통신판매신고번호: ${ECOMMERCE_REG_NUMBER}`],
+  [`사업장 주소: ${BUSINESS_ADDRESS}`, `대표자 전화번호: ${LANDLINE_PHONE}`, `문의 이메일: ${BUSINESS_EMAIL}`],
+  [`상표 출원번호: ${TRADEMARK_APPLICATION_NO}`, `저작권 등록번호: ${COPYRIGHT_REGISTRATION_NO}`],
+]
+
+function FooterInlineRow({ items, className = '' }) {
+  const visibleItems = items.filter(Boolean)
+
+  return (
+    <p className={`flex flex-wrap items-center justify-center sm:justify-end gap-x-2 gap-y-1 ${className}`}>
+      {visibleItems.map((item, index) => (
+        <span key={`${item}-${index}`} className="inline-flex items-center gap-x-2">
+          {index > 0 ? <span className="opacity-45">|</span> : null}
+          <span>{item}</span>
+        </span>
+      ))}
+    </p>
+  )
+}
 
 function useScrollReveal() {
   const ref = useRef(null)
@@ -649,55 +669,37 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
       <footer className="ours-footer">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-2">
               <span className="text-sm font-bold ours-title">OURS</span>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href={MALLOG24_INFO_URL} className="inline-flex items-center transition-opacity hover:opacity-80">
                 <Mallog24Logo className="h-5 w-auto" />
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href="/privacy" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 개인정보처리방침
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href="/terms" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 이용약관
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href="/company-policy" className="text-sm ours-muted hover:opacity-85 transition-colors">
                 회사 정책
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <Link href={MALLOG24_GUIDE_URL} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 mallog24 사용 가이드
               </Link>
+              <span className="text-sm ours-muted opacity-45">|</span>
               <a href={CONTACT_MAILTO} className="text-sm ours-muted hover:opacity-85 transition-colors">
                 문의하기
               </a>
             </div>
-            <div className="text-center sm:text-right">
-              <p className="text-xs ours-muted">
-                상호: {BUSINESS_NAME}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                사업자등록번호: {BUSINESS_REG_NUMBER}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                대표자 전화번호: {LANDLINE_PHONE}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                사업장 주소: {BUSINESS_ADDRESS}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                대표: {REPRESENTATIVE_NAME}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                통신판매신고번호: {ECOMMERCE_REG_NUMBER}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                상표 출원번호: {TRADEMARK_APPLICATION_NO}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                저작권 등록번호: {COPYRIGHT_REGISTRATION_NO}
-              </p>
-              <p className="text-xs ours-muted mt-1">
-                문의 이메일: {BUSINESS_EMAIL}
-              </p>
+            <div className="text-xs ours-muted text-center sm:text-right leading-relaxed max-w-3xl">
+              {FOOTER_BUSINESS_ROWS.map((row, index) => (
+                <FooterInlineRow key={`footer-business-${index}`} items={row} className={index > 0 ? 'mt-1' : ''} />
+              ))}
               <p className="text-xs ours-muted mt-1">
                 Copyright 2026. OURS All rights reserved.
               </p>
