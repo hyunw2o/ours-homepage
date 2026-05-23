@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.23'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.05.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -58,7 +58,7 @@ export default function CompanyPolicyEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 23, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: May 23, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Company Policy</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS operates mallog24 under clear standards for reliability, security, and responsible AI use.
@@ -67,6 +67,7 @@ export default function CompanyPolicyEn({ darkMode, setDarkMode }) {
 
           <Section title="1. Product Operating Principles">
             <ul className="list-disc pl-5 space-y-1">
+              <li>Maintain consistent core features and policy disclosures across web, Android, and iOS apps.</li>
               <li>Keep workflows simple so users can quickly turn audio into reusable records.</li>
               <li>Prioritize transcript quality, security, and stability in roadmap decisions.</li>
             </ul>
@@ -76,6 +77,7 @@ export default function CompanyPolicyEn({ darkMode, setDarkMode }) {
             <ul className="list-disc pl-5 space-y-1">
               <li>Process only the minimum data required to deliver core functionality.</li>
               <li>Source audio is handled in temporary storage and removed after processing by default policy.</li>
+              <li>Apple ID sign-in and App Store subscription data are processed only as needed for authentication and subscription verification.</li>
               <li>Role-based access control and audit logging are maintained for operational accountability.</li>
             </ul>
           </Section>
@@ -107,8 +109,9 @@ export default function CompanyPolicyEn({ darkMode, setDarkMode }) {
           <Section title="6. Paid Product Registration and Change Governance">
             <ol className="list-decimal pl-5 space-y-1">
               <li>Before launch/change, we finalize product name, price, billing cycle, refund rules, and support contact as mandatory fields.</li>
-              <li>We cross-check that payment-provider dashboard values match pricing and legal pages.</li>
+              <li>We cross-check that payment-provider dashboard values, App Store Connect settings, pricing pages, and legal pages match.</li>
               <li>Live billing is enabled only after test transactions (success/cancel/failure/refund) and log verification pass.</li>
+              <li>iOS in-app subscriptions are managed with a separate checklist for Apple review, sandbox testing, and receipt/transaction verification.</li>
               <li>Any material change is announced with reason, effective date, and document version.</li>
             </ol>
           </Section>

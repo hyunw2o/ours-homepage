@@ -5,7 +5,7 @@ const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || 'Hyunwoo Kim'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 28 Mudeul-ro, Chowol-eup, Gwangju-si, Gyeonggi-do, Republic of Korea'
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'ours113814@gmail.com'
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.21'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.05.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -62,7 +62,7 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: February 21, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Last updated: May 23, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Privacy Policy</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS (mallog24) processes personal data in a minimal and secure manner for service delivery.
@@ -72,8 +72,9 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
           <Section title="1. Personal Data We Process">
             <ul className="list-disc pl-5 space-y-1">
               <li>Account data: email, password (email login), user identifier (UID)</li>
-              <li>Social login (Google, Kakao): email, name/nickname, profile image, provider identifier</li>
+              <li>Social login (Google, Kakao, Apple ID): email, name/nickname, profile image, provider identifier, Apple private relay email when selected</li>
               <li>Service data: uploaded audio, transcript/corrected/summarized text, saved records</li>
+              <li>Billing/subscription data: payment status, product ID, subscription period, transaction identifier, and platform details. We do not store raw card numbers or full payment credentials.</li>
               <li>Automatically collected data: IP, device/browser details, cookies, access/error logs</li>
             </ul>
           </Section>
@@ -82,6 +83,7 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
             <ul className="list-disc pl-5 space-y-1">
               <li>Authentication, account security, and user support</li>
               <li>Core functionality: transcription, correction, summarization, record storage and retrieval</li>
+              <li>Free/paid quota management, iOS App Store in-app subscription verification, and web/Android billing status checks</li>
               <li>Service reliability, abuse detection, incident response, and customer communication</li>
             </ul>
           </Section>
@@ -89,6 +91,8 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
           <Section title="3. Collection Methods">
             <ul className="list-disc pl-5 space-y-1">
               <li>Information provided directly during sign-up/login and file upload</li>
+              <li>Information provided by external login providers such as Google, Kakao, and Apple ID during authentication</li>
+              <li>Payment/subscription status data provided by Apple App Store or payment providers for subscription verification</li>
               <li>Technical data generated automatically during app/web usage</li>
               <li>Data submitted through support and inquiry channels</li>
             </ul>
@@ -106,7 +110,7 @@ export default function PrivacyPolicyEn({ darkMode, setDarkMode }) {
           <Section title="5. Third-Party Sharing, Processors, and Overseas Processing">
             <ul className="list-disc pl-5 space-y-1">
               <li>We do not sell or provide personal data to third parties without user consent, except when legally required.</li>
-              <li>Processors: Supabase (auth/database), OpenAI (Whisper STT), Google (Gemini correction/summarization)</li>
+              <li>Processors and connected services: Supabase (auth/database), OpenAI (Whisper STT), Google (Gemini correction/summarization), and Apple (Sign in with Apple/App Store subscriptions)</li>
               <li>Data may be transferred and processed on overseas infrastructure during API-based processing.</li>
             </ul>
           </Section>

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.23'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.05.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -58,7 +58,7 @@ export default function Terms({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">시행일: 2026년 2월 23일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">시행일: 2026년 5월 23일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">이용약관</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               본 약관은 OURS가 제공하는 mallog24 서비스의 이용 조건, 권리, 책임을 규정합니다.
@@ -72,6 +72,7 @@ export default function Terms({ darkMode, setDarkMode }) {
           <Section title="2. 계정 및 인증">
             <ul className="list-disc pl-5 space-y-1">
               <li>이용자는 정확한 정보로 가입·로그인해야 하며, 타인 계정을 무단 사용해서는 안 됩니다.</li>
+              <li>서비스는 이메일 로그인과 Google, Kakao, Apple ID 등 외부 인증 로그인을 제공할 수 있습니다.</li>
               <li>계정·비밀번호·세션 관리 책임은 이용자에게 있습니다.</li>
               <li>보안 위험이 확인되면 회사는 추가 인증 또는 접근 제한 조치를 할 수 있습니다.</li>
             </ul>
@@ -79,7 +80,7 @@ export default function Terms({ darkMode, setDarkMode }) {
 
           <Section title="3. 서비스 내용 및 특성">
             <ul className="list-disc pl-5 space-y-1">
-              <li>음성 파일 업로드, 전사(STT), 교정, 요약, 기록본 저장 기능을 제공합니다.</li>
+              <li>웹, Android 앱, iOS 앱에서 음성 파일 업로드, 전사(STT), 교정, 요약, 기록본 저장 기능을 제공합니다.</li>
               <li>서비스는 외부 API 연동을 포함할 수 있으며, 이에 따라 처리 시간과 결과 품질이 달라질 수 있습니다.</li>
               <li>회사는 품질·보안·안정성 개선을 위해 기능 및 UI를 변경할 수 있습니다.</li>
             </ul>
@@ -90,16 +91,18 @@ export default function Terms({ darkMode, setDarkMode }) {
               <li>무료 플랜은 공지된 월간 한도 내에서 제공됩니다.</li>
               <li>유료 상품 기본 정보는 서비스 화면에 명시합니다. (예: 상품명, 월 이용요금, 이용기간, 제공기능)</li>
               <li>현재 기준 유료 상품은 <strong>mallog24 Pro 월간 구독(월 8,800원, VAT 포함)</strong>이며, 결제 승인 시점부터 1개월 단위로 자동 갱신됩니다.</li>
-              <li>결제 및 환불은 관련 법령과 결제사 정책을 따릅니다.</li>
+              <li>iOS 앱에서는 Apple App Store 인앱구독으로 Pro를 이용할 수 있으며, 최종 가격은 App Store 계정의 국가/지역 및 Apple 결제창 기준으로 표시됩니다.</li>
+              <li>웹/Android 결제와 iOS App Store 구독은 결제 경로, 해지 방법, 환불 절차가 다를 수 있습니다.</li>
+              <li>결제 및 환불은 관련 법령, 결제대행사 정책, Apple App Store 정책을 따릅니다.</li>
             </ul>
           </Section>
 
           <Section title="5. 결제 및 구독 등록 절차">
             <ol className="list-decimal pl-5 space-y-1">
-              <li>이용자는 로그인 후 요금제 페이지에서 상품을 선택합니다.</li>
-              <li>결제 대행사 체크아웃 화면에서 상품명, 금액, 과금주기, 결제수단, 약관 내용을 확인합니다.</li>
+              <li>이용자는 로그인 후 요금제 페이지 또는 앱 설정 화면에서 상품을 선택합니다.</li>
+              <li>웹/Android에서는 결제 대행사 체크아웃 화면에서, iOS에서는 Apple 결제창에서 상품명, 금액, 과금주기, 결제수단, 약관 내용을 확인합니다.</li>
               <li>결제 승인 시 구독이 즉시 활성화되며, 결제 내역 기준으로 이용기간이 산정됩니다.</li>
-              <li>다음 결제일부터 중단하려면 결제 주기 종료 전에 구독 관리 메뉴에서 해지해야 합니다.</li>
+              <li>다음 결제일부터 중단하려면 결제 주기 종료 전에 해당 플랫폼의 구독 관리 메뉴에서 해지해야 합니다.</li>
             </ol>
           </Section>
 
@@ -108,6 +111,7 @@ export default function Terms({ darkMode, setDarkMode }) {
               <li>결제 후 7일 이내, 사용 이력이 없는 경우 전액 환불을 요청할 수 있습니다.</li>
               <li>결제 후 사용 이력이 있는 경우 당월 이용분에 대한 부분 환불은 제한될 수 있으며, 해지는 다음 결제일부터 반영됩니다.</li>
               <li>중복 결제, 시스템 오류 등 명백한 과오금은 확인 후 전액 환불합니다.</li>
+              <li>Apple App Store 인앱구독의 환불 요청 및 승인 여부는 Apple 정책과 Apple 고객지원 절차를 따릅니다.</li>
               <li>환불 처리 소요기간은 결제사·카드사 정책에 따라 달라질 수 있습니다.</li>
               <li>전자상거래법 등 관련 법령이 본 규정보다 우선하는 경우 해당 법령을 따릅니다.</li>
             </ul>
@@ -116,7 +120,7 @@ export default function Terms({ darkMode, setDarkMode }) {
           <Section title="7. 상품 등록 및 변경 절차">
             <ol className="list-decimal pl-5 space-y-1">
               <li>회사는 유료 상품 출시 전 상품명, 가격, 결제주기, 환불기준, 문의처를 내부 검토합니다.</li>
-              <li>결제대행사(PG) 관리자 콘솔에 동일 정보를 등록하고, 체크아웃 화면 표시값과 약관 문구 일치 여부를 확인합니다.</li>
+              <li>결제대행사(PG) 관리자 콘솔 또는 App Store Connect에 동일 정보를 등록하고, 체크아웃/Apple 결제창 표시값과 약관 문구 일치 여부를 확인합니다.</li>
               <li>등록 완료 후 테스트 결제(승인/취소/실패/환불)를 검증한 다음 실제 결제를 활성화합니다.</li>
               <li>상품 정보 변경 시 변경 사유, 적용일, 버전을 함께 고지하며 주요 변경은 사전 안내합니다.</li>
             </ol>

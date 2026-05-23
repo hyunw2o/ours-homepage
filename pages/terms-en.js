@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.23'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.05.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -58,7 +58,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: February 23, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">Effective date: May 23, 2026 · Doc version: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">Terms of Service</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               These Terms define rights and responsibilities for using mallog24 web and mobile services operated by OURS.
@@ -72,6 +72,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
           <Section title="2. Accounts and Authentication">
             <ul className="list-disc pl-5 space-y-1">
               <li>Users must provide accurate information and must not use another person&apos;s account without authorization.</li>
+              <li>The service may provide email sign-in and external authentication through Google, Kakao, Apple ID, and other supported providers.</li>
               <li>Users are responsible for account credentials, session security, and sign-in devices.</li>
               <li>We may request additional verification or apply restrictions when suspicious activity is detected.</li>
             </ul>
@@ -79,7 +80,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
 
           <Section title="3. Service Features and Characteristics">
             <ul className="list-disc pl-5 space-y-1">
-              <li>The service includes audio upload, transcription, correction, summarization, and structured note storage.</li>
+              <li>The service includes audio upload, transcription, correction, summarization, and structured note storage on web, Android, and iOS apps.</li>
               <li>External APIs may be used, and response time or output quality may vary accordingly.</li>
               <li>Features and UX may change to improve quality, reliability, and security.</li>
             </ul>
@@ -90,16 +91,18 @@ export default function TermsEn({ darkMode, setDarkMode }) {
               <li>Free plans are subject to announced monthly usage limits.</li>
               <li>Paid product details are disclosed in the service UI (e.g., product name, monthly fee, service period, included features).</li>
               <li>Current paid plan baseline: <strong>mallog24 Pro Monthly Subscription (KRW 8,800/month, VAT included)</strong>, auto-renewed every month from payment approval time.</li>
-              <li>Payments and refunds follow applicable law and payment provider rules.</li>
+              <li>On iOS, mallog24 Pro may be purchased through Apple App Store in-app subscriptions. Final pricing is displayed based on the user&apos;s App Store country/region and Apple checkout.</li>
+              <li>Web/Android billing and iOS App Store subscriptions may differ in checkout path, cancellation method, and refund process.</li>
+              <li>Payments and refunds follow applicable law, payment provider rules, and Apple App Store policies.</li>
             </ul>
           </Section>
 
           <Section title="5. Checkout and Subscription Registration Flow">
             <ol className="list-decimal pl-5 space-y-1">
-              <li>The user logs in and selects a plan from the pricing page.</li>
-              <li>The payment provider checkout displays product name, amount, billing cycle, payment method, and terms.</li>
+              <li>The user logs in and selects a plan from the pricing page or app settings.</li>
+              <li>On web/Android, the payment provider checkout displays product name, amount, billing cycle, payment method, and terms. On iOS, the Apple checkout sheet provides the purchase confirmation.</li>
               <li>Once payment is approved, subscription is activated immediately and billing period starts.</li>
-              <li>To stop renewal, the user must cancel from subscription management before the next billing date.</li>
+              <li>To stop renewal, the user must cancel from the relevant platform&apos;s subscription management before the next billing date.</li>
             </ol>
           </Section>
 
@@ -108,6 +111,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
               <li>Full refund may be requested within 7 days after payment if no usage has occurred.</li>
               <li>If usage exists, partial refunds for the current cycle may be limited; cancellation takes effect from the next cycle.</li>
               <li>Duplicate charges or verified billing errors are fully refunded after verification.</li>
+              <li>Refund requests and approval for Apple App Store in-app subscriptions follow Apple&apos;s policies and customer support process.</li>
               <li>Refund settlement timing depends on payment provider/card issuer policies.</li>
               <li>Mandatory consumer protection laws prevail over this policy where applicable.</li>
             </ul>
@@ -116,7 +120,7 @@ export default function TermsEn({ darkMode, setDarkMode }) {
           <Section title="7. Product Registration and Change Procedure">
             <ol className="list-decimal pl-5 space-y-1">
               <li>Before launch, we internally review paid-product name, price, billing cycle, refund rules, and support contact.</li>
-              <li>The same values are registered in the payment provider dashboard and cross-checked against checkout and legal pages.</li>
+              <li>The same values are registered in the payment provider dashboard or App Store Connect and cross-checked against checkout/Apple purchase UI and legal pages.</li>
               <li>After registration, we run test transactions (success/cancel/failure/refund) before enabling live billing.</li>
               <li>When product data changes, reason, effective date, and document version are announced in advance when material.</li>
             </ol>

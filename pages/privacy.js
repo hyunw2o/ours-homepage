@@ -5,7 +5,7 @@ const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-
 const REPRESENTATIVE_NAME = process.env.NEXT_PUBLIC_REPRESENTATIVE_NAME || '김현우'
 const BUSINESS_ADDRESS = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '12735, 경기도 광주시 초월읍 무들로 28'
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'ours113814@gmail.com'
-const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.02.21'
+const LEGAL_DOC_VERSION = process.env.NEXT_PUBLIC_LEGAL_DOC_VERSION || 'v2026.05.23'
 
 function ThemeToggle({ darkMode, setDarkMode }) {
   return (
@@ -62,7 +62,7 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
       <main className="py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-6 space-y-5">
           <div className="text-center mb-8">
-            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 2월 21일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-2">최종 업데이트: 2026년 5월 23일 · 문서 버전: {LEGAL_DOC_VERSION}</p>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">개인정보처리방침</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-3">
               OURS(mallog24)는 이용자의 개인정보를 최소 범위로 처리하며, 관련 법령과 보안 원칙을 준수합니다.
@@ -72,8 +72,9 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
           <Section title="1. 처리하는 개인정보 항목">
             <ul className="list-disc pl-5 space-y-1">
               <li>회원 인증: 이메일, 비밀번호(이메일 로그인 시), 사용자 식별자(UID)</li>
-              <li>소셜 로그인(Google, Kakao): 이메일, 이름/닉네임, 프로필 이미지, 공급자 식별자</li>
+              <li>소셜 로그인(Google, Kakao, Apple ID): 이메일, 이름/닉네임, 프로필 이미지, 공급자 식별자, Apple 비공개 릴레이 이메일(선택 시)</li>
               <li>서비스 데이터: 업로드 음성 파일, 변환/교정/요약 텍스트, 저장 기록본</li>
+              <li>결제/구독 정보: 결제 상태, 상품 ID, 구독 기간, 거래 식별자, 플랫폼 정보(카드번호 등 결제수단 원문은 저장하지 않습니다)</li>
               <li>자동 수집 정보: 접속 IP, 기기/브라우저 정보, 쿠키, 접속/오류 로그</li>
             </ul>
           </Section>
@@ -82,6 +83,7 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
             <ul className="list-disc pl-5 space-y-1">
               <li>로그인/회원 관리, 본인 식별, 계정 보호</li>
               <li>음성 인식, 텍스트 변환, 요약, 기록본 저장 및 조회</li>
+              <li>무료/유료 사용량 산정, iOS App Store 인앱구독 및 웹/Android 결제 상태 확인</li>
               <li>서비스 안정화, 악성 트래픽 탐지, 장애 대응, 고객 문의 처리</li>
             </ul>
           </Section>
@@ -89,6 +91,8 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
           <Section title="3. 수집 방법">
             <ul className="list-disc pl-5 space-y-1">
               <li>회원가입/로그인 및 서비스 이용 과정에서 이용자가 직접 입력·업로드한 정보</li>
+              <li>Google, Kakao, Apple ID 등 외부 로그인 제공자가 인증 과정에서 전달하는 정보</li>
+              <li>Apple App Store 또는 결제대행사가 구독 상태 확인을 위해 전달하는 결제/거래 정보</li>
               <li>앱/웹 사용 중 자동 생성되는 로그 및 기기 정보</li>
               <li>고객지원 문의 접수 시 제공된 정보</li>
             </ul>
@@ -107,7 +111,7 @@ export default function PrivacyPolicy({ darkMode, setDarkMode }) {
             <ul className="list-disc pl-5 space-y-1">
               <li>회사는 원칙적으로 이용자 동의 없이 개인정보를 제3자에게 판매/제공하지 않습니다.</li>
               <li>단, 법령상 의무 이행 또는 이용자 요청 이행에 필요한 경우 예외가 발생할 수 있습니다.</li>
-              <li>처리 위탁: Supabase(인증/DB), OpenAI(Whisper STT), Google(Gemini 교정/요약)</li>
+              <li>처리 위탁 및 연동 서비스: Supabase(인증/DB), OpenAI(Whisper STT), Google(Gemini 교정/요약), Apple(Sign in with Apple/App Store 구독)</li>
               <li>API 처리 과정에서 데이터가 국외 서버로 전송·처리될 수 있으며, 최소 범위 데이터만 전송합니다.</li>
             </ul>
           </Section>
