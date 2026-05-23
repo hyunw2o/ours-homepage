@@ -248,9 +248,9 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </p>
 
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">첫 가입 30일 Pro 체험</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">무료 월 10시간</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro 월 8,800원(VAT 포함) 무제한</span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">오픈 베타: 무료 플랜 제공 중</span>
             </div>
 
             <div className="flex flex-col items-center justify-center gap-3">
@@ -273,7 +273,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </div>
             </div>
             <p className="mt-3 text-xs ours-muted">
-              오픈 베타 기간에는 무료 플랜 월 10시간으로 기능을 검증할 수 있고, 필요할 때만 Pro로 전환하면 됩니다.
+              신규 가입자는 결제 정보 없이 30일 동안 Pro 권한을 사용할 수 있고, 체험 종료 후 자동 결제되지 않습니다.
             </p>
           </div>
         </section>
@@ -360,6 +360,11 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             <div className="rounded-3xl ours-card p-6 sm:p-7">
               <span className="ours-section-kicker">Pricing</span>
               <h3 className="text-xl font-bold ours-title mt-2">가입 전에 확인하는 요금</h3>
+              <div className="rounded-2xl ours-soft-card p-4 mt-4">
+                <p className="text-xs ours-muted">첫 가입 혜택</p>
+                <p className="text-lg font-bold ours-title mt-1">30일 Pro 체험</p>
+                <p className="text-xs ours-muted mt-2">결제 정보 없이 제공되며 자동 유료 전환 없음</p>
+              </div>
               <div className="rounded-2xl ours-soft-card p-4 mt-4">
                 <p className="text-xs ours-muted">Free</p>
                 <p className="text-lg font-bold ours-title mt-1">월 10시간</p>
@@ -652,7 +657,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   ['음성 파일은 얼마나 보관되나요?', '원본 음성은 변환 목적의 임시 처리 후 삭제하고, 결과 텍스트와 기록본만 계정 기능 범위 안에서 관리합니다.'],
                   ['영어 음성도 지원하나요?', '한국어와 영어를 지원하며, 업로드 전에 언어를 직접 선택할 수 있습니다.'],
                   ['여러 화자 구분이 가능한가요?', '회의/통화 유형에서는 화자 구분 형식을 우선 적용합니다. 발화가 겹치지 않을수록 품질이 더 좋아집니다.'],
-                  ['결제 전에 무료 검증이 가능한가요?', '가능합니다. 무료 플랜으로 월 10시간까지 실제 업로드와 구조화 결과를 확인한 뒤 Pro로 전환할 수 있습니다.'],
+                  ['첫 가입 30일 Pro 체험은 자동 결제되나요?', '아닙니다. 신규 가입자는 결제 정보 없이 30일 동안 Pro 권한을 사용하며, 체험 종료 후 Free 월 10시간 또는 Pro 구독을 직접 선택합니다.'],
                 ].map(([title, body]) => (
                   <div key={title} className="rounded-2xl ours-soft-card p-4">
                     <p className="text-sm ours-title font-semibold">{title}</p>

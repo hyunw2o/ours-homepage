@@ -76,6 +76,10 @@ export default function Mallog24Intro({ darkMode, setDarkMode, uiTheme, setUiThe
               <p>상표 출원번호: {TRADEMARK_APPLICATION_NO}</p>
               <p>저작권 등록번호: {COPYRIGHT_REGISTRATION_NO}</p>
             </div>
+            <div className="mt-5 max-w-3xl rounded-2xl border border-brand-200/70 bg-brand-50/70 px-4 py-3 text-sm text-brand-900 shadow-sm backdrop-blur dark:border-brand-400/20 dark:bg-brand-400/10 dark:text-brand-100">
+              <p className="font-semibold">첫 가입자는 30일 동안 Pro 권한을 체험할 수 있습니다.</p>
+              <p className="mt-1 text-xs leading-relaxed opacity-80">결제 정보 없이 제공되며, 체험 종료 후 자동 결제되지 않습니다.</p>
+            </div>
             <div id="app-download" className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
               <a
                 href={MALLOG24_URL}

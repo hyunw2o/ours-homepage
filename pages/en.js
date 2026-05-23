@@ -258,9 +258,9 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             </p>
 
             <div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">30-day Pro trial for new signups</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Free 10h/month</span>
               <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Pro KRW 8,800/month (VAT included, Unlimited)</span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold ours-chip">Open beta: Free plan available</span>
             </div>
 
             <div className="flex flex-col items-center justify-center gap-3">
@@ -283,7 +283,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
               </div>
             </div>
             <p className="mt-3 text-xs ours-muted">
-              During open beta, visitors can validate the workflow with the free 10-hour monthly plan and only upgrade to Pro if the workflow proves useful.
+              New users can use Pro access for 30 days without payment information, and the trial does not convert into a paid subscription automatically.
             </p>
           </div>
         </section>
@@ -370,6 +370,11 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
             <div className="rounded-3xl ours-card p-6 sm:p-7">
               <span className="ours-section-kicker">Pricing</span>
               <h3 className="text-xl font-bold ours-title mt-2">Plan overview before signup</h3>
+              <div className="rounded-2xl ours-soft-card p-4 mt-4">
+                <p className="text-xs ours-muted">New signup benefit</p>
+                <p className="text-lg font-bold ours-title mt-1">30-day Pro trial</p>
+                <p className="text-xs ours-muted mt-2">No payment information required and no automatic paid conversion</p>
+              </div>
               <div className="rounded-2xl ours-soft-card p-4 mt-4">
                 <p className="text-xs ours-muted">Free</p>
                 <p className="text-lg font-bold ours-title mt-1">10 hours / month</p>
@@ -663,7 +668,7 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   ['How long are audio files stored?', 'Raw audio is handled temporarily for transcription and removed after processing. Structured results remain within the account feature scope.'],
                   ['Does it support English?', 'Yes. Korean and English are both supported, and users can choose the language before upload.'],
                   ['Can it separate multiple speakers?', 'Meeting and call modes prioritize speaker-aware formatting. Clear audio with less overlap improves quality.'],
-                  ['Can users validate before paying?', 'Yes. The free plan includes up to 10 hours per month so teams can test the workflow before upgrading.'],
+                  ['Does the 30-day Pro trial bill automatically?', 'No. New users receive Pro access for 30 days without payment information, then choose the free 10-hour monthly tier or a Pro subscription after the trial.'],
                 ].map(([title, body]) => (
                   <div key={title} className="rounded-2xl ours-soft-card p-4">
                     <p className="text-sm ours-title font-semibold">{title}</p>

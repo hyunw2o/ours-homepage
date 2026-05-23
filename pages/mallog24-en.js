@@ -76,6 +76,10 @@ export default function Mallog24IntroEn({ darkMode, setDarkMode, uiTheme, setUiT
               <p>Trademark Application No.: {TRADEMARK_APPLICATION_NO}</p>
               <p>Copyright Registration No.: {COPYRIGHT_REGISTRATION_NO}</p>
             </div>
+            <div className="mt-5 max-w-3xl rounded-2xl border border-brand-200/70 bg-brand-50/70 px-4 py-3 text-sm text-brand-900 shadow-sm backdrop-blur dark:border-brand-400/20 dark:bg-brand-400/10 dark:text-brand-100">
+              <p className="font-semibold">New signups can try Pro access for 30 days.</p>
+              <p className="mt-1 text-xs leading-relaxed opacity-80">No payment information is required, and the trial does not convert into a paid subscription automatically.</p>
+            </div>
             <div id="app-download" className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
               <a
                 href={MALLOG24_URL}
