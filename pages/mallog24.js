@@ -9,7 +9,7 @@ const MALLOG24_URL =
   'https://mallog24.com'
 const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.mallog24.app&pcampaignid=web_share'
-const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || ''
+const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || 'https://apps.apple.com/us/app/mallog24/id6765552782'
 const BUSINESS_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'ours113814@gmail.com'
 const BUSINESS_MAILTO = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent('mallog24 도입 문의')}&body=${encodeURIComponent('안녕하세요 OURS 팀,\n\nmallog24 도입 관련 문의드립니다.\n')}`
 const TRADEMARK_APPLICATION_NO = process.env.NEXT_PUBLIC_TRADEMARK_APPLICATION_NO || '40-2026-0040381'

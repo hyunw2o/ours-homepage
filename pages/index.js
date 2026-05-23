@@ -13,7 +13,7 @@ const MALLOG24_INFO_URL = '/mallog24'
 const MALLOG24_GUIDE_URL = '/mallog24-guide'
 const MALLOG24_PRICING_URL = `${MALLOG24_URL}/pricing`
 const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.mallog24.app&pcampaignid=web_share'
-const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || ''
+const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || 'https://apps.apple.com/us/app/mallog24/id6765552782'
 const BUSINESS_NAME = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'OURS'
 const BUSINESS_REG_NUMBER = process.env.NEXT_PUBLIC_BUSINESS_REG_NUMBER || '696-08-03518'
 const LANDLINE_PHONE = process.env.NEXT_PUBLIC_REPRESENTATIVE_PHONE || process.env.NEXT_PUBLIC_LANDLINE_PHONE || '010-4798-3619'
