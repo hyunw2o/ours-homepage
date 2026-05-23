@@ -576,22 +576,22 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                 <p className="ours-cta-copy mb-10">
                   음성 파일을 올리고, AI가 만드는 녹취록을 경험하세요.
                 </p>
-                <div id="app-download" className="mx-auto flex max-w-5xl flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <div id="app-download" className="mx-auto grid max-w-6xl grid-cols-1 gap-3 xl:grid-cols-[1.25fr_1.05fr_1.1fr_0.95fr_0.85fr]">
                   <a
                     href={MALLOG24_URL}
-                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-btn-primary transition-all duration-200 sm:w-auto"
+                    className="inline-flex min-h-[64px] w-full min-w-0 items-center justify-center gap-3 rounded-2xl px-5 py-4 text-center font-semibold whitespace-nowrap break-keep ours-btn-primary transition-all duration-200"
                   >
                     mallog24 시작하기
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
                   <Link
                     href={MALLOG24_GUIDE_URL}
-                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
+                    className="inline-flex min-h-[64px] w-full min-w-0 items-center justify-center gap-3 rounded-2xl px-5 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200"
                   >
                     사용 가이드 보기
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6m-7 4h8m-8 4h8m-8 4h5M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z" />
                     </svg>
                   </Link>
@@ -599,10 +599,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                     href={PLAY_STORE_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
+                    className="inline-flex min-h-[64px] w-full min-w-0 items-center justify-center gap-3 rounded-2xl px-5 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200"
                   >
                     Android 다운로드
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
@@ -611,16 +611,16 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                       href={APP_STORE_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
+                      className="inline-flex min-h-[64px] w-full min-w-0 items-center justify-center gap-3 rounded-2xl px-5 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200"
                     >
                       iOS 다운로드
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </a>
                   ) : (
                     <span
-                      className="inline-flex w-full shrink-0 items-center justify-center rounded-2xl border border-dashed px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-muted sm:w-auto"
+                      className="inline-flex min-h-[64px] w-full min-w-0 items-center justify-center rounded-2xl border border-dashed px-5 py-4 text-center font-semibold whitespace-nowrap break-keep ours-muted"
                       style={{ borderColor: 'var(--ours-border)' }}
                       aria-disabled="true"
                     >
@@ -629,10 +629,10 @@ export default function Home({ darkMode, setDarkMode, uiTheme, setUiTheme, uiThe
                   )}
                   <a
                     href={CONTACT_MAILTO}
-                    className="inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-2xl px-8 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200 sm:w-auto"
+                    className="inline-flex min-h-[64px] w-full min-w-0 items-center justify-center gap-3 rounded-2xl px-5 py-4 text-center font-semibold whitespace-nowrap break-keep ours-cta-ghost-btn transition-all duration-200"
                   >
                     문의하기
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H9l-4 3V8a2 2 0 012-2z" />
                     </svg>
                   </a>
